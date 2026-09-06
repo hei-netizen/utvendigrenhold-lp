@@ -4,396 +4,173 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Utvendig Renhold × Arcads — Felles kjøreplan høst 2026</title>
+<title>Utvendig Renhold × Arcads — Kjøreplan høst 2026</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B4A4F'/%3E%3Ctext x='32' y='42' font-family='Helvetica,Arial,sans-serif' font-size='28' font-weight='700' fill='%23fff' text-anchor='middle'%3EUR%3C/text%3E%3C/svg%3E">
 <style>
   :root {
-    --bg: #F6F9F8;
-    --surface: #FFFFFF;
-    --surface-2: #EEF3F2;
-    --ink: #14201E;
-    --muted: #5B6B68;
-    --line: #DCE3E1;
-    --petrol: #0B4A4F;
-    --water: #16808F;
-    --water-soft: #E2F1F2;
-    --positive: #2E8E63;
-    --positive-soft: #E3F3EA;
-    --amber: #B67E1C;
-    --amber-soft: #FBF1DC;
-    --clay: #B54A34;
-    --clay-soft: #F8E5E0;
+    --bg: #F6F9F8; --surface: #FFFFFF; --surface-2: #EEF3F2; --ink: #14201E; --muted: #5B6B68;
+    --line: #DCE3E1; --petrol: #0B4A4F; --water: #16808F; --water-soft: #E2F1F2;
+    --positive: #2E8E63; --positive-soft: #E3F3EA; --amber: #B67E1C; --amber-soft: #FBF1DC;
     --font-display: "Helvetica Neue", "Arial Nova", Arial, system-ui, sans-serif;
     --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+    --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0; background: var(--bg); color: var(--ink);
-    font-family: var(--font-body); font-size: 17px; line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
-  }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 17px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
   a { color: var(--water); }
-  .wrap { max-width: 880px; margin: 0 auto; padding: 0 clamp(18px, 4vw, 40px); }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 clamp(18px, 4vw, 40px); }
 
-  /* Header */
-  header.hero {
-    background: var(--petrol); color: #fff;
-    padding: clamp(40px, 7vw, 80px) 0 clamp(36px, 6vw, 64px);
-  }
-  .eyebrow {
-    font-family: var(--font-mono); font-size: 12px; letter-spacing: .14em;
-    text-transform: uppercase; opacity: .75; margin: 0 0 14px;
-  }
-  header h1 {
-    font-family: var(--font-display); font-weight: 700; letter-spacing: -.02em;
-    font-size: clamp(30px, 5.2vw, 50px); line-height: 1.06; margin: 0 0 18px;
-  }
-  header p.lead { font-size: clamp(17px, 2.1vw, 20px); max-width: 640px; opacity: .92; margin: 0 0 26px; }
-  .sources { display: flex; flex-wrap: wrap; gap: 10px; }
-  .source {
-    display: inline-flex; flex-direction: column; gap: 2px;
-    background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18);
-    border-radius: 12px; padding: 12px 16px; color: #fff; text-decoration: none;
-    min-width: 240px;
-  }
-  .source:hover { background: rgba(255,255,255,.14); }
-  .source b { font-size: 15px; }
-  .source span { font-size: 13px; opacity: .8; }
+  header.hero { background: var(--petrol); color: #fff; padding: clamp(36px, 6vw, 64px) 0; }
+  .eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; opacity: .75; margin: 0 0 12px; }
+  header h1 { font-family: var(--font-display); font-weight: 700; letter-spacing: -.02em; font-size: clamp(28px, 5vw, 44px); line-height: 1.08; margin: 0 0 14px; }
+  header p { max-width: 600px; opacity: .9; margin: 0 0 18px; }
+  .sources { display: flex; flex-wrap: wrap; gap: 8px; }
+  .source { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); border-radius: 10px; padding: 8px 14px; color: #fff; text-decoration: none; font-size: 14px; }
+  .source:hover { background: rgba(255,255,255,.18); }
 
-  /* Sticky nav */
-  nav.toc {
-    position: sticky; top: 0; z-index: 5; background: rgba(246,249,248,.92);
-    backdrop-filter: blur(8px); border-bottom: 1px solid var(--line);
-  }
-  nav.toc .wrap { display: flex; gap: 4px; overflow-x: auto; padding-top: 8px; padding-bottom: 8px; scrollbar-width: none; }
-  nav.toc .wrap::-webkit-scrollbar { display: none; }
-  nav.toc a {
-    white-space: nowrap; font-size: 14px; color: var(--muted); text-decoration: none;
-    padding: 6px 12px; border-radius: 999px;
-  }
-  nav.toc a:hover { background: var(--surface-2); color: var(--ink); }
-
-  /* Sections */
-  section { padding: clamp(36px, 6vw, 64px) 0; border-bottom: 1px solid var(--line); }
+  section { padding: clamp(28px, 5vw, 48px) 0; border-bottom: 1px solid var(--line); }
   section:last-of-type { border-bottom: 0; }
-  h2 {
-    font-family: var(--font-display); font-weight: 700; letter-spacing: -.015em;
-    font-size: clamp(24px, 3.4vw, 32px); line-height: 1.15; margin: 0 0 8px;
-  }
-  .sub { color: var(--muted); margin: 0 0 26px; font-size: 16px; }
-  h3 { font-family: var(--font-display); font-size: 19px; margin: 28px 0 10px; letter-spacing: -.01em; }
-  p { margin: 0 0 14px; }
-  ul { padding-left: 22px; margin: 0 0 14px; }
-  li { margin-bottom: 7px; }
+  h2 { font-family: var(--font-display); font-weight: 700; letter-spacing: -.015em; font-size: clamp(22px, 3vw, 28px); margin: 0 0 18px; }
+  ul { padding-left: 22px; margin: 0; }
+  li { margin-bottom: 8px; }
   li::marker { color: var(--water); }
 
-  /* TL;DR */
-  .tldr { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
-  .tldr .card {
-    background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px;
-  }
-  .tldr .card .k { font-family: var(--font-mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--water); margin-bottom: 6px; }
-  .tldr .card b { display: block; font-size: 17px; margin-bottom: 4px; }
-  .tldr .card span { color: var(--muted); font-size: 15px; }
+  .tldr { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+  .card .k { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--water); margin-bottom: 4px; }
+  .card b { display: block; font-size: 16px; margin-bottom: 2px; }
+  .card span { color: var(--muted); font-size: 14.5px; }
 
-  /* KPI strip */
-  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 0 0 22px; }
-  .kpi { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
-  .kpi .n { font-family: var(--font-display); font-size: 30px; font-weight: 700; letter-spacing: -.02em; line-height: 1; color: var(--petrol); }
-  .kpi .l { font-size: 13px; color: var(--muted); margin-top: 6px; }
-  .kpi .d { font-size: 12px; color: var(--positive); margin-top: 4px; font-family: var(--font-mono); }
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-bottom: 18px; }
+  .kpi { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+  .kpi .n { font-family: var(--font-display); font-size: 26px; font-weight: 700; letter-spacing: -.02em; color: var(--petrol); line-height: 1; }
+  .kpi .l { font-size: 13px; color: var(--muted); margin-top: 5px; }
 
-  /* Decision blocks */
-  .decision {
-    background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
-    padding: 22px 24px; margin-bottom: 16px;
-  }
-  .decision h3 { margin: 0 0 10px; }
-  .decision .now {
-    display: flex; gap: 12px; align-items: flex-start;
-    background: var(--water-soft); border-radius: 10px; padding: 12px 14px; margin: 0 0 12px;
-  }
-  .decision .now .tag {
-    flex: none; font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
-    background: var(--petrol); color: #fff; border-radius: 6px; padding: 3px 7px; margin-top: 3px;
-  }
-  .decision .why { color: var(--muted); font-size: 15.5px; }
-  .decision .why b { color: var(--ink); }
-  .pill { display: inline-block; font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; border-radius: 6px; padding: 3px 8px; margin-right: 6px; vertical-align: middle; }
-  .pill.aug { background: var(--surface-2); color: var(--muted); }
-  .pill.sep { background: var(--water-soft); color: var(--petrol); }
-
-  /* Timeline */
-  .timeline { list-style: none; padding: 0; margin: 0; position: relative; }
-  .timeline::before { content: ""; position: absolute; left: 9px; top: 6px; bottom: 6px; width: 2px; background: var(--line); }
-  .timeline li { position: relative; padding: 0 0 22px 36px; margin: 0; }
-  .timeline li::before {
-    content: ""; position: absolute; left: 3px; top: 7px; width: 14px; height: 14px; border-radius: 50%;
-    background: var(--water); border: 3px solid var(--bg);
-  }
+  .timeline { list-style: none; padding: 0; position: relative; }
+  .timeline::before { content: ""; position: absolute; left: 8px; top: 6px; bottom: 6px; width: 2px; background: var(--line); }
+  .timeline li { position: relative; padding: 0 0 16px 32px; }
+  .timeline li::before { content: ""; position: absolute; left: 2px; top: 7px; width: 14px; height: 14px; border-radius: 50%; background: var(--water); border: 3px solid var(--bg); }
   .timeline li.done::before { background: var(--positive); }
-  .timeline li.later::before { background: var(--line); }
   .timeline .when { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--water); }
   .timeline li.done .when { color: var(--positive); }
-  .timeline li.later .when { color: var(--muted); }
-  .timeline b { display: block; font-size: 17px; margin: 2px 0 3px; }
-  .timeline span { color: var(--muted); font-size: 15.5px; }
+  .timeline b { display: block; margin: 1px 0 2px; }
+  .timeline span { color: var(--muted); font-size: 15px; }
 
-  /* Table */
-  .tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
-  table { border-collapse: collapse; width: 100%; min-width: 620px; font-size: 15.5px; }
-  th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
-  th { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); background: var(--surface-2); }
+  .tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; min-width: 520px; font-size: 15px; }
+  th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); background: var(--surface-2); }
   tr:last-child td { border-bottom: 0; }
-  .st { display: inline-block; font-size: 12.5px; font-weight: 600; border-radius: 999px; padding: 3px 10px; white-space: nowrap; }
-  .st.done { background: var(--positive-soft); color: var(--positive); }
-  .st.open { background: var(--amber-soft); color: var(--amber); }
-  .st.wait { background: var(--surface-2); color: var(--muted); }
 
-  /* Quotes */
-  .voices { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
-  .voice { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; }
-  .voice .who { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--water); margin-bottom: 8px; }
-  .voice p { margin: 0; font-size: 15.5px; }
-
-  .note { background: var(--amber-soft); border-left: 4px solid var(--amber); border-radius: 0 10px 10px 0; padding: 12px 16px; font-size: 15.5px; margin: 16px 0; }
-
-  footer { padding: 32px 0 56px; color: var(--muted); font-size: 14px; }
+  footer { padding: 24px 0 48px; color: var(--muted); font-size: 14px; }
   footer a { color: var(--muted); }
-
-  @media (max-width: 640px) {
-    body { font-size: 16px; }
-    .decision { padding: 18px; }
-  }
-  @media print {
-    nav.toc { display: none; }
-    header.hero { background: #fff; color: var(--ink); }
-    .source { color: var(--ink); border-color: var(--line); }
-  }
 </style>
 </head>
 <body>
 
 <header class="hero">
   <div class="wrap">
-    <p class="eyebrow">Utvendig Renhold × Arcads · Oppdatert 6. september 2026</p>
-    <h1>Felles kjøreplan for høsten 2026</h1>
-    <p class="lead">Alt vi ble enige om i markedsmøtet med alle avdelingslederne 13. august, og justeringene fra oppfølgingsmøtet mellom Jonathan og Jona 4. september, samlet på ett sted.</p>
+    <p class="eyebrow">Utvendig Renhold × Arcads · 6. september 2026</p>
+    <h1>Kjøreplan for høsten 2026</h1>
+    <p>Det vi ble enige om i markedsmøtet 13. august og oppfølgingsmøtet 4. september. Der de spriker, gjelder det siste.</p>
     <div class="sources">
-      <a class="source" href="https://fathom.video/calls/782264621" target="_blank" rel="noopener">
-        <b>Markedsmøte – høsten</b>
-        <span>13. aug 2026 · 1 t 26 min · alle avdelingsledere + Jonathan, Victor og Jona</span>
-      </a>
-      <a class="source" href="https://fathom.video/calls/811052121" target="_blank" rel="noopener">
-        <b>Oppfølgingsmøte</b>
-        <span>4. sep 2026 · 28 min · Jonathan og Jona</span>
-      </a>
+      <a class="source" href="https://fathom.video/calls/782264621" target="_blank" rel="noopener">Opptak 13. aug · alle avdelingsledere</a>
+      <a class="source" href="https://fathom.video/calls/811052121" target="_blank" rel="noopener">Opptak 4. sep · Jonathan og Jona</a>
     </div>
   </div>
 </header>
 
-<nav class="toc">
-  <div class="wrap">
-    <a href="#kort">Kort oppsummert</a>
-    <a href="#status">Status</a>
-    <a href="#beslutninger">Beslutninger</a>
-    <a href="#kjoreplan">Kjøreplan</a>
-    <a href="#hvem">Hvem gjør hva</a>
-    <a href="#handbok">Håndboken</a>
-    <a href="#innspill">Innspill fra avdelingene</a>
-  </div>
-</nav>
-
-<section id="kort">
+<section>
   <div class="wrap">
     <h2>Kort oppsummert</h2>
-    <p class="sub">De seks tingene som styrer høsten. Detaljene ligger lenger ned.</p>
     <div class="tldr">
-      <div class="card"><div class="k">Budsjett</div><b>Maks 20 000 kr per avdeling per måned</b><span>Google + Meta samlet. Holdes ut året. Google ble doblet fra ~3 000 til ~6 000 kr i august.</span></div>
-      <div class="card"><div class="k">Priser</div><b>Ingen «fra»-priser, ingen fast rabatt</b><span>Annonsene selger fordelene ved vask. Rabatt er et lokalt verktøy, ikke hovedbudskapet.</span></div>
-      <div class="card"><div class="k">Unntak: test</div><b>20 % på tak + impregnering i 7 dager</b><span>Kun Østfold og Sørlandet. Starter mandag 7. september. Måler om det gir flere leads.</span></div>
-      <div class="card"><div class="k">Tjenestefokus</div><b>50/50 tak og ventilasjon fra ~11. september</b><span>Gradvis overgang til ventilasjonshøsten. Fasade-push i Oslo. Innlandet og Trondheim holder takfokus.</span></div>
-      <div class="card"><div class="k">Kuttes</div><b>Varmepumperens annonseres ikke</b><span>Få jobber, og kundene tror de bestiller full service. Kan stå som tillegg i skjemaet.</span></div>
-      <div class="card"><div class="k">Håndbok</div><b>Ny håndbok bygges med innhold fra Notion</b><span>Krever pålogging. Jonathan gir Arcads full tilgang til de to Notion-databasene.</span></div>
+      <div class="card"><div class="k">Budsjett</div><b>Maks 20 000 kr per avdeling per måned</b><span>Google + Meta samlet, ut året. Google doblet til ~6 000 kr i august.</span></div>
+      <div class="card"><div class="k">Priser</div><b>Ingen «fra»-priser, ingen fast rabatt</b><span>Annonsene selger fordelene ved vask. Rabatt kun lokalt, på forespørsel.</span></div>
+      <div class="card"><div class="k">Test</div><b>20 % på tak + impregnering i 7 dager</b><span>Kun Østfold og Sørlandet, fra mandag 7. september.</span></div>
+      <div class="card"><div class="k">Fokus</div><b>50/50 tak og ventilasjon fra ~11. sep</b><span>Fasade-push i Oslo. Innlandet og Trondheim holder takfokus.</span></div>
+      <div class="card"><div class="k">Kuttes</div><b>Varmepumperens annonseres ikke</b><span>Få jobber, kundene tror det er full service.</span></div>
+      <div class="card"><div class="k">Håndbok</div><b>Bygges på nytt fra Notion, med pålogging</b><span>Venter på tilgang fra Jonathan.</span></div>
     </div>
   </div>
 </section>
 
-<section id="status">
+<section>
   <div class="wrap">
-    <h2>Status per 4. september</h2>
-    <p class="sub">Tallene slik de ble lagt fram i de to møtene.</p>
+    <h2>Status</h2>
     <div class="kpis">
-      <div class="kpi"><div class="n">700</div><div class="l">leads i august</div><div class="d">juni ~500 → juli 560 → aug 700</div></div>
-      <div class="kpi"><div class="n">~200 kr</div><div class="l">kostnad per lead, august</div><div class="d">ned fra sommertoppen</div></div>
-      <div class="kpi"><div class="n">170–180 kr</div><div class="l">forventet CPL på Google</div><div class="d">når læringsfasen er over</div></div>
-      <div class="kpi"><div class="n">~30 %</div><div class="l">leads som blir jobb</div><div class="d">nasjonalt snitt, noen over, noen under</div></div>
-      <div class="kpi"><div class="n">300+</div><div class="l">unike annonser siden desember</div><div class="d">minst 5 nye hver uke</div></div>
+      <div class="kpi"><div class="n">700</div><div class="l">leads i august (560 i juli)</div></div>
+      <div class="kpi"><div class="n">~200 kr</div><div class="l">per lead i august</div></div>
+      <div class="kpi"><div class="n">170–180 kr</div><div class="l">ventet på Google etter læringsfasen</div></div>
+      <div class="kpi"><div class="n">~30 %</div><div class="l">av leads blir jobb</div></div>
     </div>
     <ul>
-      <li><b>Google leverer nå bedre enn Meta.</b> Søkere har høyere intensjon, og de nye landingssidene nesten halverte kostnaden per lead på flere lokasjoner. Derfor flyttes budsjett dit.</li>
-      <li><b>Video slår statiske annonser</b>, og lokale annonser («Hei Drammen», «Hei Bergen») gjør det best. Jonathans videoer om ventilasjonsrens og «nå er det kampanje på takvask» har vært blant vinnerne.</li>
-      <li><b>Google er i læringsfase igjen.</b> Alle annonser ble byttet til lokale landingssider 28. august, og målstyringen ble justert 29. august. Uke 36–37 vil svinge før det stabiliserer seg.</li>
-      <li><b>Drammen, Østfold og Sørlandet meldte om et markant fall i leads siste uke</b> (per 4. september). Det er bakgrunnen for 20 %-testen under.</li>
+      <li>Google leverer nå bedre enn Meta. Video og lokale annonser («Hei Drammen») gjør det best.</li>
+      <li>Alle Google-annonser peker til lokale landingssider siden 28. august. Kontoen er i læringsfase noen uker.</li>
+      <li>Drammen, Østfold og Sørlandet meldte om lead-fall siste uke. Det er grunnen til 20 %-testen.</li>
     </ul>
   </div>
 </section>
 
-<section id="beslutninger">
+<section>
   <div class="wrap">
-    <h2>Beslutninger, tema for tema</h2>
-    <p class="sub"><span class="pill aug">13. aug</span> = vedtatt i markedsmøtet · <span class="pill sep">4. sep</span> = justert i oppfølgingsmøtet. Der de spriker, gjelder 4. september.</p>
-
-    <div class="decision">
-      <h3>1. Budsjett</h3>
-      <div class="now"><span class="tag">Gjelder</span><div>Samlet annonsebudsjett holdes på <b>maks 20 000 kr per avdeling per måned</b> ut året. Over det blir det for mye leads til å håndtere.</div></div>
-      <p class="why"><span class="pill aug">13. aug</span> Avdelingene sa ja til +20–30 % i august. Google dobles fra ~3 000 til ~6 000 kr per avdeling fordi det «har gått så sykt bra». Utført 13. august. <br><span class="pill sep">4. sep</span> Jonathan og Jona satte taket på 20 000 kr totalt per avdeling og lot det ligge der ut året.</p>
-    </div>
-
-    <div class="decision">
-      <h3>2. Priser og rabatter i annonsene</h3>
-      <div class="now"><span class="tag">Gjelder</span><div><b>Ingen «fra»-priser og ingen fast rabatt</b> i annonser eller på landingssider. Budskapet er hvorfor du bør vaske, ikke hva det koster. «Høstkampanje» kan brukes som overskrift uten prosent.</div></div>
-      <p class="why"><span class="pill aug">13. aug</span> «Fra kr 9 000» på takvask-siden skapte støy: folk leser tallet, ikke ordet «fra», og blir sure når tilbudet er 22 000. Jean viste til Bergen: 5 % rabatt på alt i fjor kostet en halv million, i år null rabatt, 20 % høyere priser og fortsatt god hit-rate. Karianne og Bradley pekte på at noen områder trenger 10–15 % for å lande takvask. Løsningen: rabatt kun lokalt, på forespørsel, når en avdeling mangler leads. Filmes som variasjonsklipp. <br><span class="pill sep">4. sep</span> Jonathan: heller volum og mange bestillinger enn å diskutere 200 kr. Startpris-diskusjonen legges bort.</p>
-    </div>
-
-    <div class="decision">
-      <h3>3. Unntaket: 7-dagers test med 20 % rabatt</h3>
-      <div class="now"><span class="tag">Test</span><div><b>«Takvask og impregnering, 20 % rabatt»</b> kjøres i <b>Østfold og Sørlandet</b> fra mandag 7. september i 7 dager. Budsjettet i de to områdene deles 50/50 mellom rabattannonsen og de vanlige annonsene, så vi kan isolere effekten. Arcads rapporterer om det ga flere leads.</div></div>
-      <p class="why"><span class="pill sep">4. sep</span> Svar på lead-fallet i Østfold og Sørlandet. Jonathan har sendt bilder Jona bruker i annonsen. Bare takvask alene ble vurdert som for lite å bygge budskap på, derfor tak + impregnering.</p>
-    </div>
-
-    <div class="decision">
-      <h3>4. Tak, fasade og ventilasjon</h3>
-      <div class="now"><span class="tag">Gjelder</span><div><b>50/50-splitt mellom tak og ventilasjon fra rundt 11. september</b>, som en innfasing mot ventilasjonshøsten. Fasadevask får mer budsjett i Oslo. <b>Innlandet og Trondheim skal ikke ha fasade-push</b>, de beholder takfokus.</div></div>
-      <p class="why"><span class="pill aug">13. aug</span> I dag er ~70 % av annonseringen på tak, fordi det er det folk søker på. Fasade er forretningsmessig gunstig (kortere jobber) og august/september er siste vindu før våren. Oslo ville ha mer fasade, Trondheim og Innlandet sa nei. Bradley: start ventilasjon 2–3 uker før sesongen for å bygge pipeline, privatboliger betaler lite så det trengs volum. <br><span class="pill sep">4. sep</span> I stedet for en hard switch ble det innfasing med 50/50 om en uke.</p>
-    </div>
-
-    <div class="decision">
-      <h3>5. Varmepumperens</h3>
-      <div class="now"><span class="tag">Kuttes</span><div><b>Annonseres ikke lenger.</b> Kan stå som tilleggsvalg i skjemaet. Der det tilbys må det stå klinkende klart at det er kjemisk vask av innedelen, ikke en full service.</div></div>
-      <p class="why"><span class="pill aug">13. aug</span> Bradley gjorde 2–3 i vinter, Karianne 4 i år. Kundene tror de bestiller varmepumpeservice (inne og ute, full gjennomgang), og skuffes. Ventilasjonsrens er døråpneren, ikke varmepumpe.</p>
-    </div>
-
-    <div class="decision">
-      <h3>6. Lokale landingssider</h3>
-      <div class="now"><span class="tag">Levert</span><div>Én landingsside per lokasjon med lokal kontaktperson, lokale områder og lokal tekst. <b>18 sider er live, og alle Google-annonser har pekt dit siden 28. august.</b> «Fra kr 9 000» og kampanjepåstanden er borte fra disse sidene.</div></div>
-      <p class="why"><span class="pill aug">13. aug</span> Nasjonal side manglet lokal relevans. Jonathan ba Arcads lage 2–3 forslag per lokasjon (Trondheim først) som han deler videre. Ønske om teambilder, for eksempel teamet på Bryggen i Bergen. Neste steg er lokale Google-omtaler og ekte før/etter-bilder fra tilstandsrapportene, når avdelingene sender dem.</p>
-    </div>
-
-    <div class="decision">
-      <h3>7. Video og innhold fra avdelingene</h3>
-      <div class="now"><span class="tag">Gjelder</span><div>Avdelingsledere som vil ha bedre lokale resultater filmer <b>korte selfie-videoer på jobb</b>: «Hei, jeg heter X, jeg er avdelingsleder i Y, i dag er vi på …». Arcads sender manus og klipper. Jonathan filmer ventilasjons-, høst- og borettslag-videoene.</div></div>
-      <p class="why"><span class="pill aug">13. aug</span> Karianne spurte om regler for filming: privatboliger er greit når kunden sier ja, kommersielle bygg (kjøpesentre) har egne regler. Jean: borettslag, sameier og leilighetsbygg har egne, lavere priser som få kjenner til, så vi mister kunder som tror det koster som en enebolig. Egen video lages på det før annonseringen i slutten av september. Alt innhold legges i den delte Drive-mappen «Arcads x Utvendigrenhold».</p>
-    </div>
-
-    <div class="decision">
-      <h3>8. «Be om tilbud» eller «Bestill selv»</h3>
-      <div class="now"><span class="tag">Under arbeid</span><div>Skjemaet beholdes som i dag. Etter innsendt skjema kan kunden tilbys å <b>bestille direkte til litt lavere pris</b>. Det krever en tydelig avkryssing («jeg er klar over at dette er en bestilling») og avbestillingsregel på 24/48 timer. Kunden kan velge sted, ikke tidspunkt. Victor, Jona og Jonathan tar en egen arbeidsøkt på dette.</div></div>
-      <p class="why"><span class="pill aug">13. aug</span> Jean: folk har bestilt og trodd de ba om tilbud, og det ble «masse baluba». Et tilbud på 2–3 000 kr trenger ikke familieråd, så en liten gulrot for å bestille rett (100–200 kr) sparer tiden det tar å skrive tilbud. Stian: bindende bestilling må være klinkende klar, med fakturering ved sen avbestilling.</p>
-    </div>
-
-    <div class="decision">
-      <h3>9. Kommunikasjon</h3>
-      <div class="now"><span class="tag">Gjelder</span><div><b>All dialog på e-post</b>, ikke WhatsApp-gruppe. Skriv til <a href="mailto:hei@arcads.no">hei@arcads.no</a> eller via Jonathan. Arcads sender månedlig rapport Google mot Meta til Jonathan, og følger opp andelen leads som blir jobb.</div></div>
-      <p class="why"><span class="pill aug">13. aug</span> Karianne ønsket en kort mail med hva Arcads trenger fra hver avdeling (bilder, film). Jonathan sendte alle adresser etter møtet.</p>
-    </div>
+    <h2>Beslutninger</h2>
+    <ul>
+      <li><b>Budsjett:</b> tak på 20 000 kr per avdeling per måned ut året. Over det blir det for mange leads å håndtere.</li>
+      <li><b>Priser:</b> «fra kr 9 000» skapte støy og sure kunder. Bergen økte prisene 20 % uten rabatt og har god hit-rate. Rabatt brukes bare der en avdeling mangler leads.</li>
+      <li><b>20 %-test:</b> «Takvask og impregnering, 20 %» i Østfold og Sørlandet, 7 dager, 50/50 budsjett mot vanlige annonser. Arcads rapporterer om det ga flere leads.</li>
+      <li><b>Tak, fasade, ventilasjon:</b> gradvis 50/50 tak og ventilasjon fra ~11. september. Fasade får mer i Oslo. Innlandet og Trondheim: kun tak.</li>
+      <li><b>Varmepumperens:</b> ut av annonsene. Kan stå som tillegg i skjemaet.</li>
+      <li><b>Lokale landingssider:</b> 18 sider er live med lokal kontaktperson og lokale områder. Ønsker teambilder og før/etter fra avdelingene.</li>
+      <li><b>Video:</b> avdelingsledere som vil ha flere lokale leads filmer korte selfie-videoer på jobb. Arcads sender manus og klipper. Egen video om borettslag og sameier, som har egne priser få kjenner til.</li>
+      <li><b>Bestill selv:</b> etter innsendt skjema kan kunden bestille direkte til litt lavere pris. Krever tydelig avkryssing og 24/48-timers avbestillingsregel. Egen arbeidsøkt med Jonathan.</li>
+      <li><b>Kommunikasjon:</b> på e-post, ikke WhatsApp. <a href="mailto:hei@arcads.no">hei@arcads.no</a> eller via Jonathan.</li>
+    </ul>
   </div>
 </section>
 
-<section id="kjoreplan">
+<section>
   <div class="wrap">
     <h2>Kjøreplan</h2>
-    <p class="sub">Datoene slik de ble avtalt 4. september.</p>
     <ul class="timeline">
-      <li class="done"><div class="when">13. aug · gjort</div><b>Google-budsjett doblet</b><span>Fra ~100 til 300 kr/dag per lokasjonskampanje. Østfold-kampanjen skrudd på 14. august.</span></li>
-      <li class="done"><div class="when">20.–28. aug · gjort</div><b>18 lokale landingssider live, alle annonser byttet</b><span>102 annonser peker nå til sin lokale side. 2. september kom 28 temasider til (mosefjerning, takstein, husvask per lokasjon).</span></li>
-      <li class="done"><div class="when">6. sep · gjort</div><b>Ventilasjonsrens-landingsside klar</b><span>utvendigrenhold.no/tjenester/ventilasjonsrens-landingside/ i den nye malen. Annonsene som skal peke hit settes opp i 50/50-splitten.</span></li>
-      <li><div class="when">man 7. sep</div><b>20 %-testen starter i Østfold og Sørlandet</b><span>Takvask + impregnering, 20 % rabatt. 50/50 budsjett mot vanlige annonser. Løper til søndag 13. september.</span></li>
-      <li><div class="when">~11. sep</div><b>50/50 tak og ventilasjon</b><span>Innfasing av ventilasjonshøsten i alle aktive avdelinger. Fasade-push i Oslo fortsetter ut september.</span></li>
-      <li><div class="when">uke 38</div><b>Testen leses av</b><span>Arcads rapporterer til Jonathan: ga 20 % flere leads, og var de like gode? Beslutning om rabatt skal brukes lokalt andre steder.</span></li>
-      <li class="later"><div class="when">slutten av sep</div><b>Ventilasjon for fullt, borettslag-video ut</b><span>Krever at Jonathan har filmet ventilasjons- og borettslag-videoene etter manus fra Arcads.</span></li>
-      <li class="later"><div class="when">månedlig</div><b>Rapport Google mot Meta</b><span>Til Jonathan, med leads per kanal og hit-rate der avdelingene rapporterer det.</span></li>
+      <li class="done"><div class="when">13. aug · gjort</div><b>Google-budsjett doblet</b></li>
+      <li class="done"><div class="when">28. aug · gjort</div><b>Lokale landingssider live, alle annonser byttet</b></li>
+      <li class="done"><div class="when">6. sep · gjort</div><b>Ventilasjonsrens-landingsside klar</b></li>
+      <li><div class="when">man 7. sep</div><b>20 %-testen starter i Østfold og Sørlandet</b><span>Løper til 13. september.</span></li>
+      <li><div class="when">~11. sep</div><b>50/50 tak og ventilasjon</b></li>
+      <li><div class="when">uke 38</div><b>Testen leses av, rapport til Jonathan</b></li>
+      <li><div class="when">slutten av sep</div><b>Ventilasjon for fullt, borettslag-video ut</b><span>Krever at videoene er filmet.</span></li>
+      <li><div class="when">månedlig</div><b>Rapport Google mot Meta til Jonathan</b></li>
     </ul>
   </div>
 </section>
 
-<section id="hvem">
+<section>
   <div class="wrap">
-    <h2>Hvem gjør hva</h2>
-    <p class="sub">Alle løfter fra begge møtene, med status per 6. september.</p>
+    <h2>Åpne oppgaver</h2>
     <div class="tablewrap">
       <table>
-        <thead><tr><th>Oppgave</th><th>Ansvar</th><th>Avtalt</th><th>Status</th></tr></thead>
+        <thead><tr><th>Oppgave</th><th>Ansvar</th></tr></thead>
         <tbody>
-          <tr><td>Doble Google-budsjettene til ~6 000 kr/mnd per avdeling</td><td>Arcads</td><td>13. aug</td><td><span class="st done">Gjort 13. aug</span></td></tr>
-          <tr><td>Recap og opptak på e-post til alle avdelingsledere</td><td>Arcads</td><td>13. aug</td><td><span class="st done">Sendt</span></td></tr>
-          <tr><td>Lokale landingssider, 2–3 forslag per lokasjon via Jonathan</td><td>Arcads</td><td>13. aug</td><td><span class="st done">18 live, i drift 28. aug</span></td></tr>
-          <tr><td>Fjerne «fra kr 9 000» fra takvask-landingssidene</td><td>Victor</td><td>13. aug</td><td><span class="st done">Borte fra lokale sider</span></td></tr>
-          <tr><td>Slutte å annonsere varmepumperens</td><td>Arcads / Jonathan</td><td>13. aug</td><td><span class="st done">Gjort</span></td></tr>
-          <tr><td>Mer fasadebudsjett i Oslo, takfokus i Innlandet og Trondheim</td><td>Arcads</td><td>13. aug</td><td><span class="st done">Innlandet/Trondheim har ingen fasadesider</span></td></tr>
-          <tr><td>Manus til Jonathan: ventilasjon, høstkampanje, borettslag</td><td>Arcads</td><td>13. aug</td><td><span class="st open">Åpen</span></td></tr>
-          <tr><td>Selfie-video-manus til avdelingslederne</td><td>Arcads</td><td>13. aug</td><td><span class="st open">Åpen</span></td></tr>
-          <tr><td>Filme ventilasjons-, høst- og borettslag-video</td><td>Jonathan</td><td>13. aug</td><td><span class="st wait">Venter manus</span></td></tr>
-          <tr><td>Sende lokale bilder og teambilder til Drive-mappen</td><td>Alle avdelingsledere</td><td>13. aug</td><td><span class="st open">Åpen</span></td></tr>
-          <tr><td>Arbeidsøkt om «Be om tilbud» vs «Bestill selv»</td><td>Jonathan, Victor, Jona</td><td>13. aug</td><td><span class="st open">Ikke booket</span></td></tr>
-          <tr><td>Lansere 20 %-testen i Østfold og Sørlandet, 7 dager, rapportere leads</td><td>Arcads (Jona)</td><td>4. sep</td><td><span class="st open">Starter 7. sep</span></td></tr>
-          <tr><td>Skru på 50/50 tak og ventilasjon</td><td>Arcads</td><td>4. sep</td><td><span class="st open">~11. sep</span></td></tr>
-          <tr><td>Holde totalbudsjettet ≤ 20 000 kr per avdeling ut året</td><td>Arcads</td><td>4. sep</td><td><span class="st done">Løpende</span></td></tr>
-          <tr><td>Samle notatene fra begge møtene i én kjøreplan Jonathan kan dele</td><td>Arcads</td><td>4. sep</td><td><span class="st done">Denne siden</span></td></tr>
-          <tr><td>Bygge ny håndbok med innhold fra Notion, med pålogging</td><td>Arcads</td><td>4. sep</td><td><span class="st open">Starter når tilgang er gitt</span></td></tr>
-          <tr><td>Gi Arcads full tilgang til de to Notion-databasene</td><td>Jonathan</td><td>4. sep</td><td><span class="st open">Åpen</span></td></tr>
-          <tr><td>Sende Arcads første utkast til ny annonsetekst</td><td>Jonathan</td><td>4. sep</td><td><span class="st open">Åpen</span></td></tr>
-          <tr><td>Sende kundereferanser til Arcads</td><td>Jonathan</td><td>4. sep</td><td><span class="st open">Åpen</span></td></tr>
+          <tr><td>Lansere 20 %-testen og rapportere leads etter 7 dager</td><td>Arcads</td></tr>
+          <tr><td>Skru på 50/50 tak og ventilasjon</td><td>Arcads</td></tr>
+          <tr><td>Manus til Jonathan: ventilasjon, høstkampanje, borettslag</td><td>Arcads</td></tr>
+          <tr><td>Selfie-video-manus til avdelingslederne</td><td>Arcads</td></tr>
+          <tr><td>Bygge ny håndbok fra Notion, med pålogging</td><td>Arcads</td></tr>
+          <tr><td>Gi Arcads full tilgang til de to Notion-databasene</td><td>Jonathan</td></tr>
+          <tr><td>Filme ventilasjons-, høst- og borettslag-video</td><td>Jonathan</td></tr>
+          <tr><td>Sende utkast til annonsetekst og kundereferanser til Arcads</td><td>Jonathan</td></tr>
+          <tr><td>Sende lokale bilder og teambilder til Drive-mappen</td><td>Alle avdelingsledere</td></tr>
+          <tr><td>Arbeidsøkt om «Be om tilbud» vs «Bestill selv»</td><td>Jonathan, Victor, Jona</td></tr>
         </tbody>
       </table>
     </div>
   </div>
 </section>
 
-<section id="handbok">
-  <div class="wrap">
-    <h2>Håndboken</h2>
-    <p class="sub">Det meste av oppfølgingsmøtet 4. september handlet om den nye håndboken.</p>
-    <p><b>Problemet:</b> Dagens versjon på utvendigrenhold.arcads.no/handbok er bygget fra Google Drive og mangler det avdelingene faktisk bruker mest: standardprosedyrene fra Notion, med formål, nødvendig utstyr, video og fremgangsmåte. Notion er mer oppdatert, og best practice-prosedyrene har ikke kommet med.</p>
-    <p><b>Løsningen:</b> Arcads bygger håndboken på nytt og henter innholdet fra de to Notion-databasene. Jonathan gir full tilgang. Notion får prioritet over Drive der de spriker.</p>
-    <h3>Ny struktur</h3>
-    <ul>
-      <li><b>Franchisehåndbok</b>, som i dag.</li>
-      <li><b>HMS-håndbok</b>, det lange dokumentet som må være på plass.</li>
-      <li><b>Personalhåndbok</b> og <b>onboardingsplan</b>, flyttes opp fordi de brukes mye.</li>
-      <li><b>Dokumentert opplæring</b>, med egen bolk for «Best practice-prosedyrer» og «Workflows: hvordan vi jobber». Salg og markedsføring (telefonpitch, åpninger) blir en del av denne, ikke eget kapittel.</li>
-    </ul>
-    <h3>Funksjoner</h3>
-    <ul>
-      <li>Enkel navigasjon på én side: håndbok eller best practice, hva vil du finne, klikk deg ned.</li>
-      <li>Video og skjermbilder inne i prosedyrene, slik Notion-sidene har i dag.</li>
-      <li><b>Pålogging</b>, slik at ikke hele verden har tilgang til prosedyrene. Brukernavn/passord eller Google-innlogging.</li>
-      <li>Kan flyttes til Utvendig Renholds eget domene når den er ferdig.</li>
-    </ul>
-    <div class="note">Når alt fra Notion er inne blir håndboken vesentlig større enn i dag. Arcads sender den over til en ny gjennomgang med Jonathan før den tas i bruk.</div>
-  </div>
-</section>
-
-<section id="innspill">
-  <div class="wrap">
-    <h2>Innspill fra avdelingene 13. august</h2>
-    <p class="sub">Det avdelingslederne selv la vekt på.</p>
-    <div class="voices">
-      <div class="voice"><div class="who">Bradley King</div><p>Våren var mer enn han kunne ta unna. Juli ble stille, august er nær normalt igjen. Ny konkurranse fra enmannsbedrifter med lave priser, men vil ikke ned på det nivået. Start ventilasjon 2–3 uker før sesongen. Varmepumperens bør ut av annonsene.</p></div>
-      <div class="voice"><div class="who">Jean Salvesen</div><p>Slutt med «fra»-priser og kampanjerabatter, de skaper bare støy. Bergen økte prisene 20 % uten rabatt og har kjempegod hit-rate. Borettslag og sameier må få vite at de har egne priser. Bestilling må være knalltydelig skilt fra tilbud.</p></div>
-      <div class="voice"><div class="who">Karianne Olsen</div><p>Får ikke solgt takvask til full pris i sitt område, må ha 10–15 %. Vil heller styre rabatten mot måneden hun trenger jobbene i. Ba om en kort mail med nøyaktig hva Arcads ønsker av bilder og film.</p></div>
-      <div class="voice"><div class="who">Stian Solberg</div><p>Betaler heller for Google enn Facebook: der søker folk aktivt. Trondheim har lite fasadevask, vil holde takfokus. Bindende bestilling må ha avkryssing og faktureringsregel ved sen avbestilling.</p></div>
-      <div class="voice"><div class="who">Jonathan Røthe</div><p>De fleste brukte ikke opp budsjettet i juli, men er motiverte for flere leads i september. «Nå skal vi melke Google-kua.» Vil rute budskapet mot fordelene ved vask, ikke pris.</p></div>
-    </div>
-  </div>
-</section>
-
 <footer>
   <div class="wrap">
-    <p>Skrevet av Arcads på grunnlag av Fathom-opptakene fra 13. august og 4. september 2026. Der møtene spriker gjelder det siste. Spørsmål: <a href="mailto:hei@arcads.no">hei@arcads.no</a>.</p>
-    <p><a href="/">Statuspresentasjonen fra 13. august</a> · <a href="/handbok/">Håndboken (dagens versjon)</a> · <a href="/lokasjoner/">Lokale landingssider</a></p>
+    <p>Skrevet av Arcads fra opptakene 13. august og 4. september 2026. Spørsmål: <a href="mailto:hei@arcads.no">hei@arcads.no</a>.</p>
+    <p><a href="/">Statuspresentasjonen</a> · <a href="/handbok/">Håndboken</a> · <a href="/lokasjoner/">Lokale landingssider</a></p>
   </div>
 </footer>
 
