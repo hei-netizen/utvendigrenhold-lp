@@ -339,8 +339,35 @@ main,.ark,.innhold{min-width:0}
 <button id="versjoner" title="Versjonshistorikk">v<b id="vnaa">1</b></button>
 <button id="rediger">Rediger</button>
 </div><div id="histbanner"></div></header>
+<style id="hub-style">
+#hub{padding:0!important}
+#hub>.hub-wrap{max-width:1120px;margin:0 auto;padding:34px 30px 20px}
+.hub-hero{background:linear-gradient(135deg,var(--dark),var(--accent));border-radius:22px;padding:42px 40px;color:#fff;margin-bottom:30px;position:relative;overflow:hidden}
+.hub-hero:after{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.06)}
+.hub-hero h1{font-size:31px;letter-spacing:-.02em;margin:0 0 12px;font-weight:800;color:#fff;border:none}
+.hub-hero p{font-size:15.5px;max-width:600px;color:rgba(255,255,255,.9);line-height:1.55;margin:0}
+.hub-verdier{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.hub-verdi{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);border-radius:99px;padding:7px 15px;font-size:13px;font-weight:600}
+.hub-sekstit{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);font-weight:700;margin:4px 0 15px}
+.hub-rutenett{display:grid;grid-template-columns:repeat(2,1fr);gap:17px;align-items:start}
+.hub-kort{background:var(--panel);border:1px solid var(--linje);border-radius:18px;padding:24px 24px 20px;box-shadow:0 1px 2px rgba(16,42,38,.04),0 8px 24px rgba(16,42,38,.06)}
+.hub-ikon{width:42px;height:42px;border-radius:12px;background:var(--gul);color:var(--gulk);display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px}
+.hub-kort h2{font-size:18px;font-weight:800;letter-spacing:-.01em;margin:0 0 5px;border:none;color:var(--ink)}
+.hub-und{font-size:13px;color:var(--soft);margin-bottom:12px}
+.hub-lenker{display:flex;flex-direction:column;gap:1px}
+.hub-l{display:flex;align-items:center;gap:10px;padding:9px 0;font-size:13.7px;border-top:1px solid var(--linje);text-decoration:none;color:var(--ink)}
+.hub-l:first-child{border-top:none}
+.hub-l:hover{color:var(--accent)}
+.hub-l .em{font-size:15px;width:22px;text-align:center;flex:none}
+.hub-l .pil{margin-left:auto;color:var(--soft);font-size:13px;opacity:.55}
+.hub-l.ny{color:var(--accent);font-weight:600}
+.hub-lapp{margin-left:auto;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;background:var(--gul);color:var(--gulk);padding:2px 8px;border-radius:99px}
+.hub-bunn{margin-top:30px;padding:20px 24px;background:var(--panel);border:1px solid var(--linje);border-radius:16px;font-size:12.5px;color:var(--soft);display:flex;gap:13px;align-items:center;flex-wrap:wrap}
+.hub-laas{display:inline-flex;align-items:center;gap:7px;color:var(--accent);font-weight:600}
+@media(max-width:760px){.hub-rutenett{grid-template-columns:1fr}.hub-hero{padding:30px 24px}.hub-hero h1{font-size:25px}}
+</style>
 <div class="vindu">
-<nav id="nav"><div id="lukk"><span>Innhold</span><button id="lukkKn" aria-label="Lukk">×</button></div><div class="navgruppe"><div class="navtit"><b>01</b> Franchisehåndbok <i>21 sider</i></div><ul>
+<nav id="nav"><div id="lukk"><span>Innhold</span><button id="lukkKn" aria-label="Lukk">×</button></div><div class="navgruppe"><ul><li><a href="#hub" style="font-weight:700"><span>🏠</span>Forside</a></li></ul></div><div class="navgruppe"><div class="navtit"><b>01</b> Franchisehåndbok <i>21 sider</i></div><ul>
 <li><a href="#s1"><span>1</span>Franchise- håndbok</a></li>
 <li><a href="#s2"><span>2</span>Hva håndboka skal gjøre</a></li>
 <li><a href="#s3"><span>3</span>Velkommen til Utvendig Renhold</a></li>
@@ -454,7 +481,7 @@ main,.ark,.innhold{min-width:0}
 <li><a href="#s103"><span>103</span>Dette mangler fra håndbok 05</a></li>
 </ul></div></nav>
 <script id="endringer" type="application/json">{"s1":"\n<div class=\"eyebrow\">Utvendig Renhold AS · Håndbok 01&nbsp;</div>\n<h1>Franchise-<br>håndbok</h1>\n<p class=\"lead\">Hvordan en franchisetakervirksomhet skal drives — rutiner, kvalitetsstandard,\ndrift, administrasjon, markedsføring, salg og risikostyring.</p>\n<svg width=\"300\" height=\"300\" viewBox=\"0 0 300 300\" style=\"margin-bottom:56px\">\n<circle cx=\"150\" cy=\"150\" r=\"140\" fill=\"none\" stroke=\"#2C6A6F\" stroke-width=\"2\"></circle>\n<circle cx=\"150\" cy=\"150\" r=\"110\" fill=\"none\" stroke=\"#1E5A60\" stroke-width=\"2\"></circle>\n<circle cx=\"150\" cy=\"76\" r=\"26\" fill=\"#7FD0D8\"></circle>\n<circle cx=\"86\" cy=\"186\" r=\"26\" fill=\"#7FD0D8\"></circle>\n<circle cx=\"214\" cy=\"186\" r=\"26\" fill=\"#7FD0D8\"></circle>\n<circle cx=\"150\" cy=\"150\" r=\"34\" fill=\"none\" stroke=\"#7FD0D8\" stroke-width=\"4\"></circle>\n<g stroke=\"#2C6A6F\" stroke-width=\"3\">\n<line x1=\"150\" y1=\"102\" x2=\"150\" y2=\"116\"></line><line x1=\"122\" y1=\"166\" x2=\"110\" y2=\"176\"></line>\n<line x1=\"178\" y1=\"166\" x2=\"190\" y2=\"176\"></line></g>\n</svg>\n<div class=\"meta-row\" style=\"margin-bottom:44px\">\n<span>Franchisegiver: Utvendig Renhold AS</span><span>Daglig leder: Jonathan Røthe</span>\n<span>Styreleder: Arild Hestås</span></div>\n<div class=\"brand\">UTVENDIG RENHOLD AS · FRANCHISEHÅNDBOK</div>\n"}</script>
-<main id="ark"><article id="s1" class="ark forside" data-sek="01" data-g="1" data-n="1"><div class="sidetall"><b>1</b><span>01 · 01</span></div><div class="innhold">
+<main id="ark"><article id="hub" class="ark" data-hub="1"><div class="hub-wrap"><div class="hub-hero"><h1>Velkommen til håndboka</h1><p>Ett samlet sted for alt du trenger i jobben — rutiner, HMS, salg og arbeidsflyter. Start her og naviger deg videre til det du er ute etter.</p><div class="hub-verdier"><span class="hub-verdi">💪 Innsats</span><span class="hub-verdi">🎯 Samvittighet</span><span class="hub-verdi">🔍 Interesse</span></div></div><div class="hub-sekstit">Velg område</div><div class="hub-rutenett"><div class="hub-kort"><div class="hub-ikon">👷</div><h2>Personal og HMS</h2><div class="hub-und">Ansettelse, sikkerhet, prosedyrer og opplæring</div><div class="hub-lenker"><a class="hub-l" href="#s22"><span class="em">🔰</span> HMS-håndbok <span class="pil">→</span></a><a class="hub-l" href="#s81"><span class="em">📘</span> Personalhåndbok <span class="pil">→</span></a><span class="hub-l ny"><span class="em">🧭</span> Onboardingsplan (8 steg) <span class="hub-lapp">Ny</span></span><a class="hub-l" href="#s35"><span class="em">⭐</span> Best praksis <span class="pil">→</span></a><a class="hub-l" href="#s40"><span class="em">🧪</span> Kjemi <span class="pil">→</span></a></div></div><div class="hub-kort"><div class="hub-ikon">📣</div><h2>Markedsføring og salg</h2><div class="hub-und">Salgsverktøy, tilbud og maler</div><div class="hub-lenker"><a class="hub-l" href="#s69"><span class="em">📈</span> Markedsføring og salg <span class="pil">→</span></a><a class="hub-l" href="#s19"><span class="em">💰</span> Salg, priser og nettbutikk <span class="pil">→</span></a><a class="hub-l" href="#s49"><span class="em">💨</span> Ventilasjonsrens <span class="pil">→</span></a><span class="hub-l ny"><span class="em">📋</span> Service Bridge-maler (24) <span class="hub-lapp">Ny</span></span><span class="hub-l ny"><span class="em">🧩</span> Salg Ventilasjonsrens <span class="hub-lapp">Ny</span></span></div></div><div class="hub-kort"><div class="hub-ikon">🏢</div><h2>Franchise og drift</h2><div class="hub-und">Rammene rundt avdelingen din</div><div class="hub-lenker"><a class="hub-l" href="#s1"><span class="em">📖</span> Franchisehåndbok <span class="pil">→</span></a><a class="hub-l" href="#s92"><span class="em">🎓</span> Dokumentert opplæring <span class="pil">→</span></a><a class="hub-l" href="#s12"><span class="em">🔁</span> Statusflyt i Service Bridge <span class="pil">→</span></a></div></div><div class="hub-kort"><div class="hub-ikon">⚙️</div><h2>Arbeidsflyter</h2><div class="hub-und">Steg-for-steg for de vanligste prosessene</div><div class="hub-lenker"><a class="hub-l" href="#s10"><span class="em">🧽</span> Oppdragsflyt og grensesnitt <span class="pil">→</span></a><a class="hub-l" href="#s13"><span class="em">📞</span> Kundeklage steg for steg <span class="pil">→</span></a><a class="hub-l" href="#s11"><span class="em">🧾</span> Fra planlegging til faktura <span class="pil">→</span></a></div></div></div><div class="hub-bunn"><span class="hub-laas">🔒 Innloggingsbeskyttet</span><span>Internt for Utvendig Renhold. «Ny»-merkede sider bygges inn fra Intranett (Fase 2).</span></div></div></article><article id="s1" class="ark forside" data-sek="01" data-g="1" data-n="1"><div class="sidetall"><b>1</b><span>01 · 01</span></div><div class="innhold">
 <div class="eyebrow">Utvendig Renhold AS · Håndbok 01</div>
 <h1>Franchise-<br>håndbok</h1>
 <p class="lead">Hvordan en franchisetakervirksomhet skal drives — rutiner, kvalitetsstandard,
