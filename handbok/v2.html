@@ -5,9 +5,13 @@
 @font-face{font-family:'Roboto';src:url('fonts/Roboto-VF.ttf');font-weight:400 700;font-display:swap}
 *{margin:0;box-sizing:border-box;font-family:'Roboto',-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
 h1,h2,h3,h4,.brand,.kort h3,.lkort h2,.rad b,.tilbake{font-family:'Poppins','Roboto',sans-serif}
+html,body{overflow-x:clip;max-width:100%}
 body{background:var(--bg);color:var(--ink);line-height:1.55;font-weight:400}
+img,svg,figure,table,iframe,pre{max-width:100%}
+.doc a{overflow-wrap:anywhere;word-break:break-word}
+.doc svg{height:auto}
 a{cursor:pointer;text-decoration:none;color:inherit}
-.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--linje)}
+.topbar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--linje)}
 .topin{max-width:860px;margin:0 auto;display:flex;align-items:center;gap:12px;padding:13px 20px}
 .pin{width:28px;height:28px;border-radius:8px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:15px;cursor:pointer;flex:none}
 .pin.big{width:52px;height:52px;border-radius:14px;font-size:26px;margin:0 auto 14px}
@@ -77,7 +81,7 @@ h1{font-size:26px;letter-spacing:-.02em;margin-bottom:6px;line-height:1.2}
 @media(max-width:680px){.grid{grid-template-columns:1fr}#sok{min-width:150px}}
 </style></head><body>
 <div id="login"><div class="lkort"><div class="pin big">📍</div><h2>Utvendig Renhold</h2><p>Håndbok · logg inn</p><form id="lf" autocomplete="off"><input id="lb" placeholder="Brukernavn" autocapitalize="none"><input id="lp" type="password" placeholder="Passord"><button>Logg inn</button><div class="lfeil" id="lfeil"></div></form></div></div>
-<div class="top"><div class="topin"><button id="tilbake" class="tilbake hidden" onclick="back()">‹ Tilbake</button><div class="pin" onclick="go('hub')">📍</div><div class="brand" onclick="go('hub')">Utvendig Renhold <span>· Håndbok</span></div><div class="soksh"><input id="sok" placeholder="🔍 Søk i håndboka …"><div id="sokres" class="sokres hidden"></div></div></div></div>
+<div class="topbar"><div class="topin"><button id="tilbake" class="tilbake hidden" onclick="back()">‹ Tilbake</button><div class="pin" onclick="go('hub')">📍</div><div class="brand" onclick="go('hub')">Utvendig Renhold <span>· Håndbok</span></div><div class="soksh"><input id="sok" placeholder="🔍 Søk i håndboka …"><div id="sokres" class="sokres hidden"></div></div></div></div>
 <div class="view" id="hub"><h1>Håndbok</h1><div class="und">Velg et område for å komme i gang.</div><div class="grid"><a class="kort" onclick="go('o-franchise')"><div class="ik">🏢</div><h3>Franchise</h3><p>Rammene rundt avdelingen din</p><div class="antall">21 sider →</div></a><a class="kort" onclick="go('o-hms')"><div class="ik">🦺</div><h3>HMS</h3><p>Sikkerhet, prosedyrer og arbeid i høyden</p><div class="antall">47 sider →</div></a><a class="kort" onclick="go('o-personal')"><div class="ik">👷</div><h3>Personal</h3><p>Ansettelse, onboarding og rutiner</p><div class="antall">12 sider →</div></a><a class="kort" onclick="go('o-dok')"><div class="ik">🎓</div><h3>Dokumentert opplæring</h3><p>Opplæring, best praksis og kjemi</p><div class="antall">33 sider →</div></a><a class="kort" onclick="go('o-marked')"><div class="ik">📣</div><h3>Salg & marked</h3><p>Salg, ventilasjonsrens, priser og maler</p><div class="antall">18 sider →</div></a></div></div>
 <div class="view" id="o-franchise"><div class="krumme"><a onclick="go('hub')">Håndbok</a><span class="sep">›</span> Franchise</div><h1>🏢 Franchise</h1><div class="und">Rammene rundt avdelingen din</div><div class="doc omr-intro">
 <p class="lead">Hvordan en franchisetakervirksomhet skal drives — rutiner, kvalitetsstandard,
@@ -2432,6 +2436,6 @@ function back(){go(hist.pop()||'hub',true)}
 (function(){var b="utvendigrenhold",pw="123456789",ov=document.getElementById("login");try{if(localStorage.getItem("ur_h")=="1")ov.style.display="none"}catch(e){}
 document.getElementById("lf").onsubmit=function(e){e.preventDefault();if(document.getElementById("lb").value.trim().toLowerCase()==b&&document.getElementById("lp").value==pw){try{localStorage.setItem("ur_h","1")}catch(e){}ov.style.display="none"}else document.getElementById("lfeil").textContent="Feil brukernavn eller passord."}})();
 var h=location.hash.slice(1);if(h&&document.getElementById(h))go(h);
-var si=document.getElementById("sok");if(si)si.oninput=function(){var q=this.value.toLowerCase().trim();var box=document.getElementById("sokres");if(!q){box.classList.add("hidden");return}var hits=[];document.querySelectorAll('.view[id^="s"],.view[id^="nb"]').forEach(function(v){var t=(v.querySelector("h1")||{}).textContent||"";if(t.toLowerCase().indexOf(q)>-1)hits.push([v.id,t])});box.innerHTML=hits.slice(0,12).map(function(x){return '<a onclick="go(\''+x[0]+'\');document.getElementById(\'sok\').value=\'\';document.getElementById(\'sokres\').classList.add(\'hidden\')">'+x[1]+'</a>'}).join("")||'<i>Ingen treff</i>';box.classList.remove("hidden")}
+var si=document.getElementById("sok");if(si)si.oninput=function(){var q=this.value.toLowerCase().trim();var box=document.getElementById("sokres");if(!q){box.classList.add("hidden");return}var hits=[];document.querySelectorAll('.view[id^="s"],.view[id^="nb"]').forEach(function(v){if(v.textContent.toLowerCase().indexOf(q)>-1){var el=v.querySelector("h1,h2");hits.push([v.id,el?el.textContent:v.id])}});box.innerHTML=hits.slice(0,12).map(function(x){return '<a onclick="go(\''+x[0]+'\');document.getElementById(\'sok\').value=\'\';document.getElementById(\'sokres\').classList.add(\'hidden\')">'+x[1]+'</a>'}).join("")||'<i>Ingen treff</i>';box.classList.remove("hidden")}
 </script>
 </body></html>
