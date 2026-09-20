@@ -1,0 +1,875 @@
+<title>Intranett Utvendig Renhold</title>
+<meta name="description" content="Internt intranett og håndbøker for Utvendig Renhold – personal, HMS og franchise samlet for ansatte, franchisetakere og administrasjon.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+*{box-sizing:border-box}
+:root{
+  --teal:#007A8B; --teal-deep:#005A66; --teal-ink:#10474C;
+  --teal-050:#E0F1EF; --border:#CBD8D7; --accent:#FCEC52; --accent-ink:#4A3F00;
+  --text:#383239; --muted:#616464; --bg:#F7FAF9; --surface:#FFFFFF; --surface-2:#F0F6F5;
+  --info-bg:#E3F0F3; --info-bd:#8FC3CE;
+  --success-bg:#E4F1E9; --success-bd:#A0CDB2;
+  --warn-bg:#FBEEDC; --warn-bd:#E6C79A;
+  --danger-bg:#F7E4E1; --danger-bd:#E0A99F;
+  --yellow-bg:#FBF6D8; --yellow-bd:#E4D889;
+  --neutral-bg:#EDF3F2; --neutral-bd:#CBD8D7;
+  --shadow:0 1px 2px rgba(16,71,76,.06),0 10px 28px rgba(16,71,76,.07);
+  --radius:14px; --maxdoc:820px; --hh:60px;
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --head:'Poppins',var(--sans);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --teal:#3FB4C4; --teal-deep:#7FD3DE; --teal-ink:#CFEDF0;
+  --teal-050:#12313A; --border:#2A464C; --accent:#FCEC52; --accent-ink:#3A3305;
+  --text:#E8EEEE; --muted:#9FB2B3; --bg:#0E1719; --surface:#152226; --surface-2:#1B2B2F;
+  --info-bg:#123039; --info-bd:#2E5A66;
+  --success-bg:#123528; --success-bd:#2E5C46;
+  --warn-bg:#392C16; --warn-bd:#6B552C;
+  --danger-bg:#3A201C; --danger-bd:#6E453D;
+  --yellow-bg:#33301A; --yellow-bd:#655E2E;
+  --neutral-bg:#182629; --neutral-bd:#2A464C;
+  --shadow:0 1px 2px rgba(0,0,0,.45),0 12px 34px rgba(0,0,0,.4);
+}}
+:root[data-theme="dark"]{
+  --teal:#3FB4C4; --teal-deep:#7FD3DE; --teal-ink:#CFEDF0;
+  --teal-050:#12313A; --border:#2A464C; --accent:#FCEC52; --accent-ink:#3A3305;
+  --text:#E8EEEE; --muted:#9FB2B3; --bg:#0E1719; --surface:#152226; --surface-2:#1B2B2F;
+  --info-bg:#123039; --info-bd:#2E5A66;
+  --success-bg:#123528; --success-bd:#2E5C46;
+  --warn-bg:#392C16; --warn-bd:#6B552C;
+  --danger-bg:#3A201C; --danger-bd:#6E453D;
+  --yellow-bg:#33301A; --yellow-bd:#655E2E;
+  --neutral-bg:#182629; --neutral-bd:#2A464C;
+  --shadow:0 1px 2px rgba(0,0,0,.45),0 12px 34px rgba(0,0,0,.4);
+}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto} *{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--teal-deep);text-underline-offset:2px}
+a:hover{color:var(--teal)}
+:focus-visible{outline:3px solid var(--teal);outline-offset:2px;border-radius:6px}
+
+/* header */
+.top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:saturate(1.1) blur(8px);border-bottom:1px solid var(--border);min-height:var(--hh)}
+.top-in{max-width:1120px;margin:0 auto;padding:8px 16px;display:flex;align-items:center;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--head);font-weight:700;letter-spacing:.2px;color:var(--teal-ink);text-decoration:none;font-size:15px}
+.logo{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,var(--teal),var(--teal-deep));display:grid;place-items:center;color:#fff;font-weight:700;font-family:var(--head);flex:0 0 auto;box-shadow:var(--shadow)}
+.crumb{color:var(--muted);font-weight:500;font-size:14px}
+.crumb b{color:var(--text);font-weight:600}
+.top-sp{flex:1 1 auto}
+.btn{font:inherit;cursor:pointer;border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:10px;padding:7px 12px;font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:7px;transition:background .15s,border-color .15s,transform .05s}
+.btn:hover{background:var(--surface-2);border-color:var(--teal)}
+.btn:active{transform:translateY(1px)}
+.iconbtn{padding:7px 9px}
+.back{color:var(--teal-deep)}
+
+/* layout */
+main{max-width:1120px;margin:0 auto;padding:0 16px 64px}
+.view[hidden]{display:none}
+.view{padding-block:26px}
+section:focus{outline:none}
+
+/* hub */
+.hero{background:linear-gradient(135deg,var(--teal-050),var(--surface));border:1px solid var(--border);border-radius:20px;padding:clamp(22px,4vw,40px);box-shadow:var(--shadow);position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;right:-40px;top:-40px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--teal) 22%,transparent),transparent 70%)}
+.eyebrow{font-family:var(--head);font-weight:600;font-size:12.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--teal-deep);margin:0 0 8px}
+.hero h1{font-family:var(--head);font-weight:700;font-size:clamp(26px,4.6vw,40px);line-height:1.12;margin:0 0 12px;color:var(--teal-ink);max-width:18ch}
+.hero p.lead{margin:0;max-width:62ch;color:var(--text);font-size:16.5px}
+.sec{margin-top:38px}
+.sec-h{font-family:var(--head);font-weight:700;font-size:clamp(19px,2.6vw,24px);color:var(--teal-ink);margin:0 0 4px;display:flex;align-items:center;gap:10px}
+.sec-sub{margin:0 0 18px;color:var(--muted);max-width:70ch}
+.mission{font-family:var(--head);font-weight:600;font-size:clamp(18px,2.6vw,23px);line-height:1.3;color:var(--text);border-left:4px solid var(--teal);padding:2px 0 2px 16px;margin:0 0 22px}
+.mission span{color:var(--teal-deep)}
+
+.grid{display:grid;gap:16px}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:820px){.g3{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.g3,.g2{grid-template-columns:1fr}}
+
+.value{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px 18px 16px;box-shadow:var(--shadow)}
+.value .vic{width:40px;height:40px;border-radius:11px;background:var(--teal-050);display:grid;place-items:center;font-size:20px;margin-bottom:12px}
+.value h3{font-family:var(--head);margin:0 0 4px;font-size:17px;color:var(--teal-ink)}
+.value p{margin:0;color:var(--muted);font-size:15px}
+
+.hbcard{text-align:left;width:100%;cursor:pointer;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);transition:transform .12s,border-color .15s,box-shadow .15s;display:flex;flex-direction:column;gap:8px;color:inherit;font:inherit}
+.hbcard:hover{transform:translateY(-3px);border-color:var(--teal);box-shadow:0 6px 14px rgba(16,71,76,.1),0 18px 40px rgba(16,71,76,.12)}
+.hbcard .hbic{font-size:30px}
+.hbcard h3{font-family:var(--head);margin:2px 0 0;font-size:19px;color:var(--teal-ink)}
+.hbcard p{margin:0;color:var(--muted);font-size:14.5px;flex:1}
+.hbcard .go{font-weight:600;color:var(--teal-deep);font-size:14px;display:inline-flex;align-items:center;gap:6px;margin-top:6px}
+.hbcard .chip{align-self:flex-start;background:var(--teal-050);color:var(--teal-deep);border-radius:999px;padding:3px 10px;font-size:12px;font-weight:600}
+
+.linkcard{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow);text-decoration:none;color:inherit;transition:border-color .15s,transform .1s}
+.linkcard:hover{border-color:var(--teal);transform:translateY(-2px)}
+.linkcard .lic{font-size:20px;line-height:1.2;flex:0 0 auto}
+.linkcard .lt{display:block;font-weight:600;color:var(--text);font-size:15px}
+.linkcard .ld{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.linkcard .ext{margin-left:auto;color:var(--muted);font-size:13px;flex:0 0 auto}
+
+.helpbox{background:var(--danger-bg);border:1px solid var(--danger-bd);border-radius:var(--radius);padding:18px 20px;display:flex;gap:14px;align-items:flex-start}
+.helpbox .hic{font-size:24px}
+.helpbox b{color:var(--text)}
+.helpbox p{margin:.2em 0}
+
+/* handbook layout */
+.hbwrap{display:grid;grid-template-columns:262px minmax(0,1fr);gap:30px;align-items:start}
+@media (max-width:940px){.hbwrap{grid-template-columns:1fr;gap:14px}}
+.toc{position:sticky;top:calc(var(--hh) + 14px);background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+@media (max-width:940px){.toc{position:static}}
+.toc>summary{list-style:none;cursor:pointer;font-family:var(--head);font-weight:600;font-size:14px;color:var(--teal-ink);padding:13px 16px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.toc>summary::-webkit-details-marker{display:none}
+.toc>summary:after{content:"▾";color:var(--muted);transition:transform .2s}
+.toc[open]>summary:after{transform:rotate(180deg)}
+.toc nav{border-top:1px solid var(--border);max-height:min(70vh,640px);overflow:auto}
+.toc ol{list-style:none;margin:0;padding:6px}
+.toc li{margin:0}
+.toc a{display:block;text-decoration:none;color:var(--text);font-size:13.6px;padding:7px 10px;border-radius:8px;line-height:1.35}
+.toc a:hover{background:var(--surface-2);color:var(--teal-deep)}
+
+.doc{min-width:0;max-width:var(--maxdoc)}
+.dochead{margin-bottom:8px}
+.doc-eyebrow{font-family:var(--head);font-weight:600;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:var(--teal-deep);margin:0 0 4px}
+.doc h1{font-family:var(--head);font-weight:700;font-size:clamp(24px,4vw,34px);color:var(--teal-ink);margin:0 0 18px;line-height:1.15}
+.chapter{scroll-margin-top:calc(var(--hh) + 16px);padding-top:10px;margin-top:14px;border-top:1px solid var(--border)}
+.chapter:first-of-type{border-top:none}
+.chapter h2{font-family:var(--head);font-weight:700;font-size:clamp(20px,3vw,26px);color:var(--teal-ink);line-height:1.2;margin:14px 0 12px;display:flex;gap:12px;align-items:baseline}
+.chapter .chn{flex:0 0 auto;font-size:.72em;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--teal),var(--teal-deep));border-radius:9px;min-width:1.9em;height:1.9em;display:inline-flex;align-items:center;justify-content:center;box-shadow:var(--shadow)}
+.doc h3{font-family:var(--head);font-weight:600;font-size:18.5px;color:var(--teal-ink);margin:22px 0 8px}
+.doc h4{font-family:var(--head);font-weight:600;font-size:15.6px;color:var(--teal-deep);margin:18px 0 6px;letter-spacing:.2px}
+.doc p{margin:0 0 12px}
+.doc ul,.doc ol{margin:0 0 14px;padding-left:1.35em}
+.doc li{margin:4px 0}
+.doc ul.linklist{list-style:none;padding-left:0;display:grid;gap:6px}
+.doc ul.linklist li{background:var(--surface-2);border:1px solid var(--border);border-radius:9px;padding:8px 12px}
+.doc ul.linklist a{font-weight:500;font-size:14.5px;word-break:break-word}
+.imgnote{font-style:italic;color:var(--muted);font-size:14px;background:var(--surface-2);border:1px dashed var(--border);border-radius:9px;padding:8px 12px;display:inline-block}
+
+/* callouts */
+.callout{display:flex;gap:12px;border-radius:12px;padding:14px 16px;margin:0 0 16px;border:1px solid var(--neutral-bd);background:var(--neutral-bg)}
+.callout-ic{flex:0 0 auto;font-size:19px;line-height:1.4}
+.callout-bd{min-width:0}
+.callout-bd>:first-child{margin-top:0}
+.callout-bd :last-child{margin-bottom:0}
+.c-info{background:var(--info-bg);border-color:var(--info-bd)}
+.c-success{background:var(--success-bg);border-color:var(--success-bd)}
+.c-warn{background:var(--warn-bg);border-color:var(--warn-bd)}
+.c-danger{background:var(--danger-bg);border-color:var(--danger-bd)}
+.c-yellow{background:var(--yellow-bg);border-color:var(--yellow-bd)}
+.c-neutral{background:var(--neutral-bg);border-color:var(--neutral-bd)}
+
+.quotebox{border-left:3px solid var(--teal);background:var(--surface-2);border-radius:0 10px 10px 0;padding:8px 14px;margin:0 0 16px}
+.quotebox ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.quotebox li{margin:0;padding-left:1.1em;position:relative}
+.quotebox li:before{content:"›";position:absolute;left:0;color:var(--teal);font-weight:700}
+
+/* tables */
+.tablewrap{overflow-x:auto;margin:0 0 16px;border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow)}
+table{border-collapse:collapse;width:100%;min-width:440px;font-size:14.5px;background:var(--surface)}
+th,td{text-align:left;padding:10px 13px;border-bottom:1px solid var(--border);vertical-align:top}
+thead th,tr:first-child th{background:var(--teal-050)}
+th{color:var(--teal-ink);font-weight:600}
+th[scope=row]{background:var(--surface-2);white-space:nowrap}
+tr:last-child td,tr:last-child th{border-bottom:none}
+.row-warn td,.row-warn th{background:var(--warn-bg)}
+.row-danger td,.row-danger th{background:var(--danger-bg)}
+.row-info td,.row-info th{background:var(--info-bg)}
+
+.footnote{margin-top:40px;padding-top:16px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}
+.footnote .dot{width:6px;height:6px;border-radius:50%;background:var(--teal);display:inline-block}
+</style>
+<header class="top">
+  <div class="top-in">
+    <a id="brand" class="brand" href="#" aria-label="Til forsiden"><span class="logo" aria-hidden="true">UR</span><span>Utvendig&nbsp;Renhold</span></a>
+    <span id="crumb" class="crumb">Intranett</span>
+    <span class="top-sp"></span>
+    <button id="backbtn" class="btn back" hidden><span aria-hidden="true">←</span> Til forsiden</button>
+    <button id="themebtn" class="btn iconbtn" type="button" aria-label="Bytt tema">🌙</button>
+  </div>
+</header>
+<main>
+
+<section id="view-hub" class="view" tabindex="-1" aria-label="Forside">
+  <div class="hero">
+    <p class="eyebrow">Utvendig Renhold · Intranett</p>
+    <h1>Alt teamet trenger – på ett sted</h1>
+    <p class="lead">Velkommen til intranettet. Her ligger håndbøker, beste praksis, opplæring, HMS, salg og administrasjon samlet på ett sted – for ansatte, franchisetakere, avdelingsledere og administrasjonen.</p>
+  </div>
+
+  <div class="sec">
+    <h2 class="sec-h">🎯 Mål og verdier</h2>
+    <p class="mission">Vi skal bli <span>Norges beste</span> på utvendig renhold.</p>
+    <div class="grid g3">
+      <div class="value"><div class="vic" aria-hidden="true">💪</div><h3>Innsats</h3><p>Vi gir alltid vårt beste.</p></div>
+      <div class="value"><div class="vic" aria-hidden="true">🫱</div><h3>Samvittighet</h3><p>Vi tar ansvar.</p></div>
+      <div class="value"><div class="vic" aria-hidden="true">🔍</div><h3>Interesse</h3><p>Vi søker forbedring.</p></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2 class="sec-h">📚 Håndbøkene</h2>
+    <p class="sec-sub">Tre komplette håndbøker. Klikk for å lese hele innholdet – kapittel for kapittel.</p>
+    <div class="grid g3">
+      <button class="hbcard" data-view="view-personal" aria-label="Åpne Personalhåndbok"><span class="hbic" aria-hidden="true">👥</span><span class="chip">13 kapitler</span><h3>Personalhåndbok</h3><p>Felles rammeverk for personalledelse, ryddige arbeidsforhold og en trygg arbeidsplass.</p><span class="go">Åpne håndbok <span aria-hidden="true">→</span></span></button><button class="hbcard" data-view="view-hms" aria-label="Åpne HMS-håndbok"><span class="hbic" aria-hidden="true">🛡️</span><span class="chip">9 kapitler</span><h3>HMS-håndbok</h3><p>Systematisk arbeid for et trygt, helsefremmende og bærekraftig arbeidsmiljø.</p><span class="go">Åpne håndbok <span aria-hidden="true">→</span></span></button><button class="hbcard" data-view="view-franchise" aria-label="Åpne Franchisehåndbok"><span class="hbic" aria-hidden="true">🧭</span><span class="chip">15 kapitler</span><h3>Franchisehåndbok</h3><p>Felles krav, arbeidsmåter og ansvarsdeling mellom Utvendig Renhold AS og franchisetakerne.</p><span class="go">Åpne håndbok <span aria-hidden="true">→</span></span></button>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2 class="sec-h">🔗 Snarveier</h2>
+    <p class="sec-sub">Ofte brukte ressurser. Lenkene åpner Notion, Google eller Service Bridge og krever innlogging.</p>
+    <div class="grid g2"><a class="linkcard" href="https://app.notion.com/p/172d31701b97808bada7ee33e09a38e7" target="_blank" rel="noopener noreferrer"><span class="lic" aria-hidden="true">🧰</span><span><span class="lt">Drift og kvalitet</span><span class="ld">Beste praksis, prosedyrer og maler (Notion)</span></span><span class="ext" aria-hidden="true">↗</span></a><a class="linkcard" href="https://app.notion.com/p/306d31701b9780609656cab49ec9e03f" target="_blank" rel="noopener noreferrer"><span class="lic" aria-hidden="true">🌱</span><span><span class="lt">Onboardingsplan</span><span class="ld">Onboarding for nyansatte (Notion)</span></span><span class="ext" aria-hidden="true">↗</span></a><a class="linkcard" href="https://app.notion.com/p/145d31701b97804296c7de1628762895" target="_blank" rel="noopener noreferrer"><span class="lic" aria-hidden="true">📱</span><span><span class="lt">Templates for Service Bridge</span><span class="ld">Maler for oppdrag (Notion)</span></span><span class="ext" aria-hidden="true">↗</span></a><a class="linkcard" href="https://app.notion.com/p/145d31701b97805ebd8dec85ea0e3051" target="_blank" rel="noopener noreferrer"><span class="lic" aria-hidden="true">🌀</span><span><span class="lt">Salg – Ventilasjonsrens</span><span class="ld">Beste praksis for tjenesten (Notion)</span></span><span class="ext" aria-hidden="true">↗</span></a><a class="linkcard" href="https://www.canva.com/design/DAGQe747vuI/PyIP7a7jjZA0QnHFr0F1ww/edit" target="_blank" rel="noopener noreferrer"><span class="lic" aria-hidden="true">🎨</span><span><span class="lt">Kundepresentasjon</span><span class="ld">Salgsdekk i Canva</span></span><span class="ext" aria-hidden="true">↗</span></a><a class="linkcard" href="https://sorlandetutvendigrenhold.notion.site/Intranett-Utvendig-Renhold-13fd31701b9780259df4d2db6a33872c" target="_blank" rel="noopener noreferrer"><span class="lic" aria-hidden="true">🗄️</span><span><span class="lt">Masterdata i Notion</span><span class="ld">Kilden til alt innhold på intranettet</span></span><span class="ext" aria-hidden="true">↗</span></a></div>
+  </div>
+
+  <div class="sec">
+    <h2 class="sec-h">🚀 Ny hos oss</h2>
+    <p class="sec-sub">Opplæringsløpet for nye i kjeden – presentasjoner og kunnskapstester.</p>
+    <div class="grid g2"><a class="linkcard" href="https://docs.google.com/presentation/d/1vRZtKa2raMaNvYh59Ckpf4P1ejTb9gvLkjYScGEU5Ls/edit" target="_blank" rel="noopener noreferrer"><span class="lic" aria-hidden="true">1️⃣</span><span><span class="lt">Ny hos oss – Konsept og salg</span><span class="ld">Introduksjonspresentasjon (Google Slides)</span></span><span class="ext" aria-hidden="true">↗</span></a><a class="linkcard" href="https://docs.google.com/presentation/d/16uFn4PkoUFk9S2-idfn56-A8JUCOiz4XyPw45waF0s0/edit" target="_blank" rel="noopener noreferrer"><span class="lic" aria-hidden="true">2️⃣</span><span><span class="lt">Ny hos oss – Kjernetjenester</span><span class="ld">Presentasjon (Google Slides)</span></span><span class="ext" aria-hidden="true">↗</span></a><a class="linkcard" href="https://docs.google.com/forms/d/e/1FAIpQLSdHHiWdh8fyESsIq0aRHUynl-edrsz3t2FalpfSg6J-gykgXA/viewform" target="_blank" rel="noopener noreferrer"><span class="lic" aria-hidden="true">📝</span><span><span class="lt">Kunnskapstest 2</span><span class="ld">Test for kjernetjenester</span></span><span class="ext" aria-hidden="true">↗</span></a><a class="linkcard" href="https://docs.google.com/presentation/d/1C6TKfnksSM_9oDCdZWpaYiYqWzytEDrf69WG_zkUGbY/edit" target="_blank" rel="noopener noreferrer"><span class="lic" aria-hidden="true">3️⃣</span><span><span class="lt">Ny hos oss – Andre tjenester</span><span class="ld">Presentasjon (Google Slides)</span></span><span class="ext" aria-hidden="true">↗</span></a><a class="linkcard" href="https://docs.google.com/forms/d/e/1FAIpQLSfgvI5I0hgJj3NNDy08WQzYy6zZz9er2KVtdAMi3wFMuJnoaQ/viewform" target="_blank" rel="noopener noreferrer"><span class="lic" aria-hidden="true">📝</span><span><span class="lt">Kunnskapstest 3</span><span class="ld">Test for andre tjenester</span></span><span class="ext" aria-hidden="true">↗</span></a></div>
+  </div>
+
+  <div class="sec">
+    <h2 class="sec-h">🆘 Hjelp og avvik</h2>
+    <div class="helpbox">
+      <span class="hic" aria-hidden="true">📞</span>
+      <div>
+        <p><b>Ring 113</b> ved akutt fare for liv og helse.</p>
+        <p>Spørsmål, avvik eller innspill til intranettet? Kontakt Jonathan Røthe – <a href="mailto:jr@utvendigrenhold.no">jr@utvendigrenhold.no</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footnote">
+    <span class="dot" aria-hidden="true"></span>
+    <span>Sist oppdatert 17.09.2026</span>
+    <span>·</span>
+    <span>Masterdata: <a href="https://sorlandetutvendigrenhold.notion.site/Intranett-Utvendig-Renhold-13fd31701b9780259df4d2db6a33872c" target="_blank" rel="noopener noreferrer">Notion</a></span>
+    <span>·</span>
+    <span>Speiler bedriftens Notion-intranett – ingen ansatt- eller admindata vises her.</span>
+  </div>
+</section>
+
+<section id="view-personal" class="view" tabindex="-1" hidden aria-label="Personalhåndbok">
+  <div class="hbwrap">
+    <details class="toc" open>
+      <summary>Innhold</summary>
+      <nav aria-label="Innholdsfortegnelse"><ol><li><a href="#personal-ch1">1. Organisasjon og virkeområde</a></li>
+<li><a href="#personal-ch2">2. Franchisetakeren som arbeidsgiver</a></li>
+<li><a href="#personal-ch3">3. Krav til ledere</a></li>
+<li><a href="#personal-ch4">4. Krav til medarbeidere</a></li>
+<li><a href="#personal-ch5">5. Personalpolitikk og bedriftskultur</a></li>
+<li><a href="#personal-ch6">6. Onboarding og medarbeideroppfølging</a></li>
+<li><a href="#personal-ch7">7. Arbeidstid, lønn og overtid</a></li>
+<li><a href="#personal-ch8">8. Permisjon og ferie</a></li>
+<li><a href="#personal-ch9">9. Sykefravær</a></li>
+<li><a href="#personal-ch10">10. Forsikringsordninger</a></li>
+<li><a href="#personal-ch11">11. Pensjon</a></li>
+<li><a href="#personal-ch12">12. Helse, miljø og sikkerhet</a></li>
+<li><a href="#personal-ch13">13. Personvern og behandling av personopplysninger</a></li></ol></nav>
+    </details>
+    <article class="doc">
+      <div class="dochead">
+        <p class="doc-eyebrow">Personalhåndbok</p>
+        <h1>Personalhåndbok</h1>
+      </div>
+      <div class="callout c-info"><span class="callout-ic" aria-hidden="true">👥</span><div class="callout-bd"><strong>Formål</strong><br>Personalhåndboken gir franchisetakere i Utvendig Renhold et felles rammeverk for god personalledelse, ryddige arbeidsforhold og en trygg arbeidsplass.</div></div>
+<div class="tablewrap"><table><tr><th scope="row"><strong>Dokument</strong></th><td>Personalhåndbok</td><th scope="row"><strong>Målgruppe</strong></th><td>Franchisetakere og deres medarbeidere</td></tr><tr><th scope="row"><strong>Dokumenteier</strong></th><td>Utvendig Renhold AS</td><th scope="row"><strong>Bedriftshelsetjeneste</strong></th><td>Dr. Dropin AS</td></tr><tr><th scope="row"><strong>Sist revidert av</strong></th><td>Jonathan Røthe</td><th scope="row"><strong>Sist oppdatert</strong></th><td>17. september 2026</td></tr></table></div>
+<div class="callout c-neutral"><span class="callout-ic" aria-hidden="true">⚖️</span><div class="callout-bd"><strong>Viktig om arbeidsgiveransvaret</strong><br>Den enkelte franchisevirksomheten er arbeidsgiver for sine ansatte og har ansvar for arbeidsavtaler, lønn, arbeidstid, forsikringer, pensjon, personvern og HMS. Håndboken er et felles rammeverk og må tilpasses virksomhetens avtaler, tariffgrunnlag og lokale forhold. Ved motstrid gjelder lov, forskrift, tariffavtale og den enkeltes arbeidsavtale.</div></div>
+      <section id="personal-ch1" class="chapter"><h2><span class="chn">1</span>Organisasjon og virkeområde</h2><div class="callout c-info"><span class="callout-ic" aria-hidden="true">🏢</span><div class="callout-bd">Utvendig Renhold er organisert som et franchisesamarbeid med felles merkevare, arbeidsmetoder og kvalitetskrav.</div></div>
+<p>Utvendig Renhold AS ble etablert 2. juni 2020 og tilbyr tjenester innen utvendig renhold, blant annet vindusvask, fasadevask og behandling av utvendige overflater.</p>
+<p>Franchisetakerne driver selvstendige virksomheter under Utvendig Renholds konsept. Felles standarder skal bidra til gjenkjennelig kvalitet, trygg arbeidsutførelse og en profesjonell kundeopplevelse på tvers av avdelinger.</p>
+<p>Denne håndboken gjelder som felles veiledning for franchisetakere, ledere og medarbeidere. Hver franchisetaker skal sørge for at innholdet tilpasses egen virksomhet og gjøres kjent for medarbeiderne.</p></section>
+<section id="personal-ch2" class="chapter"><h2><span class="chn">2</span>Franchisetakeren som arbeidsgiver</h2><p>Franchisetakeren skal skape et inkluderende og forsvarlig arbeidsmiljø der medarbeidere blir møtt med respekt, tydelige forventninger og forutsigbar oppfølging.</p>
+<p>Som arbeidsgiver har franchisetakeren blant annet ansvar for å:</p>
+<ul><li>inngå skriftlige arbeidsavtaler</li><li>følge gjeldende regler om lønn, arbeidstid, ferie, fravær og permisjon</li><li>sørge for nødvendig opplæring og dokumentasjon</li><li>gjennomføre systematisk HMS-arbeid</li><li>tegne lovpålagte forsikringer og pensjonsordninger</li><li>behandle personopplysninger på en lovlig og sikker måte</li><li>følge opp medarbeidere og håndtere avvik eller konflikter på en forsvarlig måte</li></ul>
+<p>Fast ansatte, midlertidig ansatte og innleide ressurser skal møtes med tydelige krav til kvalitet, sikkerhet og profesjonell opptreden. Ved bruk av underleverandører skal ansvar, kompetansekrav og arbeidsomfang være skriftlig avklart.</p></section>
+<section id="personal-ch3" class="chapter"><h2><span class="chn">3</span>Krav til ledere</h2><div class="callout c-success"><span class="callout-ic" aria-hidden="true">🧭</span><div class="callout-bd">God ledelse handler om tydelige rammer, tilgjengelighet og konsekvent oppfølging.</div></div>
+<p>Ledere skal:</p>
+<ul><li>planlegge og tilrettelegge arbeidet på en forsvarlig måte</li><li>avklare ansvar, oppgaver, mål og forventninger</li><li>sørge for at nødvendig opplæring er gjennomført før selvstendig arbeid</li><li>følge <a href="https://docs.google.com/spreadsheets/d/1ebcXB37UWOBeFxM6MhdorhiQuj3CQKA4XhytYrC_AmQ/edit#gid=0" target="_blank" rel="noopener noreferrer">Sjekkliste for onboarding</a> ved nyansettelser</li><li>gjøre gjeldende rutiner og HMS-informasjon tilgjengelig</li><li>være tilgjengelige for spørsmål, bekymringer og forbedringsforslag</li><li>følge opp fravær, arbeidsprestasjoner, arbeidsmiljø og avvik</li><li>behandle medarbeidere saklig, respektfullt og likeverdig</li></ul>
+<p>Gjeldende HMS-krav og arbeidsrutiner finnes i <a href="https://docs.google.com/document/d/1VghxgXmBJsrbWfwdCTeOtumiKSIoNuRN6qrNZ7fdxLo/edit" target="_blank" rel="noopener noreferrer">HMS-håndboken</a> og tilhørende dokumentasjon.</p></section>
+<section id="personal-ch4" class="chapter"><h2><span class="chn">4</span>Krav til medarbeidere</h2><div class="callout c-neutral"><span class="callout-ic" aria-hidden="true">🤝</span><div class="callout-bd">Alle medarbeidere bidrar til kvalitet, sikkerhet og et godt omdømme for både franchisevirksomheten og Utvendig Renhold.</div></div>
+<h3>Oppmøte og kommunikasjon</h3>
+<p>Medarbeidere skal møte presis og arbeidsklare til avtalt tid. Ved sykdom eller uforutsett forsinkelse skal nærmeste leder varsles så tidlig som mulig. Kunden kontaktes bare etter avtale med leder eller når lokal rutine krever det.</p>
+<h3>Identifikasjon og adgangskort</h3>
+<p>Alle som utfører arbeid, skal ha gyldig renholdskort, HMS-kort eller annet nødvendig adgangskort. Arbeidsgiveren administrerer dette for egne ansatte. Innleide og underleverandører skal dokumentere at kravene er oppfylt før arbeidet starter.</p>
+<h3>Arbeidstid og registrering</h3>
+<p>Arbeidstid skal registreres korrekt i virksomhetens system. Overtid eller merarbeid skal som hovedregel være avtalt med nærmeste leder. Uforutsette hendelser, ventetid og problemer med utstyr skal dokumenteres i tråd med lokal rutine.</p>
+<h3>Ansvar og arbeidsutførelse</h3>
+<p>Medarbeidere skal:</p>
+<ul><li>følge arbeidsordre, rutiner og sikkerhetskrav</li><li>bruke utstyr og verneutstyr riktig</li><li>melde fra om avvik, skader og farlige forhold</li><li>behandle kunder, kolleger og samarbeidspartnere profesjonelt</li><li>bidra til at oppdrag avsluttes med avtalt kvalitet</li><li>ta vare på kjøretøy, utstyr og materiell</li></ul>
+<p>Felles mål og retning er nærmere beskrevet i <a href="https://docs.google.com/presentation/d/1Ekw2WQNkiMIEFm3MWOM9CWCBkC8R1KZYkoZzzXqyWf4/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">forretningsplanen og presentasjonen</a>.</p></section>
+<section id="personal-ch5" class="chapter"><h2><span class="chn">5</span>Personalpolitikk og bedriftskultur</h2><p>Personalpolitikken skal støtte trygge arbeidsplasser, gode kundeopplevelser og bærekraftig utvikling i den enkelte franchisevirksomheten.</p>
+<p>Vi ønsker en kultur preget av:</p>
+<ul><li>respekt og likeverd</li><li>tydelig kommunikasjon</li><li>samarbeid og ansvarlighet</li><li>læring og kontinuerlig forbedring</li><li>medvirkning og rom for konstruktive innspill</li><li>nulltoleranse for mobbing, trakassering og diskriminering</li></ul>
+<p>Uenigheter skal tas opp tidlig og håndteres så nær situasjonen som mulig. Ved behov involveres nærmeste leder, tillitsvalgt, verneombud eller annen relevant støtteperson.</p>
+<h3>Mål for arbeidsmiljøet</h3>
+<ul><li>Gi den enkelte et meningsfylt arbeid med tydelige forventninger.</li><li>Skape en god og profesjonell tone på arbeidsplassen.</li><li>Bidra til at alle opplever tilhørighet og betydning.</li><li>Legge til rette for samarbeid mellom medarbeidere og ledelse.</li><li>Sikre nødvendig fleksibilitet ved endrede oppdrag og prioriteringer.</li><li>Ivareta kravene i arbeidsmiljøloven og annet relevant regelverk.</li></ul>
+<h3>Delegering og ansvar</h3>
+<p>Delegering skal gi raskere beslutninger, bedre kundeservice og utviklende arbeidsoppgaver. Ansvar og myndighet skal være tydelig, og nødvendige rapporteringsrutiner skal være enkle å finne og bruke.</p></section>
+<section id="personal-ch6" class="chapter"><h2><span class="chn">6</span>Onboarding og medarbeideroppfølging</h2><div class="callout c-success"><span class="callout-ic" aria-hidden="true">🌱</span><div class="callout-bd">En god oppstart reduserer risiko, gir raskere mestring og tydeliggjør forventningene til rollen.</div></div>
+<p>Alle nyansatte skal gjennomføre virksomhetens onboardingprogram. Programmet skal minst omfatte:</p>
+<ul><li>arbeidsavtale, rolle og ansvarsområder</li><li>arbeidstid, lønn, fravær og lokale rutiner</li><li>HMS, risikoforhold og avviksmelding</li><li>kjemikalier, sikkerhetsdatablader og verneutstyr</li><li>praktisk opplæring i tjenester, utstyr og arbeidsmetoder</li><li>kundebehandling, kvalitet og dokumentasjon</li><li>nødvendige systemer, tilganger og kontaktpersoner</li></ul>
+<p>Gjennomført opplæring skal dokumenteres.</p>
+<h3>Medarbeidersamtaler</h3>
+<p>Leder skal gjennomføre regelmessige oppfølgingssamtaler. Samtalene kan ta utgangspunkt i <a href="https://docs.google.com/document/d/1k2WaubJYQc_63nLXLkEZ3Mdx9Kpfyz0slYuI6Uz9O-o/edit" target="_blank" rel="noopener noreferrer">malen for 1-1-samtaler</a> og bør omfatte trivsel, arbeidssituasjon, utvikling, mål og behov for støtte eller opplæring.</p></section>
+<section id="personal-ch7" class="chapter"><h2><span class="chn">7</span>Arbeidstid, lønn og overtid</h2><p>Den enkelte franchisevirksomheten skal følge gjeldende lov, eventuell tariffavtale og arbeidsavtalene som gjelder for medarbeiderne.</p>
+<div class="callout c-warn"><span class="callout-ic" aria-hidden="true">⏱️</span><div class="callout-bd">Overtid skal bare benyttes når det foreligger et særlig og tidsavgrenset behov, og skal som hovedregel avtales med nærmeste leder på forhånd.</div></div>
+<p>Arbeidstid, pauser, merarbeid og overtid skal registreres korrekt. Satser og vilkår følger gjeldende lov, tariffavtale og arbeidsavtale. Franchisetakeren er ansvarlig for å informere medarbeiderne om hvilke bestemmelser som gjelder lokalt.</p></section>
+<section id="personal-ch8" class="chapter"><h2><span class="chn">8</span>Permisjon og ferie</h2><p>Medarbeidere kan ha rett til permisjon og ferie etter blant annet arbeidsmiljøloven, folketrygdloven, ferieloven, eventuell tariffavtale og arbeidsavtalen.</p>
+<p>Søknad om planlagt permisjon skal leveres skriftlig til nærmeste leder så tidlig som mulig. Arbeidsgiveren skal behandle søknaden, avklare eventuell dokumentasjon og gi skriftlig tilbakemelding.</p>
+<p>Den enkelte franchisevirksomheten skal ha en lokal oversikt over fremgangsmåte, kontaktperson og eventuelle ytelser knyttet til permisjon.</p></section>
+<section id="personal-ch9" class="chapter"><h2><span class="chn">9</span>Sykefravær</h2><div class="callout c-info"><span class="callout-ic" aria-hidden="true">🩺</span><div class="callout-bd">Tidlig beskjed og god dialog gjør det enklere å ivareta medarbeideren, kunden og den daglige driften.</div></div>
+<p>Ved sykdom skal medarbeideren varsle nærmeste leder så tidlig som mulig og senest før klokken 07.00 samme dag, med mindre en annen lokal frist er avtalt.</p>
+<p>Medarbeidere som er innleid gjennom bemanningsbyrå, skal også følge byråets varslingsrutiner. Innleid arbeidskraft skal varsle om fravær på samme måte når arbeid er avtalt den aktuelle dagen.</p>
+<p>Egenmelding eller sykmelding leveres og registreres i tråd med virksomhetens rutiner. Ved tilbakekomst kan <a href="https://form.jotform.com/213056322397353" target="_blank" rel="noopener noreferrer">egenmeldingsskjemaet</a> benyttes, eller fraværet registreres i Field Service dersom lokal rutine åpner for dette.</p>
+<p>Arbeidsgiveren skal følge opp sykefravær og vurdere tilrettelegging i samsvar med gjeldende regelverk.</p></section>
+<section id="personal-ch10" class="chapter"><h2><span class="chn">10</span>Forsikringsordninger</h2><p>Den enkelte franchisetakeren er ansvarlig for at egne ansatte omfattes av lovpålagt yrkesskadeforsikring og eventuelle andre avtalte forsikringer.</p>
+<p>Opplysninger om virksomhetens forsikringer, dekning og fremgangsmåte ved skade skal være tilgjengelige for medarbeiderne. Dokumentasjon knyttet til <a href="https://drive.google.com/open?id=1R-4C9DdTnDUIa30NiUFRUd7aDz6rQXVi" target="_blank" rel="noopener noreferrer">Gjensidige</a> brukes der dette er franchisetakerens valgte forsikringsleverandør.</p>
+<p>Skader og hendelser skal straks meldes til nærmeste leder og registreres etter virksomhetens avviksrutine.</p></section>
+<section id="personal-ch11" class="chapter"><h2><span class="chn">11</span>Pensjon</h2><p>Den enkelte franchisevirksomheten skal etablere lovpålagt tjenestepensjon for medarbeidere som omfattes av ordningen.</p>
+<p>Pensjonsleverandør, sparesats og øvrige vilkår kan variere mellom franchisevirksomhetene. Medarbeiderne skal få informasjon om den ordningen som gjelder hos egen arbeidsgiver. Ordningen skal minst oppfylle gjeldende lovkrav.</p></section>
+<section id="personal-ch12" class="chapter"><h2><span class="chn">12</span>Helse, miljø og sikkerhet</h2><div class="callout c-warn"><span class="callout-ic" aria-hidden="true">🛡️</span><div class="callout-bd">Hver franchisetaker har ansvar for systematisk HMS-arbeid i egen virksomhet. Utvendig Renhold stiller felles krav og gjør prosedyrer og støttemateriell tilgjengelig.</div></div>
+<p>HMS-arbeidet skal blant annet omfatte:</p>
+<ul><li>kartlegging og risikovurdering av arbeidsoppgaver</li><li>nødvendig opplæring og dokumentasjon</li><li>sikker bruk av stige, lift, personløfter og fallsikringsutstyr</li><li>trygg bruk, merking og oppbevaring av kjemikalier</li><li>kontroll og vedlikehold av maskiner og arbeidsutstyr</li><li>riktig bruk av personlig verneutstyr</li><li>registrering og oppfølging av avvik, nestenulykker og skader</li><li>forebygging og oppfølging av sykefravær</li></ul>
+<p>Franchisetakeren skal gjøre den felles HMS-håndboken, sikkerhetsdatablader og lokale risikovurderinger tilgjengelige for medarbeiderne. Bedriftshelsetjenesten er Dr. Dropin AS, med mindre annet er avtalt for den enkelte franchisevirksomheten.</p>
+<p>Vi støtter franchisetakerne i å sikre et trygt og forsvarlig arbeidsmiljø i sine virksomheter.</p></section>
+<section id="personal-ch13" class="chapter"><h2><span class="chn">13</span>Personvern og behandling av personopplysninger</h2><div class="callout c-neutral"><span class="callout-ic" aria-hidden="true">🔒</span><div class="callout-bd">Personopplysninger skal behandles lovlig, sikkert og bare i den utstrekning det er nødvendig.</div></div>
+<h3>Formål</h3>
+<p>Personopplysninger kan behandles for å administrere arbeidsforholdet, blant annet i forbindelse med lønn, skattetrekk, arbeidstid, fravær, opplæring, HMS og andre lovpålagte arbeidsgiveroppgaver.</p>
+<p>Fullstendig informasjon finnes i <a href="https://docs.google.com/document/d/0B3Tp8uilaZ78QzNEa05BOXE4c0VWU2IwcVVFTmJHM1llLTI4/edit?resourcekey=0-_nvAtkECegsJs5ZvgSTg_g" target="_blank" rel="noopener noreferrer">personvernerklæringen for ansatte</a>.</p>
+<h3>Innhenting, bruk og deling</h3>
+<p>Arbeidsgiveren skal bare innhente opplysninger som er nødvendige for tydelige og legitime formål. Opplysningene skal sikres mot uautorisert tilgang og slettes eller anonymiseres når de ikke lenger er nødvendige.</p>
+<p>Personopplysninger deles bare når det finnes et gyldig behandlingsgrunnlag, for eksempel en lovpålagt plikt, oppfyllelse av arbeidsavtalen eller et gyldig samtykke.</p>
+<h3>Medarbeiderens rettigheter</h3>
+<p>Medarbeidere kan, innenfor rammene av personvernregelverket, ha rett til innsyn, retting, sletting, begrensning og informasjon om hvordan opplysningene brukes. Et samtykke kan trekkes tilbake når samtykke er behandlingsgrunnlaget.</p>
+<p>Spørsmål om personvern rettes til nærmeste leder eller den personvernansvarlige hos den aktuelle franchisevirksomheten.</p>
+<div class="callout c-success"><span class="callout-ic" aria-hidden="true">✅</span><div class="callout-bd"><strong>Lokalt ansvar</strong><br>Franchisetakeren skal gjennomgå håndboken jevnlig, oppdatere lokale opplysninger og sikre at medarbeiderne kjenner rutinene som gjelder i egen virksomhet.</div></div></section>
+    </article>
+  </div>
+</section>
+
+<section id="view-hms" class="view" tabindex="-1" hidden aria-label="HMS-håndbok">
+  <div class="hbwrap">
+    <details class="toc" open>
+      <summary>Innhold</summary>
+      <nav aria-label="Innholdsfortegnelse"><ol><li><a href="#hms-ch1">1. Målsetting for HMS</a></li>
+<li><a href="#hms-ch2">2. Organisering og fakta om Utvendig Renhold</a></li>
+<li><a href="#hms-ch3">3. Generelle rutiner</a></li>
+<li><a href="#hms-ch4">4. Rutiner for renhold</a></li>
+<li><a href="#hms-ch5">5. Arbeid i høyden med stillas og stige</a></li>
+<li><a href="#hms-ch6">6. Hvordan bli bedre</a></li>
+<li><a href="#hms-ch7">7. HMS-aktiviteter</a></li>
+<li><a href="#hms-ch8">8. Dokumentasjon</a></li>
+<li><a href="#hms-ch9">9. Handlingsplan</a></li></ol></nav>
+    </details>
+    <article class="doc">
+      <div class="dochead">
+        <p class="doc-eyebrow">HMS-håndbok</p>
+        <h1>HMS-håndbok</h1>
+      </div>
+      <div class="callout c-info"><span class="callout-ic" aria-hidden="true">🛡️</span><div class="callout-bd"><strong>Formål</strong><br>HMS-håndboken beskriver hvordan Utvendig Renhold AS arbeider systematisk for et trygt, helsefremmende og bærekraftig arbeidsmiljø.</div></div>
+<div class="tablewrap"><table><tr><th scope="row"><strong>Dokument</strong></th><td>HMS-håndbok</td><th scope="row"><strong>Virksomhet</strong></th><td>Utvendig Renhold AS</td></tr><tr><th scope="row"><strong>Utarbeidet av</strong></th><td>Dr. Dropin AS</td><th scope="row"><strong>Godkjent av</strong></th><td>Rikke Røthe</td></tr><tr><th scope="row"><strong>Sist revidert av</strong></th><td>Jonathan Røthe</td><th scope="row"><strong>Revisjonsdato</strong></th><td>25. desember 2023</td></tr></table></div>
+<div class="callout c-neutral"><span class="callout-ic" aria-hidden="true">ℹ️</span><div class="callout-bd">Håndboken er et levende styringsdokument. Lenker til prosedyrer, skjemaer og sikkerhetsdatablader skal peke til gjeldende originaldokument.</div></div>
+      <section id="hms-ch1" class="chapter"><h2><span class="chn">1</span>Målsetting for HMS</h2><div class="callout c-info"><span class="callout-ic" aria-hidden="true">🎯</span><div class="callout-bd">Målene gir retning for virksomhetens systematiske arbeid med helse, miljø og sikkerhet.</div></div>
+<h3>Hovedmål</h3>
+<p>Vi prioriterer sunne medarbeidere i et bærekraftig arbeidsmiljø. Våre mål inkluderer:</p>
+<ul><li>Minimere vår påvirkning på det ytre miljøet.</li><li>Velge miljøsertifiserte kjemikalier når det er mulig.</li><li>Nulltoleranse for skader og ulykker i utvendig renhold.</li><li>Oppnå et sykefravær på under 2 %.</li><li>Skape et åpent og trivelig arbeidsmiljø i utvendig renhold, preget av arbeidsglede.</li><li>Gjennomføre systematisk planlegging, organisering, gjennomføring og vedlikehold av det eksisterende arbeidsmiljø ved virksomheten. Dette inkluderer vurdering av risikofaktorer, helsefarer og velferdsforhold.</li></ul></section>
+<section id="hms-ch2" class="chapter"><h2><span class="chn">2</span>Organisering og fakta om Utvendig Renhold</h2><div class="callout c-neutral"><span class="callout-ic" aria-hidden="true">🏢</span><div class="callout-bd">Her finner du nøkkelinformasjon om virksomheten, ansvar, organisering og opplæring.</div></div>
+<h3>Fakta om bedriften</h3>
+<p>Bedrift: Utvendig Renhold</p>
+<p>Bransje: 81.220 Utvendig rengjøring av bygninger og industriell rengjøring</p>
+<p>Org.nr : 925 145 645</p>
+<p>Hjemmeside: www.utvendigrenhold.no</p>
+<h3>Organisasjonskart</h3>
+<p>Antall ansatte: 3</p>
+<p class="imgnote">[Illustrasjon: Organisasjonskart – 3 ansatte]</p>
+<h3>Verneombud</h3>
+<p>Arbeidsmiljøloven § 6-1 sier at ved hver virksomhet som går inn under loven skal det velges verneombud. Virksomheter som har mindre enn 10 medarbeidere kan avtale skriftlig en annen ordning, herunder at det ikke skal være verneombud.</p>
+<p><strong>Valgt ordning:</strong> Virksomheten har avtalt en annen ordning og er fritatt fra å ha verneombud.</p>
+<h3>Arbeidsreglement</h3>
+<p>Utvendig Renhold har eget arbeidsreglement og relevante instrukser. Alle ansatte har skriftlige arbeidsavtaler.</p>
+<h3>Bedriftshelsetjeneste</h3>
+<p>Vi har avtale med Dr. Dropin AS som godkjent bedriftshelsetjeneste (BHT). Avtalen beskriver hvilke oppgaver og tjenester bedriftshelsetjenesten skal utføre for oss.</p>
+<p>Vi utarbeider periodiske samarbeidsplaner for HMS-arbeidet sammen med Dr. Dropin AS. Gjeldende avtale, kontaktinformasjon og samarbeidsplan oppbevares sammen med øvrig HMS-dokumentasjon.</p>
+<h3>Yrkesskadeforsikring</h3>
+<p>Vi har yrkesskadeforsikring: Gjensidige forsikring</p>
+<h3>Godkjenning</h3>
+<p>Vi er en godkjent renholdsvirksomhet og sender inn <a href="https://www.altinn.no/templates/MondoSearch/Click.aspx?LinkClick=%27%2fcgi-bin%2fMsmGo.exe%3fgrab_id%3d0%26page_id%3d949%26query%3dgodkjenning%2520av%2520renholds%26SCOPE%3dwww.altinn.no%27&amp;fullview=" target="_blank" rel="noopener noreferrer">årlig melding for godkjent renholdsvirksomhet.</a> Vi sørger for å ha godkjenning av Arbeidstilsynet for å kunne drive lovlig til enhver tid.</p>
+<h3>ID-kort</h3>
+<p>For våre renholdstjenester er vi pålagt å utstyre arbeidstakerne med ID-kort. Det er vi som arbeidsgiver som søker om ID-kort for de ansatte. ID-kort bestilles gjennom nettløsningen til Oberthur Technologies på <a href="http://www.renholdskort.no/" target="_blank" rel="noopener noreferrer">www.renholdskort.no</a>.</p>
+<h3>Opplæring</h3>
+<p>Alle ansatte får grunnopplæring i renhold, kjemikaliehåndtering, sikkerhetsdatablader, verneutstyr, dosering og lagring. Dokumentasjon på gjennomført opplæring registreres i oversikten for <a href="https://docs.google.com/spreadsheets/d/1LRkYa61LCez1AmZLFFpBFdT7n4tc_Ym4Gu5w7vxG-cM/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">dokumentert opplæring</a>.</p>
+<p>Ansvarlig for vurdering og planlegging av opplæring er: Nærmeste leder.</p>
+<p>Opplæring vil bli gitt i henhold til opplæringsplan “<a href="https://docs.google.com/spreadsheets/d/1ebcXB37UWOBeFxM6MhdorhiQuj3CQKA4XhytYrC_AmQ/edit#gid=0" target="_blank" rel="noopener noreferrer">Sjekkliste for Onboarding</a>”</p>
+<h3>Organisering av arbeidet</h3>
+<p>Utvendig Renhold har oppdragsavtaler for alle oppdragene og for hvordan arbeidet organiseres.</p>
+<p>Fordeling av arbeidsoppgaver utføres av daglig leder via <a href="https://cloud.servicebridge.com/" target="_blank" rel="noopener noreferrer">Field Service.</a></p>
+<h3>Informasjon</h3>
+<p>Utvendig Renhold har etablert klare rutiner for informasjonsdeling og kommunikasjon:</p>
+<ul><li>Møter avholdes regelmessig, med en ukentlig frekvens. Disse møtene gir rom for diskusjon av aktuelle saker, inkludert helse, miljø og sikkerhet. Referatene og handlingsplanene som genereres i disse møtene utgjør en viktig del av dokumentasjonen for Utvendig Renholds arbeid med helse, miljø og sikkerhet. Disse referatene må gjerne legges i digitale tavler som <a href="https://trello.com/u/jonathanrothe/boards" target="_blank" rel="noopener noreferrer">Trello</a>.</li><li>Møtene blir ledet av enten daglig leder eller driftsassistent, som sikrer en effektiv gjennomføring.</li><li>For å støtte informasjonsdeling har vi en digital oppslagstavle på <a href="https://trello.com/u/jonathanrothe/boards" target="_blank" rel="noopener noreferrer">Trello-plattformen</a>.</li><li>Daglig leder har ansvaret for å utføre informasjonsoppgaver.</li></ul></section>
+<section id="hms-ch3" class="chapter"><h2><span class="chn">3</span>Generelle rutiner</h2><div class="callout c-info"><span class="callout-ic" aria-hidden="true">📋</span><div class="callout-bd">Felles rutiner for oppfølging, forebygging, varsling, arbeidsmiljø og samordning.</div></div>
+<h3>Tilrettelegging av arbeidet</h3>
+<p>Vi legger til rette for arbeidsforhold som reduserer ensidig og gjentagende arbeid så mye som mulig. Vi foretar kontinuerlige vurderinger for å avgjøre om det er behov for jobbrotasjon, justeringer i arbeidsmengde eller tempo.</p>
+<h3>Rutine for oppfølging av sykmeldte</h3>
+<p>Hensikten med denne rutinen er å sikre rask tilbakeføring av sykmeldte medarbeidere til arbeidslivet. Daglig leder har ansvaret for å implementere denne rutinen og følge opp sykmeldte medarbeidere. Dette inkluderer tilrettelegging av arbeidet der det er mulig og utarbeidelse av en oppfølgingsplan i samarbeid med den sykmeldte. Dersom medisinske forhold hindrer dette, skal det dokumenteres med en legeerklæring.</p>
+<p>Her er fremdriftsplanen:</p>
+<p>Dag 1:</p>
+<ul><li>Den sykmeldte må kontakte daglig leder første fraværsdag, levere egenmelding når de returnerer til jobb, eller sende sykmelding så snart den er tilgjengelig.</li></ul>
+<p>Dag 4:</p>
+<ul><li>Etter egenmeldingsperioden skal daglig leder kontakte den syke medarbeideren for å følge opp og vise omsorg.</li></ul>
+<p>Innen 4 uker:</p>
+<ul><li>Daglig leder skal initiere og utarbeide en oppfølgingsplan i samarbeid med arbeidstakeren. Planen må godkjennes av arbeidstakeren og vil fungere som viktig dokumentasjon for videre oppfølging med sikte på å returnere til arbeidslivet. En kopi av oppfølgingsplanen skal sendes til sykmelderen.</li></ul>
+<p>Innen 7 uker:</p>
+<ul><li>Daglig leder skal kalle inn til dialogmøte 1, med mindre det er klart unødvendig. Også delvis sykmeldte arbeidstakere skal innkalles. Sykmelderen skal delta i dialogmøte 1, med mindre arbeidstakeren ikke ønsker det eller det er enighet om at det ikke er hensiktsmessig.</li></ul>
+<p>Innen 8 uker:</p>
+<ul><li>For å ha rett til 100 % sykepenger etter 8 uker, må arbeidstakeren forsøke arbeidsrelaterte aktiviteter. NAV kan gi unntak fra dette kravet ved tungtveiende medisinske grunner eller når arbeidsgiveren kan dokumentere at det ikke er mulig å tilrettelegge på arbeidsplassen.</li></ul>
+<p>Innen 26 uker:</p>
+<ul><li>Senest innen 26 uker skal NAV-kontoret kalle inn arbeidstakeren og arbeidsgiveren til dialogmøte 2, hvor alle parter må delta. Sykmelderen skal delta hvis det er hensiktsmessig. Det vil bli vurdert arbeidsrettede tiltak, og ved behov kan det kalle inn til et dialogmøte 3.</li></ul>
+<p>Innen 1 år:</p>
+<ul><li>Senest innen 1 år, som er maksimal tid for sykepenger, vil NAV-kontoret vurdere rettigheter og behov for ytterligere arbeidsrettede tiltak.</li></ul>
+<h3>Rutine for forebygging av sykefravær</h3>
+<p>Bedriften skal gjennomføre kontinuerlig kartlegging av arbeidsmiljøet med spesielt fokus på faktorer som kan føre til sykefravær. Kartleggingen skal avdekke status i bedriften, hva som fungerer og hva som ikke fungerer. Resultatene fra kartleggingen skal brukes for å lage handlingsplaner som skal følges opp og gjennomføres.</p>
+<h4>Hva skal kartlegges?</h4>
+<p>Det fysiske arbeidsmiljøet</p>
+<p>Det psykososiale arbeidsmiljøet</p>
+<p>Organisering og ledelse</p>
+<h4>Medvirkning</h4>
+<p>Det er viktig å involvere alle medarbeiderne i kartleggingen da selve prosessen skaper viktig bevissthet om arbeidsmiljøet i bedriften.</p>
+<h4>Metoder</h4>
+<p>Kartlegging vil gjøres via individuelle samtaler med ansatte. I tillegg vil vi vurdere og implementere andre relevante kartleggingsmetoder.</p>
+<h4>Sykefraværsstatistikk</h4>
+<p>Registrering av ulykker, nestenulykker og sykefravær knyttet til egen sykdom. Dette er pålagt etter folketrygdloven og arbeidsmiljøloven. Registreringene legges inn i <a href="https://cloud.servicebridge.com/" target="_blank" rel="noopener noreferrer">Fieldservice</a> (timereg system) som timer, men hendelsen skal også legges inn som ticket i <a href="https://app.hubspot.com/" target="_blank" rel="noopener noreferrer">Hubspot</a> med tilhørende granskning.</p>
+<h4>Risikoanalyse</h4>
+<p>Vi skal bruke skjema for risikoanalyse i HMS-systemet for å avdekke fysiske og psykiske risikofaktorer (Arbeidsplass, ergonomi, tilpasning av utstyr, arbeidsoppgaver, arbeidstid osv). Gjennomføres minst en gang per år, men også ved behov. For analyse knyttet til oppdrag benyttes for tiden dette <a href="https://form.jotformeu.com/71177229586365" target="_blank" rel="noopener noreferrer">skjemaet</a>.</p>
+<h4>Avviksregistrering</h4>
+<p>Avvik registreres fortløpende som en sak i <a href="https://app.hubspot.com/" target="_blank" rel="noopener noreferrer">HubSpot</a> og merkes for avviksbehandling. Før avviket lukkes, skal årsak, korrigerende tiltak og behovet for endringer i rutiner vurderes og dokumenteres.</p>
+<h4>Vernerunder</h4>
+<p>Vi gjennomfører vernerunder ved hjelp av skjemaene i <a href="https://docs.google.com/document/d/0B3Tp8uilaZ78QU5JSFJHWG1iWXlPYUdsRkpMZVNPU1RtLTNz/edit?usp=drive_link&amp;ouid=115272086111439484409&amp;resourcekey=0-wd-5bPlJo_WnKqa5AIOb8A&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer">HMS-systemet</a>. Dokumentasjonen lagres i HMS-systemet og gjøres tilgjengelig for relevante medarbeidere. Registrerte avvik skal følges opp og lukkes.</p>
+<h4>Kartleggingsmøte</h4>
+<p>Møte for alle medarbeidere der en prøver å samle hele eller naturlige deler av bedriften for å få et helhetlig bilde av de utfordringer en står overfor. Gjennomføres minst en gang per år.</p>
+<h4>Tiltak som kan vurderes:</h4>
+<h4>Fysiske tiltak</h4>
+<div class="quotebox"><ul><li>Tilby tekniske hjelpemidler</li><li>Tilpasse maskiner, regulerbar arbeidshøyde, heis</li><li>Endre bygningsmessige forhold</li><li>Justere inneklima</li><li>Endre plassering i lokalene</li></ul></div>
+<h4>Psykososiale tiltak</h4>
+<div class="quotebox"><ul><li>Gi støtte og oppfølging</li><li>Sikre verdsetting og inkludering</li><li>Trygge sosialt miljø</li><li>Tilby kollegastøtte</li><li>Styrke holdninger og kultur</li></ul></div>
+<h4>Organisatoriske tiltak</h4>
+<div class="quotebox"><ul><li>Justere arbeidsfordelingen</li><li>Tilby nye eller midlertidige arbeidsoppgaver</li><li>Endre tempo</li><li>Tilpasse arbeidstid</li><li>Tilby opplæring</li><li>Tilby omskolering</li></ul></div>
+<h4>Psykososiale rutiner</h4>
+<p>Varsling av kritikkverdig forhold for Utvendig Renhold AS</p>
+<h4>Hva er varsling?</h4>
+<p>Varsling innebærer å rapportere om forhold i virksomheten som anses som kritikkverdige til en person eller instans som kan håndtere slike forhold. Kritikkverdige forhold er handlinger som bryter med lover, interne retningslinjer eller allment aksepterte etiske standarder.</p>
+<p>Det er viktig å merke seg at faglige eller politiske uenigheter vanligvis ikke betraktes som varsling i den forstand som arbeidsmiljøloven har til hensikt å beskytte. I tillegg regnes uttalelser som kun angår arbeidstakerens eget ansettelsesforhold ikke som varsling, med mindre de er dekket av bestemmelsene i arbeidsmiljøloven § 2 A-1 (2).</p>
+<p>Varsling kan deles inn i to hovedkategorier: intern varsling, som involverer rapportering internt i organisasjonen, og ekstern (offentlig) varsling, som omfatter tilfeller der arbeidstakere går til media, blogger eller på andre måter offentliggjør informasjonen, samt varsling til tilsynsmyndigheter.</p>
+<h4>Rutine for varsling av kritikkverdige forhold</h4>
+<h4>Beskrivelse</h4>
+<p>Arbeidsmiljølovens bestemmelser om varsling lovfester arbeidstakers rett til å varsle om kritikkverdige forhold i egen virksomhet, og gir arbeidstaker som varsler vern mot gjengjeldelse, jf. arbeidsmiljølovens Kapittel 2 A. Varsling</p>
+<h4>Formål</h4>
+<p>Varslingsreglene skal fremme åpenhet og bidra til å styrke ytringsfriheten i ansettelsesforhold. Åpenhet og god kommunikasjon bidrar til at ansatte tør si fra om kritikkverdige forhold.</p>
+<p>Dette er viktig for et godt arbeidsmiljø og for Utvendig Renhold AS. Kritikkverdige forhold skal avdekkes og håndteres så tidlig som mulig og nærmest mulig der de oppstår. Varsling kan bidra til å redusere risikoen for at uønsket eller ulovlig praksis finner sted.</p>
+<h4>Omfang</h4>
+<p>Prosedyren gjelder for alle som utfører arbeid for eller på vegne av Utvendig Renhold AS.</p>
+<h4>Definisjoner</h4>
+<p>Å varsle er å si fra om kritikkverdige forhold på arbeidsplassen, jf. arbeidsmiljølovens Kapittel 2 A. Varsling. Med kritikkverdige forhold menes brudd på lover og forskrifter eller etiske normer.</p>
+<h4>Eksempler på kritikkverdige forhold kan være:</h4>
+<p>Kritikkverdige forhold er forhold som strider mot lover og regler, virksomhetens skriftlige etiske retningslinjer eller etiske normer med bred tilslutning i samfunnet.</p>
+<h4>Hva er kritikkverdige forhold?</h4>
+<p>Kritikkverdige forhold, som beskrevet i arbeidsmiljøloven § 2 A-1 (2), kan omfatte:</p>
+<ul><li>Fare for liv eller helse, for eksempel manglende sikkerhetsrutiner, utstyr eller kvalifikasjoner som utgjør en alvorlig trussel mot noen.</li><li>Fare for klima eller miljø, inkludert brudd på miljølover.</li><li>Økonomisk kriminalitet, som korrupsjon, bedrageri, arbeidslivskriminalitet og lignende.</li><li>Uforsvarlige arbeidsmiljøforhold, som kan påvirke fysisk eller psykisk helse, inkludert trakassering.</li><li>Brudd på personvern, inkludert uautorisert tilgang til eller spredning av personopplysninger.</li></ul>
+<p>Det er viktig å merke seg at følgende ikke regnes som varsling:</p>
+<ul><li>Ytringer som kun angår arbeidstakerens personlige arbeidsforhold, som lønn, arbeidsmengde, personalkonflikter, og faglig uenighet.</li><li>Ytringer basert på personlig politisk eller etisk overbevisning, moralske synspunkter eller generell misnøye på arbeidsplassen.</li></ul>
+<p>Selv om Grunnlovens ytringsfrihet gir arbeidstakere rett til å uttrykke seg om slike forhold, dekkes ikke alle slike ytringer av varslingsbestemmelsene i arbeidsmiljøloven. Varslingsretten gjelder ikke bare for arbeidstakere i tradisjonelle arbeidstaker-arbeidsgiverforhold, men også for andre som arbeider i virksomheter som er underlagt arbeidsmiljøloven.</p>
+<h4>Ansvar og myndighet</h4>
+<p>Ledelsen i Utvendig Renhold AS har ansvar og myndighet til å følge opp varsler. Ansvarlig kontaktperson er Jonathan Røthe.</p>
+<h4>Kvalitetsmål</h4>
+<p>Det skal være trygt å varsle om kritikkverdige forhold ved Utvendig Renhold AS . All varsling skal håndteres i henhold til denne rutinen. For varsling benyttes skjema <a href="https://drive.google.com/a/utvendigrenhold.no/open?id=0B3Tp8uilaZ78dXVWZlZMUEpaUDBnbHkwRlkya0YxLVA0ODFZ" target="_blank" rel="noopener noreferrer">02.04.01.21 Utvendig renhold Varsling.docx</a> . Vi vil til enhver tid etterstrebe å følge varslingsplakaten <a href="https://drive.google.com/a/utvendigrenhold.no/open?id=0B3Tp8uilaZ78LXJ3QW0zdk1aS0ItejhVcVJmQjVIbFh1MVBr" target="_blank" rel="noopener noreferrer">02.04.01.22 Utvendig Renhold Varslingsplakaten.doc</a> for å følge rutinen opp. Vi mener varsling (å gå videre med kritikkverdige forhold til noen som kan gjøre noe med det) er bra for bedriften og for samfunnet. Som arbeidsgiver har vi fått ytterligere krav, ny lov fra 01.01.2020 på hvordan varsling skal håndteres fra ledelsen. Dette fordi kritikkverdige forhold kan rettes opp. Den enkelte ansatte oppfordres til å varsle om slike forhold, og har plikt til å varsle om kriminelle forhold og om forhold der liv og helse er i fare. Alle ansatte skal ha mottatt nye rutinebeskrivelser om varsling.</p>
+<h4>Mobbing</h4>
+<p>Vi har nulltoleranse for mobbing, trakassering og annen utilbørlig opptreden. Den som opplever eller observerer slike forhold, skal varsle nærmeste leder. Leder skal undersøke saken, vurdere egnede tiltak og sørge for at forholdet opphører.</p>
+<h4>Medarbeidersamtaler</h4>
+<p>Hyppigheten på medarbeidersamtaler er minst én gang i året. Bedriften bruker skjemaet i <a href="https://docs.google.com/document/d/1k2WaubJYQc_63nLXLkEZ3Mdx9Kpfyz0slYuI6Uz9O-o/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">HMS-systemet</a>, som lastes ned fra skjemasamlingen. Skjema fylles ut, signeres og lastes opp på medarbeideren. Bare daglig leder og den ansatte har tilgang til informasjonen. Skjema tas frem ved neste medarbeidersamtale. Medarbeidersamtalene gjennomføres av: Nærmeste leder.</p>
+<h4>Konflikthåndtering</h4>
+<p>Nærmeste leder har ansvaret for å håndtere konflikter mellom sine medarbeidere, og eventuelt også med underordnede ledere, dersom de ikke kan løse konflikten seg imellom. Rutinen beskriver håndteringen av konflikter mellom to definerte parter. I mer komplekse tilfeller, for eksempel når flere parter er involvert eller når konflikten påvirker grupper, kreves det derfor skjønn i tillegg til de prinsippene som er beskrevet i rutinen og veilederen.</p>
+<p>De som er involvert i en konflikt har rett til å få støtte fra en annen person i forbindelse med konflikthåndteringen, enten det er en tillitsvalgt, verneombud eller en kollega de har tillit til. All relevant informasjon som fremkommer og som brukes aktivt i konflikthåndteringen, skal være tilgjengelig for alle involverte parter og den som håndterer konflikten. Møter knyttet til konflikthåndtering skal dokumenteres med underskrift fra de deltakende partene</p>
+<h3>Rutine for samordning av HMS-arbeid</h3>
+<p>Formål: Sikre at oppdragstakere blir kjent med oppdragsgivers HMS-tiltak.</p>
+<p>Utføres av: Daglig leder.</p>
+<p>Henvisninger: Arbeidsmiljøloven, Internkontrollforskriften og lignende.</p>
+<p>Oppstartskurs: Vi gjennomfører et oppstartskurs for oppdragstakere angående oppdragsgivers HMS-initiativer. Alle ansatte fra oppdragstaker som arbeider hos oppdragsgiver skal delta på dette kurset. Kurset vil omfatte følgende:</p>
+<ul><li>Innsikt i arbeidsforholdene på arbeidsplassen.</li><li>Informasjon om oppdragsgivers HMS-arbeid, inkludert HMS-mål og praktiske tiltak som vernerunder og HMS-møter.</li><li>Gjennomgang av beredskapsplanen, individuelle ansvarsområder, førstehjelp, brannsikkerhet og evakueringsprosedyrer.</li><li>Identifikasjon av spesielle risikofaktorer og gjennomgang av tidligere risikovurderinger og kartlegginger.</li><li>Opplæring i avvikshåndtering. Ansatte fra oppdragstaker får utdelt prosedyrer og avviksskjema.</li></ul>
+<p>Opplæringen skal tilpasses språket som oppdragstaker forstår.</p>
+<p>HMS-møter: Årlige HMS-møter skal arrangeres mellom oppdragsgiver og oppdragstaker.</p>
+<p>Kartlegging og risikovurdering: Årlig kartlegging og risikovurdering av arbeidsplassen skal gjennomføres av oppdragsgiver og ansatte fra oppdragstaker som arbeider hos oppdragsgiver.</p>
+<p>Vernerunder: Ansatte fra oppdragstaker som arbeider hos oppdragsgiver skal delta i de faste vernerundene til oppdragsgiver, som gjennomføres to ganger årlig i januar og august.</p>
+<p>Opplæring: Alle ansatte skal motta opplæring i bruk av verktøy, utstyr og maskiner før de tas i bruk. Ansvarlig for å sikre at denne rutinen følges, er daglig leder.</p>
+<h3>Miljø</h3>
+<p>I Utvendig Renhold følger vi bestemte rutiner for å fremme miljøbevissthet i vårt daglige arbeid.</p>
+<h4>Arbeidsmiljø</h4>
+<p>Jeg tar ansvar for å skape et godt arbeidsmiljø ved å være respektfull, samarbeidsvillig, åpen for endringer og villig til å bidra positivt.</p>
+<h4>Innkjøp</h4>
+<p>Jeg følger retningslinjene for innkjøp og holder meg oppdatert på nye produkter og løsninger som er mer miljøvennlige.</p>
+<h4>Energi</h4>
+<p>Jeg bidrar til energieffektivitet ved å slå av PC-er, lys og maskiner når de ikke er i bruk. Jeg tilpasser varme og kjøling etter behov.</p>
+<h4>Transport</h4>
+<p>Jeg planlegger kjøreruter for å optimalisere bilbruk og redusere transporttid. Jeg kjører drivstoffeffektivt og opptrer hensynsfullt i trafikken, med bevissthet om at jeg representerer firmaet. Jeg unngår å la bilen stå på tomgang. Jeg vedlikeholder bilen regelmessig og vurderer alternativer som kollektivtransport, sykling eller gåing til jobb.</p>
+<h4>Avfall</h4>
+<p>Jeg tar daglig hensyn til tiltak som reduserer avfall og følger retningslinjene for avfallssortering. Jeg bruker for eksempel dobbeltsidig utskrift som standard på printeren og sender møtemateriale elektronisk til deltakerne for å minimere papirforbruk.</p>
+<p><strong>Avfallshåndtering</strong></p>
+<p>Rutinene for avfallshåndtering er utformet for å minimere avfallsmengde, redusere forurensing, forebygge brannfare og beskytte personer og utstyr. Vi sorterer avfall nøye og samarbeider med godkjente mottakere for forsvarlig behandling. Brannfarlig avfall plasseres i brannsikre beholdere med selvstengende lokk.</p>
+<p><strong>Ansvar for avfallshåndtering</strong></p>
+<p>Daglig leder er ansvarlig for vår avfallshåndtering.</p></section>
+<section id="hms-ch4" class="chapter"><h2><span class="chn">4</span>Rutiner for renhold</h2><div class="callout c-success"><span class="callout-ic" aria-hidden="true">🧼</span><div class="callout-bd">Sikker arbeidsutførelse, kjemikaliehåndtering, utstyr og nødvendige vernetiltak.</div></div>
+<h3>Generelle prosedyrer</h3>
+<p>Det er etablert beste praksis-prosedyrer for de aktuelle tjenestene. Franchisetakere og arbeidstakere skal kjenne til og følge prosedyrene. Gjeldende prosedyrer er lenket nedenfor og gjøres også tilgjengelige på mobil via <a href="https://cloud.servicebridge.com/" target="_blank" rel="noopener noreferrer">Field Service</a>. Den relevante prosedyren knyttes til tjenesten i det enkelte oppdrag.</p>
+<ul class="linklist"><li><a href="https://docs.google.com/document/u/0/d/17KougQDzmAldzAGI3AkF06jERy7dgXLh7brqAnC8_W8/edit" target="_blank" rel="noopener noreferrer">02.04.02.01 Algebehandling best praksis</a></li><li><a href="https://docs.google.com/document/u/0/d/12zXX1bjUhMsG2SPNJl_xxshyLQLoZm9DxuXgYpVBByY/edit" target="_blank" rel="noopener noreferrer">02.04.02.03 Fasadevask best praksis</a></li><li><a href="https://docs.google.com/document/u/0/d/1LuxXLTJQ3NL4jIxEPEZRFb687-YfuqbIK5guh0LuKjM/edit" target="_blank" rel="noopener noreferrer">02.04.02.04 Kunnskap om Fallsikring ( UTGÅR)</a></li><li><a href="https://docs.google.com/document/u/0/d/1yycqCJUvC3JAEXWf9vzdu6svJL4SSISVwup-jIWX7c8/edit" target="_blank" rel="noopener noreferrer">02.04.02.05 Impregnering best praksis</a></li><li><a href="https://docs.google.com/document/u/0/d/1yssIzIV7ts8XwgWFFEJWA1fEaz-iu5d1kaSooCGzRC8/edit" target="_blank" rel="noopener noreferrer">02.04.02.06 Kjemi best praksis</a></li><li><a href="https://docs.google.com/document/u/0/d/1K5KFZPS3VZw1KAjhXSp_hZqqoT5PBI024qV9tDM8jAQ/edit" target="_blank" rel="noopener noreferrer">02.04.02.07 Lift best praksis</a></li><li><a href="https://docs.google.com/document/u/0/d/1KoiBbH5LkUQgK-C94vUDj2qe58NPrmBUl9z2OB6w3QE/edit" target="_blank" rel="noopener noreferrer">02.04.02.08 Oppdragssystem mobil best praksis</a></li><li><a href="https://docs.google.com/document/u/0/d/1treLoI3y204Z4Vv601E1nLTLzEjp0eIVKtNPXEgVQkw/edit" target="_blank" rel="noopener noreferrer">02.04.02.09 Overflaterensing best praksis</a></li><li><a href="https://docs.google.com/document/u/0/d/1EGjOPF91aA7X6bVHdpeq15YFPa02xj-bIWXZTkl1BTQ/edit" target="_blank" rel="noopener noreferrer">02.04.02.10 Taggefjerning best praksis</a></li><li><a href="https://docs.google.com/document/u/0/d/17qkkvYyGj06EOu9fU781RJcn6rXQx7xVlaYjoj5NypE/edit" target="_blank" rel="noopener noreferrer">02.04.02.11 Takrennevask best praksis</a></li><li><a href="https://docs.google.com/document/u/0/d/1KtdRYVcPObZLP90WR1W4TwPCb8xVIjsOIcLeAEI03g0/edit" target="_blank" rel="noopener noreferrer">02.04.02.12 Takvask best praksis</a></li><li><a href="https://docs.google.com/document/u/0/d/1Pf0tkeYHN4uO8iKbtPJsd9hBW07lMTSL63Ipm1oeQD8/edit" target="_blank" rel="noopener noreferrer">02.04.02.13 Utstyr best praksis</a></li><li><a href="https://docs.google.com/document/u/0/d/1VzniBF_DIKVZp5pW_Kg388JwuUMYM51s2C-Ykb6epYs/edit" target="_blank" rel="noopener noreferrer">02.04.02.14 Vindusvask best praksis</a></li><li><a href="https://docs.google.com/document/u/0/d/1XTEnrY-E9dfEH_M2g-PSTT39pX5waelXV1azKEGEHU8/edit" target="_blank" rel="noopener noreferrer">02.04.02.15 Arbeid i høyden best praksis</a></li><li><a href="https://docs.google.com/document/u/0/d/1yE023VqCa4pwJI9wDoeXzHRJMXoEVg282YplTcyi9ow/edit" target="_blank" rel="noopener noreferrer">02.04.02.15 HUBSPOT Mobil best praksis</a></li><li><a href="https://docs.google.com/document/u/0/d/1_VpgSZm449dOFpWy_Y96tSQ7UvZi5sLFj5uZkl4GQc4/edit" target="_blank" rel="noopener noreferrer">02.04.02.16 HUBSPOT PC best praksis</a></li><li><a href="https://docs.google.com/document/d/1dovCEPrqp0aqIIywpzIsRCj-holiQsc8-14V4ZRFUUo/edit?usp=sharing" target="_blank" rel="noopener noreferrer">02.04.02.17 Rengholdsplan</a></li><li><a href="https://docs.google.com/document/u/0/d/1I3fs8vAZHubU4fbORM35ZmZ2HpjIP7LTtweB8NJ7TlE/edit" target="_blank" rel="noopener noreferrer">02.04.02.18 Ventilasjonsrens best praksis</a></li><li><a href="https://docs.google.com/document/u/0/d/1tiVz0MLMCSm0cZU3GYXjec2-7f0Z3aRDSANnaHaT7xo/edit" target="_blank" rel="noopener noreferrer">02.04.02.19 Varmepumperens best praksis</a></li><li><a href="https://docs.google.com/document/u/0/d/1U-2b7TNU1mSV3Eb5i2M5HiTRmhZrXOV9JG05iodWimw/edit" target="_blank" rel="noopener noreferrer">02.04.02.20 Byggrenhold</a></li></ul>
+<h3>Kjemikalier og kjemisk helsefare</h3>
+<p>Kjemikaliene som brukes i virksomheten, skal være korrekt merket på norsk. Gjeldende sikkerhetsdatablader og verneblader finnes nedenfor:</p>
+<ul class="linklist"><li><a href="https://drive.google.com/open?id=1KwmikmLBfYrRIkNVlqdSzTnN1_0WkLa4" target="_blank" rel="noopener noreferrer">02.04.03.01 Grønskekverkeren</a></li><li><a href="https://drive.google.com/open?id=16DXnokU3Wqtm5SGyqEmeRBTLVPuk5hJg" target="_blank" rel="noopener noreferrer">02.04.03.03 TRAILERWASH</a></li><li><a href="https://drive.google.com/open?id=1y9ikWm7hjXbgj1vWOO97lds2Xylh4Rse" target="_blank" rel="noopener noreferrer">02.04.03.04 Betongtett</a></li><li><a href="https://drive.google.com/open?id=1oNWDILa125OuVpxl6Q9hKRXgsvwVJPcb" target="_blank" rel="noopener noreferrer">02.04.03.05 TOPSEAL</a></li><li><a href="https://drive.google.com/file/d/1FD_G-9ZEx54f781EQJ87XuqdnfjDeG26/view?usp=sharing" target="_blank" rel="noopener noreferrer">02.04.03.06 ARROW ERASE Verneblad</a></li><li><a href="https://drive.google.com/file/d/1Ko2AnDP_0xoefjSNBil-J6quolPuYtLu/view?usp=sharing" target="_blank" rel="noopener noreferrer">02.04.03.07 ARROW ERASE</a></li><li><a href="https://drive.google.com/file/d/1M_GLSLVj6FOEpFfs2RhDQx7mbSlAZvSz/view?usp=sharing" target="_blank" rel="noopener noreferrer">02.04.03.08 ARROW DELTA</a></li><li><a href="https://drive.google.com/file/d/1dn2w7WfAlARE4bmh2VVLA6xMrwp5G_Ss/view?usp=sharing" target="_blank" rel="noopener noreferrer">02.04.03.09 ARROW DELTA Verneblad</a></li><li><a href="https://drive.google.com/file/d/1hp9mN7fTbvRBLoxWFq06QBueSgBURvWB/view?usp=sharing" target="_blank" rel="noopener noreferrer">02.04.03.09 TD-BETONGRENS-NORSK.pdf</a></li><li><a href="https://drive.google.com/file/d/1Bz5JvgoNN4Vkc3wCUeNPVJ0BIIA-bW6F/view?usp=sharing" target="_blank" rel="noopener noreferrer">02.04.03.10 ARROW TRAILERWASH AUTOSHINE Verneblad.pdf</a></li><li><a href="https://drive.google.com/file/d/1RXzLBFu8BuvwfwBMzx6YxSbjwc2qFIlz/view?usp=sharing" target="_blank" rel="noopener noreferrer">02.04.03.11 ARROW TRAILERWASH AUTOSHINE</a></li><li><a href="https://drive.google.com/file/d/1cQqAACZyw2EIKTOFdEYyT83HkvIZrKim/view?usp=sharing" target="_blank" rel="noopener noreferrer">02.04.03.12 ARROW TRAILERWASH Verneblad</a></li><li><a href="https://drive.google.com/file/d/1djoBfxMCHeH6RIPHQamxxrzXnWIpmUwW/view?usp=sharing" target="_blank" rel="noopener noreferrer">02.04.03.13 ARROW TRAILERWASH.pdf</a></li><li><a href="https://drive.google.com/file/d/1HhhkReamYwcGiHJZyW1bY80f7G-48amJ/view?usp=sharing" target="_blank" rel="noopener noreferrer">02.04.03.14Desinfect QAC Verneblad</a></li><li><a href="https://drive.google.com/file/d/1zpGS6zwSoAWcSFb0Kbz4AT2Gl3kd2Re_/view?usp=sharing" target="_blank" rel="noopener noreferrer">02.04.03.15 Desinfect QAC</a></li><li><a href="https://drive.google.com/file/d/11nS04sMC3ZTdOGx309AAWdr7iLgXLmnn/view?usp=sharing" target="_blank" rel="noopener noreferrer">02.04.03.16 Natriumhypochlorit (Blegeessens) Verneblad.pdf</a></li><li><a href="https://drive.google.com/file/d/1Xa6DzQ0ayqw_eZkSQTID4NgExZRvvhb-/view?usp=sharing" target="_blank" rel="noopener noreferrer">02.04.03.17 Natriumhypochlorit (Blegeessens)</a></li><li><a href="https://drive.google.com/file/d/1H_f4mSpWDQodK5aQmbuZfm3JSKbO8d2K/view?usp=sharing" target="_blank" rel="noopener noreferrer">02.04.03.18 Datablad GF All In One</a></li><li><a href="https://drive.google.com/file/d/1-bxsYmhPhTSXyGTMWrpH74aCuQ0C-nCi/view?usp=sharing" target="_blank" rel="noopener noreferrer">02.04.03.19 Datablad GR Kilroy</a></li><li><a href="https://drive.google.com/open?id=1SoLFv47JMx_ASbuFurWZdq85mbtBhJwG" target="_blank" rel="noopener noreferrer">02.04.03.23 Roofseal datablad</a></li></ul>
+<p><u>02.04.03.24 Roofseal teknisk datablad</u></p>
+<p>Kjemisk helsefare er et alvorlig problem som må prioriteres i det systematiske HMS-arbeidet. Kjemikalier/stoffer kan forårsake både akutte helseskader, og skader over tid. Flere typer skader vil ikke kunne helbredes dersom de først har oppstått, de kan kun forebygges.</p>
+<p>I sitt valg av kjemikalier har UTVENDIG RENHOLD AS valgt miljøvennlig og det minst farlige for arbeidstakerne (substitusjon). Vi har også vurdert endring i arbeidsprosesser der mulig, slik at man unngår eller reduserer mengden av farlige forurensninger. Forbruk av kjemikalier og gjennomgang av dokumentasjon skal utarbeides minst en gang per år. Innkjøpsprosedyre vil ha en årlig gjennomgang samt. eventuelle endringer ved kjemikalier.</p>
+<ul class="linklist"><li><a href="https://docs.google.com/document/d/1UWeji8jItTYjTyg0XDA4iJizci99ivxBGftks_ZuW48/edit" target="_blank" rel="noopener noreferrer">Innkjøpsprosedyre</a></li><li><a href="https://docs.google.com/spreadsheets/d/1LDM2plsEJzNPnuZftVgPNHgmgXnEiGdQkeicucKbDTw/edit#gid=1995865537" target="_blank" rel="noopener noreferrer">Kjemikalieforbruk</a></li></ul>
+<h4>Risikovurdering</h4>
+<p>Vi skal ha oversikt over hvilke kjemikalier som brukes, hvem som kan bli eksponert, eksponeringsnivået og mulige helseeffekter. Se utførte risikovurderinger for renhold under dokumentasjon. Kjemisk helsefare og eksponering i arbeidsmiljøet skal kartlegges og det skal gjennomføres en risikovurdering som definerer risiko. Vi foretar risikovurdering av kjemikaliene, det utarbeides en tidfestet handlingsplan som definerer hvilke risikoreduserende tiltak som initieres for å beskytte arbeidstakerne.</p>
+<h4>Vernetiltak</h4>
+<p>Arbeidsgiver skal først organisere og tilrettelegge arbeidet for arbeidstakerne, gi nødvendig informasjon og opplæring og prøve å erstatte farlige kjemikalier, før tiltak som ventilasjon gjennomføres. Tildeling og bruk av personlig verneutstyr bør være et siste tiltak og en midlertidig løsning, inntil tilstrekkelig vern er oppnådd på andre måter.</p>
+<h4>Opplæring</h4>
+<p>Kunnskap den enkelte ansatte har om arbeidsoperasjonene de utfører må sikres ved opplæring og informasjon. God informasjon og opplæring er et av de aller viktigste tiltakene for å hindre ulykker og forebygge sykdommer. Det gis grunnleggende opplæring i kjemisk helserisiko.</p>
+<p>Det må gis spesifikk opplæring i hvordan man skal forholde seg til de kjemikalier man bruker. Gjennomgang av relevante sikkerhetsdatablad er viktig i så henseende.</p>
+<p>Tilknytning til en godkjent bedriftshelsetjeneste som har god kunnskap om kjemisk helsefare og bransjespesifikke problemstillinger kan bidra til dette arbeidet.</p>
+<h4>Substitusjon</h4>
+<p>Farlige kjemikalier bør unngås når det er mulig, og man bør vurdere alternativer som er mindre farlige for arbeidstakerne, eller til og med fjerne dem helt (substitusjon). Det er også fornuftig å vurdere endringer i arbeidsprosessene der det er mulig, for å minimere eller eliminere eksponeringen for farlige stoffer.</p>
+<p>Dette innebærer vanligvis at arbeidsgiveren bytter ut farlige kjemikalier med andre som er klassifisert som mindre giftige (i en lavere fareklasse) eller velger prosesser som gir lavere eksponering. Spesiell oppmerksomhet bør rettes mot erstatning av kjemikalier som kan forårsake akutt forgiftning, kreft, skader på arvestoffet, reproduksjonsskader og allergiske reaksjoner. Det kan også være hensiktsmessig å erstatte produkter med organiske løsemidler i de mest risikoutsatte kategoriene. Reduksjon av eksponering kan også oppnås ved å bruke kjemikalier i alternative former, som for eksempel pellets istedenfor støvete pulver.</p>
+<p>Før en erstatning gjennomføres, må arbeidsgiveren gjøre en helhetsvurdering av den faktiske risikoen og søke råd fra kompetent personell, for eksempel verne- og helsepersonell. Arbeidsgiveren må også kunne dokumentere overfor myndighetene at vurderingen av å erstatte spesielt farlige kjemikalier er gjennomført, og begrunne hvorfor det eventuelt ikke er gjennomført.</p>
+<h4>Ventilasjon</h4>
+<p>Hvis ikke eksponeringen er redusert til et fullt forsvarlig nivå ved å organisere og tilrettelegge arbeidet, og det heller ikke er mulig å bygge inn prosessen, må arbeidsgiveren gjennomføre ventilasjonstekniske tiltak. God ventilasjon og adskilte arbeidsoperasjoner reduserer problemet og betyr at personlig verneutstyr kan tas av raskere etter at en forurensende jobb er utført, enn med mindre effektiv ventilasjon. Ventilasjon omfatter både allmenn ventilasjon og avsug, men det skilles her mellom ventilasjon i betydningen allmennventilasjon (lufttilførsel og avtrekk) og avsug som er prosess- og punktavsug nær forurensningskilden. Lufttilførsel og avtrekk/avsug må samordnes (styres) slik at trykkforholdene mellom rom og i bygningen blir riktige.</p>
+<h4>Personlig verneutstyr</h4>
+<p>Personlig verneutstyr skal bare brukes dersom risiko for skader på liv og helse hos arbeidstakeren ikke kan unngås på annen måte. Det er viktig å bruke riktig verneutstyr. Vernehansker og åndedrettsvern er særlig aktuelt ved arbeid som medfører eksponering for kjemikalier. Det skal finnes rutiner for riktig bruk, oppbevaring og vedlikehold av personlig verneutstyr, inkludert rutiner for skifte av filtre. Sikkerhetsdatabladet skal inneholde anbefalinger om hvilke tiltak og verneutstyr som skal benyttes for å beskytte arbeidstakeren.</p>
+<h4>Oppbevaring av kjemikalier</h4>
+<p>Kjemikalier oppbevares og lagres forsvarlig. Beholdere med kjemikalier holdes lukket slik at det ikke blir avdunsting til omgivelsene. På de enkelte eiendommene er det egne låsbare skap.</p>
+<p>Kravene til oppbevaring av kjemikalier omfatter også kjemisk avfall.</p>
+<h3>Arbeidsutstyr</h3>
+<h4>Bruk av arbeidsutstyr</h4>
+<p>Vi skal sette i gang tiltak for å fjerne farer forbundet med varme, kulde, støv, eksos, kjemikalier og lignende.</p>
+<h4>Velg riktig utstyr</h4>
+<p>Riktig arbeidsutstyr kan fjerne eller redusere farer for liv og helse. Ved valg av arbeidsutstyr skal særlig tre forhold vurderes:</p>
+<ul><li>arbeidsutstyrets innebygde sikkerhet</li><li>plassen hvor utstyret skal brukes</li><li>arbeidsoppgaven det skal brukes til</li></ul>
+<h4>Arbeidsgivers ansvar</h4>
+<p>Utvendig Renhold må påse at arbeidsutstyr som skal brukes, er laget og innrettet slik at ansatte er vernet mot skader på liv og helse når de bruker utstyret. Dette gjelder både ulykker, belastningslidelser og påvirkninger som kan føre til helseskader over tid.</p>
+<p>I enkelte tilfeller er det ikke mulig å verne seg mot skader ved bruk av arbeidsutstyr. Utvendig Renhold er forpliktet til å begrense farene mest mulig. Hvis bruk av arbeidsutstyr kan medføre særlig fare for skade på liv og helse, skal Utvendig Renhold sørge for skriftlig arbeidsinstruks og treffe de nødvendige tiltak. Dette gjelder bruk av arbeidsutstyr der risikoen er høyere enn ved normal bruk.</p>
+<h4>Ensformig arbeid</h4>
+<p>Ensformig arbeid er arbeid som består av én enkelt eller noen få enkle arbeidsoperasjoner som gjentas i så høyt tempo og/eller så lenge at det kan føre til helseskade.</p>
+<p>Vi vurderer og tar hensyn til hvor lenge arbeidsoperasjonen pågår, hvor ofte den gjentas og om det finnes muligheter for variasjon, pauser og hvile.</p>
+<h4>Forhold som gjør arbeidet mindre ensformig</h4>
+<ul><li>variasjon i arbeidet,</li><li>hensiktsmessig arbeidsteknikk</li><li>opplæring</li><li>støtte fra leder og kolleger</li><li>medbestemmelse og ansvar</li><li>samarbeid og kontakt med andre</li></ul>
+<h4>Arbeidsmiljøforhold kan øke risiko for helseplager</h4>
+<ul><li>psykososiale forhold som mistrivsel og manglende sosial støtte fra leder/kolleger eller forhold ved selve arbeidsoppgaven (lav status, manglende følelse av sammenheng og mening)</li><li>organisatoriske forhold som lite kontroll, manglende medvirkning, manglende medbestemmelse, uklare ansvarsforhold, lite variasjon, manglende opplæring, manglende rutiner, dårlige samarbeidsforhold, for lav bemanning, tidspress og omstilling</li></ul>
+<h4>Høytrykksspyling</h4>
+<p>Vi vil gi opplæring og trening i bruk av høytrykksspylingsutstyr og sørge for tilgjengelighet av egnet personlig verneutstyr. Det er viktig å merke seg at det er aldersbegrensninger for bruk av denne typen utstyr, og vi stiller krav til grundig opplæring. Kun ansatte over 18 år skal håndtere høytrykksspyling.</p>
+<p>Både høytrykksspyleren og systemet for rensing av vann benytter varmekilder for å oppvarme vannet. Det er derfor viktig å være oppmerksom på dette, og alle må være forberedt på hvordan man skal håndtere brannsituasjoner dersom noe uventet skulle oppstå.</p>
+<h4>Tilsetningsstoffer</h4>
+<p>Ved høytrykksspyling skal det bare brukes tilsetningsstoffer som er tilpasset anlegget og som er i samsvar med bruksanvisningen.</p>
+<p>Prosessen medfører stor fare for kuttskader. Hvis det benyttes slipemidler i væskestrålen, må helsevesenet underrettes om dette ved skade, slik at sårstedet blir undersøkt nøye for partikler. Ved bløtdelsskader, for eksempel i mageregionen, kan de indre skadene være mye større enn det ser ut til på huden.</p>
+<h4>Opplæring nødvendig</h4>
+<p>Før en arbeidstaker settes til selvstendig bruk av anlegg for høytrykksspyling, kreves det nødvendig opplæring og øvelse. Instruks skal lages i egen dokumentasjonsmappe.</p>
+<p>Vi har instruks for operasjoner som medfører særlig fare for liv og helse, og alltid ved manuelt betjent utstyr med maksimalt arbeidstrykk over 350 bar. Strålerøret skal aldri rettes mot egen eller andres kropp under bruk. Utløserventil skal ikke blokkeres, avtrekkeren eller utløserventilen aldri skal bindes opp eller blokkeres på annen måte.</p>
+<h4>Merking og avgrensing</h4>
+<p>Utvendig Renhold vil sikre at områder hvor det utføres arbeid med høytrykksspyling tydelig merkes og avgrenses med adekvate sikkerhetsforanstaltninger.</p>
+<h3>Personløfter</h3>
+<p>Utvendig Renhold AS har ansvaret for at løft av personer i hovedsak skjer med arbeidsutstyr som er konstruert og beregnet for dette, det vil si en personløfter. Dette innebærer at arbeidsutstyret skal være CE-merket og typeprøvd av teknisk kontrollorgan. Det må også være enkelt å betjene, og plattformen skal som hovedregel ha betjeningsinnretninger om bord.</p>
+<h4>Sikkerhetstiltak ved personløfter</h4>
+<ul><li>til selve kurven og utforming</li><li>til basis maskinenes oppstilling og styresystem</li><li>det skal være sikker kommunikasjon mellom person på kurven og maskinens operatør</li></ul>
+<h4>Bruksanvisning viktig</h4>
+<p>En god instruks og bruksanvisning skal utarbeides, hvor fare og begrensning av bruk presiseres, samt vedlikeholds- og kontrollkrav. Det skal angis hvilke maskiner som kurven kan monteres på. Kurven skal være merket med høyeste tillatte belastning, maks antall personer, produsent, byggeår og eventuelt serienummer.</p>
+<h4>Må ha dokumentert sikkerhetsopplæring</h4>
+<p>Det er krav til dokumentert sikkerhetsopplæring for bruk av personløfter. Det er dessuten krav til sertifisert sakkyndig kontroll av personløfteren og dette gjelder også for andre maskiner påmontert kurv for løft av personer.</p>
+<h4>Mobil maskin og kurv</h4>
+<p>Arbeid av varig karakter krever som nevnt personløfter, men dersom dette ikke kan benyttes på grunn av belastninger eller påkjenninger på utstyret fra selve arbeidet, kan kombinasjon av mobil, maskin og kurv brukes.</p>
+<h4>Opplæring nødvendig</h4>
+<p>For arbeid av varig karakter kreves det at operatøren, i tillegg til sikkerhetsopplæring på maskinen, også har gjennomført opplæring i bruk av maskinen med arbeidskurv. Personer som skal løftes, skal også sikres ved at nødvendig informasjon og opplæring er gitt.</p>
+<h3>Støy og hørselvern</h3>
+<p>Vi tilbyr CE-merket hørselvern til de ansatte hvis de opplever at lydnivået er plagsomt. Hørselvern skal primært betraktes som en midlertidig løsning, og hovedfokuset bør være å redusere støyen. Bruk av hørselvern er obligatorisk når de ansatte blir eksponert for støynivåer som er lik eller overstiger de øvre tiltaksgrensene, LEX,8h = 85 dB eller LpC, peak = 130 dB.</p>
+<h4>Merk arbeidsområder</h4>
+<p>Hvis støynivået overskrider grensene, vil vi i tillegg sørge for merking av arbeidsområder med varselskilt.</p>
+<h3>Førstehjelpsutstyr</h3>
+<p>Førstehjelpsutstyr er til enhver tid komplett i henhold til oppsatt liste. De ansatte har gjennomgått en enkel opplæring. Førstehjelpsutstyr skal finnes: i alle våre biler og på lager.</p></section>
+<section id="hms-ch5" class="chapter"><h2><span class="chn">5</span>Arbeid i høyden med stillas og stige</h2><div class="callout c-warn"><span class="callout-ic" aria-hidden="true">⚠️</span><div class="callout-bd">Arbeid i høyden skal planlegges, risikovurderes og utføres med riktig utstyr og dokumentert opplæring.</div></div>
+<h3>Bruk av stillas</h3>
+<p>Stillasets styrke og stabilitet må oppfylle kravene for alle brukere. Det skal inspiseres før bruk, etter dårlig vær, og hvis det har stått ubrukt i en uke eller mer. Ved flytting må det også inspiseres på nytt før bruk.</p>
+<p>Arbeid på stillas som er høyere enn fem meter, skal kun utføres av ansatte med nødvendig teoretisk og praktisk opplæring. Alle stillaser som masseproduseres (over ti enheter) må ha typegodkjenning fra Arbeidstilsynet. Det skal også være en monteringsveiledning med illustrasjoner som følges under montering.</p>
+<p>Her er noen viktige punkter knyttet til montering, bruk og vedlikehold av stillaset:</p>
+<ul><li>Forsikre deg om at du bruker riktig type stillas med riktig belastningsklasse.</li><li>Sjekk jevnlig for grunnsetninger og kompensere eventuelle setninger med justerbare bein.</li><li>Ved graving i nærheten av stillaset må tiltak gjøres for å opprettholde sikkerheten til stillaset. Dette kan inkludere tilbakefylling og sikkerhetstiltak for strømførende ledninger.</li><li>Hvis flere arbeidsgivere skal bruke samme stillas, må det være dimensjonert for alle brukere og brukerne må koordinere arbeidsoperasjonene.</li><li>Hvis åpninger mellom stillaset og bygningen er større enn 30 cm og stillaset er over 2 meter høyt, må det sikres med rekkverk.</li><li>Hvis det er trafikk under arbeid med stillaset, må en sikker jobb-analyse utføres for å ivareta trafikantenes sikkerhet.</li><li>Stillaset må bygges av godkjent materiale uten deformiteter eller betydelig slitasje.</li><li>Stillaset må være tydelig merket med informasjon om eier, stillasbygger, bruker, eventuell utleier og tillatt belastning, samt typegodkjenning fra Arbeidstilsynet.</li><li>Stillaset må ha riktig fundament og forsvarlig forankring.</li><li>Rekkverk i form av håndlist, knelist, fotlist og enderekkverk må være tilstede.</li><li>Sikker og tilgjengelig adkomst må være tilgjengelig.</li><li>Stillaset må inspiseres regelmessig, spesielt for stillaser over fem meter. Rapport må skrives etter inspeksjonen.</li><li>Verktøy og gjenstander må sikres forsvarlig og oppbevares i kasser når det er mulig.</li><li>Unødvendig lagring på stillaset må unngås for å forhindre snublefare og blokkering av rømningsveier.</li><li>For rullestillaser må adkomsten være en del av konstruksjonen, og de må være stabile under bevegelse og bruk.</li><li>Stillaser med luftgummihjul må være konstruert slik at de ikke velter hvis et hjul punkterer.</li><li>Stillaser for utendørs bruk og lengre arbeidsperioder må kunne dekkes med presenning eller lignende og må ha muligheter for montering av varme- og lyskilder. Brannhemmende materialer må brukes hvis brann kan blokkere rømningsveiene når stillaset er dekket.</li></ul>
+<h3>Bruk av stige</h3>
+<p>Stige skal fortrinnsvis brukes til atkomst. Når stige må brukes som en arbeidsplattform, må det kun være fordi stigen er det eneste og sikreste arbeidsutstyr som egner seg for å utføre et bestemt kortvarig arbeid.</p>
+<p>Følgende er viktig å tenke på før stigen tas i bruk:</p>
+<ul><li>Riktig vinkel til vegg/ -konstruksjon (hellingsvinkel mot underlag skal ligge mellom 65 og 75 grader).</li><li>Stigen skal settes på et jevnt underlag.</li><li>Stigen skal sikres mot utglidning og velting sideveis eller bakover.</li><li>Stigen skal stå stabilt og være utstyrt med sklisikre føtter.</li><li>Stiger som brukes gjentatte ganger som atkomst, skal alltid sikres i toppen.</li><li>Stiger som brukes til atkomst til tak eller lignende, skal rage minst én meter over avsatsen.</li><li>Stiger over seks meter skal ikke brukes.</li><li>Strakstiltak utføres umiddelbart.</li></ul>
+<h3>Bruk av fallsikringsutstyr</h3>
+<p>Ved arbeid i høyden, når det ikke finnes annen beskyttelse for å hindre fall over 2 meter til lavere nivå, er bruk av fallsele med fangline og demper (eller fallblokk) påkrevd.</p>
+<p>Det er alltid nødvendig å bruke traumestropp (avlastningsstropp).</p>
+<p>Før du begynner arbeidet, må du gjøre følgende sjekker:</p>
+<ul><li>Inspeksjon av utstyret for synlige skader.</li><li>Sjekk sømmer og bånd for rift, knuter eller brennmerker.</li><li>Metalldeler skal være uten korrosjon eller rust, sprekkdannelser eller brudd.</li><li>Alle spenner skal være i god stand, låsbare og holde låsen ordentlig.</li><li>Justering og stramming av bånd må være nødvendig og tilstrekkelig.</li><li>Det er strengt forbudt å modifisere utstyret, som å lage ekstra hull eller fjerne stropper eller ringer, osv.</li><li>Forsikre deg om at forankringspunktet er sikkert, og det skal inspiseres årlig.</li><li>Øyet/leppen skal være fri for deformasjoner og uten sprekker i sveisen.</li><li>Sjakkelen skal være uten deformasjoner og godt tilskrudd med sikring/splint.</li><li>Bolten/kjemisk ankret skal være festet solid i veggen, øyet uten deformasjon eller skade, og fri for korrosjon.</li></ul>
+<p>Husk at det er den enkelte arbeidstakers ansvar å alltid følge brukerveiledningen for selen og stroppen, spesielt når det gjelder bruk og tilstandskontroll. Påse å følge <a href="https://docs.google.com/document/d/1XTEnrY-E9dfEH_M2g-PSTT39pX5waelXV1azKEGEHU8/edit" target="_blank" rel="noopener noreferrer">“Arbeid i høyden best praksis”</a>.</p>
+<p>Det er også viktig å beregne riktig klareringshøyde (fallhøyde) før arbeidet starter.</p>
+<p class="imgnote">[Illustrasjon: Fallsikring – kontrollpunkter og klareringshøyde]</p>
+<p><strong>Under bruk:</strong></p>
+<p>Stroppen bør festes så høyt som praktisk mulig i forhold til brukeren, på et egnet og sikkert sted. Det er viktig å vurdere pendeleffekten.</p>
+<p>Brukeren skal alltid forsøke å holde den justerbare stroppen så kort som praktisk mulig når den ikke er i bruk. Ved forflytninger når stroppen ikke er i bruk, skal den enten kveiles rundt kroppen, forkortes eller på annen måte sikres, slik at brukeren ikke risikerer å snuble i den.</p>
+<p>Etter bruk, husk å henge opp fallselen på et tørt og mørkt sted for lagring, unngå eksponering for forurensing.</p>
+<p>Fallsikringsutstyr, inkludert sele, stropp og fallblokk, skal leveres til bedriftens kvalifiserte personell for årlig kontroll. Defekt utstyr eller utstyr som har vært utsatt for fallulykker, skal umiddelbart tas ut av bruk for inspeksjon.</p>
+<p>Kontroll av utstyret skal gjennomføres med følgende frekvenser:</p>
+<ul><li>Intern kontroll av utstyret skal utføres årlig.</li><li>Ekstern kontroll av utstyret skal gjennomføres hvert femte år.</li></ul>
+<h3>Arbeid med strøm</h3>
+<p>For å utføre arbeid med elektrisitet kreves det et gyldig fagbrev. Alternativt kan instruert personell med dokumentert opplæring utføre spesifikke arbeidsoppgaver innenfor dette området.</p>
+<p>Det er en obligatorisk rutine for alle ansatte som arbeider med elektriske anlegg og utstyr. Alle ansatte må bekrefte at de har lest og forstått rutinen for arbeid med elektriske anlegg og utstyr ved å signere det tilhørende skjemaet. Eventuelle avvik skal rapporteres til nærmeste overordnede, og nødvendige tiltak skal iverksettes umiddelbart.</p></section>
+<section id="hms-ch6" class="chapter"><h2><span class="chn">6</span>Hvordan bli bedre</h2><div class="callout c-info"><span class="callout-ic" aria-hidden="true">🔄</span><div class="callout-bd">Avvik, erfaringer og risikovurderinger brukes aktivt til kontinuerlig forbedring.</div></div>
+<h3>Hvordan feil og mangler rettes opp</h3>
+<p>Dersom det oppdages brudd på Utvendig Renholds rutiner, og det resulterer i nesten-ulykker, feil eller andre uønskede hendelser, skal feilen rettes umiddelbart dersom det er mulig. Hendelsen skal rapporteres til nærmeste overordnede med mål om å forhindre gjentakelse.</p>
+<p>Målet er å forebygge lignende hendelser i fremtiden. Forbedringsforslag vil bli vurdert i samarbeid med de berørte partene. Dette kan inkludere tydeliggjøring av rutiner, klargjøring av ansvarsforhold eller implementering av tekniske forbedringer. Alle iverksatte tiltak skal registreres i en handlingsplan.</p>
+<h3>Avviksrutiner</h3>
+<p>Alle ulykker, uhell og nestenulykker skal straks meldes til verneombud eller daglig leder. Hendelsen registreres i <a href="https://app.hubspot.com/l" target="_blank" rel="noopener noreferrer">HubSpot</a> med årsak, tiltak, ansvarlig og frist. Alle medarbeidere skal kjenne fremgangsmåten for avviksmelding, og alle avvik skal følges opp til de er lukket.</p>
+<h3>Kartlegging og risiko</h3>
+<p>Vi har etablert rutiner for systematisk kartlegging og forbedring av helse-, miljø- og sikkerhetsstandarder. Hensikten er å identifisere og adressere risikoer, problemer, feil og mangler som ikke umiddelbart blir håndtert eller rettet opp.</p>
+<p>Våre ansatte hos Utvendig Renhold deltar aktivt i denne prosessen, og dette sikrer et samarbeid mellom ledelsen og de ansatte for å kontinuerlig forbedre forholdene. Vi anser alt som blir gjort som følge av daglige diskusjoner og umiddelbare beslutninger som en integrert del av Utvendig Renholds forbedringsarbeid.</p>
+<p>For å støtte denne innsatsen, benytter vi risikovurderingsskjemaer og utarbeider deretter planer for tiltak med sikte på å redusere identifisert risiko.</p>
+<h3>Risikoforhold</h3>
+<p><strong>Sjekkliste for vurdering av risikoforhold:</strong></p>
+<p>Hva kan gå galt?</p>
+<p>Hvilke negative forhold, skader og ulykker kan ramme ansatte?</p>
+<p>Hva kan vi gjøre for å hindre dette?</p>
+<p>Hva kan vi gjøre for å redusere konsekvensene hvis noe skjer?</p>
+<p><strong>De mest kritiske aktivitetene/områdene i Utvendig Renhold er:</strong></p>
+<p>Kjemikalier</p>
+<p>Arbeid i høyden</p>
+<p>Ensformig og tungt arbeid</p>
+<p>Bruk av maskiner som er trykksatt</p></section>
+<section id="hms-ch7" class="chapter"><h2><span class="chn">7</span>HMS-aktiviteter</h2><div class="callout c-neutral"><span class="callout-ic" aria-hidden="true">🗓️</span><div class="callout-bd">Oversikt over faste aktiviteter, skjemaer, rapporter og sentrale regelverkskrav.</div></div>
+<h3>Vernerunder</h3>
+<p>Det gjennomføres vernerunder årlig. Vi bruker en egen sjekkliste.</p>
+<p>Det gjennomføres ekstra vernerunder dersom ledelsen, verneombud eller andre ønsker det.</p>
+<h3>Skjemaer</h3>
+<ul class="linklist"><li><a href="https://drive.google.com/a/utvendigrenhold.no/open?id=0B3Tp8uilaZ78YW1PUExrUENxNzdUeTM3eWR0eEFhZ00yNkUw" target="_blank" rel="noopener noreferrer">02.04.01.01 Utvendig Renhold HMS momentliste i driftskonseptene.doc</a></li><li><a href="https://drive.google.com/a/utvendigrenhold.no/open?id=0B3Tp8uilaZ78djJRTVVreDlqUFZ5NEVhRDZrT2RKNjNwQ200" target="_blank" rel="noopener noreferrer">02.04.01.02 Utvendig renhold Aktivitetsoversikt for verneombud.xls</a></li><li><a href="https://drive.google.com/a/utvendigrenhold.no/open?id=0B3Tp8uilaZ78d05Ebkc4N0Y5cFdjZm9BOEt3Q3BDZlBCel9F" target="_blank" rel="noopener noreferrer">02.04.01.03 Utvendig Renhold anbefalt fallsikringsutstyr ved arbeid i høyden.doc</a></li><li><a href="https://drive.google.com/a/utvendigrenhold.no/open?id=0B3Tp8uilaZ78dm5hNEV1SDVFWXlfZ0hYWU5WZkJiU1VnY08w" target="_blank" rel="noopener noreferrer">02.04.01.04 Utvendig Renhold annen ordning.docx</a></li><li><a href="https://drive.google.com/a/utvendigrenhold.no/open?id=0B3Tp8uilaZ78cVRhTHhYZnN6TEU2LUIwUkNnM0ZHdmpwMzc0" target="_blank" rel="noopener noreferrer">02.04.01.05 Utvendig renhold Avvikshåndtering og skjema Document017518.docx</a></li><li><a href="https://drive.google.com/a/utvendigrenhold.no/open?id=0B3Tp8uilaZ78TnJwaFBQekItcC1TTWtKTU9nQklha2thU0NN" target="_blank" rel="noopener noreferrer">02.04.01.06 Utvendig renhold Brann.docx</a></li><li><a href="https://drive.google.com/a/utvendigrenhold.no/open?id=0B3Tp8uilaZ78WFpkN0dtS3NCQk9mVktGZjFCQUhCb2toZXdj" target="_blank" rel="noopener noreferrer">02.04.01.07 Utvendig Renhold egenerklæring om helse.docx</a></li><li><a href="https://drive.google.com/a/utvendigrenhold.no/open?id=0B3Tp8uilaZ78YmNtQ3V2V0dOc1RKZ2VaS1pfRHhBenQtMlVn" target="_blank" rel="noopener noreferrer">02.04.01.08 Utvendig renhold Instruks for bilansvarlig.doc</a></li><li><a href="https://drive.google.com/a/utvendigrenhold.no/open?id=0B3Tp8uilaZ78NWp0eGxOLUFqTTE3MENMRnpKVUFTcXAydllZ" target="_blank" rel="noopener noreferrer">02.04.01.09 Utvendig Renhold Kvittering for gjennomført grunnopplæring renhold, sikkerhetsdatablad for kjemikalier med verneutstyr, bruk_21610_2.docx</a></li><li><a href="https://drive.google.com/a/utvendigrenhold.no/open?id=0B3Tp8uilaZ78anVNbnJvU2h0cXZUdHZlZmNXVm5KWVdGSU9V" target="_blank" rel="noopener noreferrer">02.04.01.10 Utvendig Renhold Månedsrapport for firmabiler.xls</a></li><li><a href="https://drive.google.com/a/utvendigrenhold.no/open?id=0B3Tp8uilaZ78VmdhTE9uMHJLRGV5ZDV3T19DenR4NmFnVF80" target="_blank" rel="noopener noreferrer">02.04.01.11 Utvendig Renhold Om smittestoffer.doc</a></li><li><a href="https://drive.google.com/a/utvendigrenhold.no/open?id=0B3Tp8uilaZ78ckhTYjlTMFFkcGpHMUItU29oREVjb3NJTkw4" target="_blank" rel="noopener noreferrer">02.04.01.12 Utvendig Renhold Policy om rusmiddel - og spilleavhengighet AKAN.doc</a></li><li><a href="https://drive.google.com/a/utvendigrenhold.no/open?id=0B3Tp8uilaZ78RlhJX0djcG1QUzduOUduT2pTc2EtMW1UR2pB" target="_blank" rel="noopener noreferrer">02.04.01.13 Utvendig Renhold Praktiske råd i en voldssituasjon.doc</a></li><li><a href="https://drive.google.com/a/utvendigrenhold.no/open?id=0B3Tp8uilaZ78dVZ6enBNTjItSVZON01wOW9KUjZsWGVlTDR3" target="_blank" rel="noopener noreferrer">02.04.01.14 Utvendig Renhold Prosedyre for håndtering av vold og trusler i arbeidssituasjonen.doc</a></li><li><a href="https://drive.google.com/a/utvendigrenhold.no/open?id=0B3Tp8uilaZ78RzA5VVl0OC11alNxb3FYdWZ6dnVoNldBbmZZ" target="_blank" rel="noopener noreferrer">02.04.01.15 Utvendig Renhold risikoanalyse.doc</a></li><li><a href="https://drive.google.com/a/utvendigrenhold.no/open?id=0B3Tp8uilaZ78RC1NVnVoTE9YN0xodXRvckJGVjNtYkxrWWJR" target="_blank" rel="noopener noreferrer">02.04.01.16 Utvendig Renhold Rutiner for stikkskader.doc</a></li><li><a href="https://drive.google.com/a/utvendigrenhold.no/open?id=0B3Tp8uilaZ78N3AzemtMTG9UWFpqUk9hZ1VzTjdMWkN3RjlF" target="_blank" rel="noopener noreferrer">02.04.01.17 Utvendig renhold Samordningsrutiner for arbeidsaktiviteter.docx</a></li><li><a href="https://drive.google.com/a/utvendigrenhold.no/open?id=0B3Tp8uilaZ78aGEzVDhLQ29sTTFSRWp3b1dfYTBOcDJfSkw0" target="_blank" rel="noopener noreferrer">02.04.01.18 Utvendig renhold Sikker Jobbanalyse (SJA).xls</a></li><li><a href="https://drive.google.com/a/utvendigrenhold.no/open?id=0B3Tp8uilaZ78WXZNSDY3Y1p4WC1qWDMxNlIyVzFCa1BQZllv" target="_blank" rel="noopener noreferrer">02.04.01.19 Utvendig Renhold Sjekkliste HMS opplæring.xlsx</a></li><li><a href="https://drive.google.com/a/utvendigrenhold.no/open?id=0B3Tp8uilaZ78TjhRZ1UyZzcxNjJnRTFjaWhFcmx6LS0yZWNz" target="_blank" rel="noopener noreferrer">02.04.01.20 Utvendig renhold Skriftlig advarsel i forbindelse med rus- og avhengighetsproblemer.doc</a></li><li><a href="https://drive.google.com/a/utvendigrenhold.no/open?id=0B3Tp8uilaZ78dXVWZlZMUEpaUDBnbHkwRlkya0YxLVA0ODFZ" target="_blank" rel="noopener noreferrer">02.04.01.21 Utvendig renhold Varsling.docx</a></li><li><a href="https://drive.google.com/a/utvendigrenhold.no/open?id=0B3Tp8uilaZ78LXJ3QW0zdk1aS0ItejhVcVJmQjVIbFh1MVBr" target="_blank" rel="noopener noreferrer">02.04.01.22 Utvendig Renhold Varslingsplakaten.doc</a></li><li><a href="https://drive.google.com/a/utvendigrenhold.no/open?id=0B3Tp8uilaZ78QU5JSFJHWG1iWXlPYUdsRkpMZVNPU1RtLTNz" target="_blank" rel="noopener noreferrer">02.04.01.23 Utvendig Renhold Vernerunde.docx</a></li><li><a href="https://drive.google.com/a/utvendigrenhold.no/open?id=0B3Tp8uilaZ78S203MVJHcGdmVHVMMTA4LUpjWnEtamVsbXMw" target="_blank" rel="noopener noreferrer">02.04.01.23 Utvendig Renhold årlig revisjon av HMS-systemet.docx</a></li><li><a href="https://drive.google.com/a/utvendigrenhold.no/open?id=1Kp2biJBjducIkZxDHIcrZgwf6sn7EgP1WrwOeujjCyo" target="_blank" rel="noopener noreferrer">02.04.01.24 Verneombud-Avtale</a></li></ul>
+<h3>Rapporter</h3>
+<p>Dokumentasjon på Sykefraværsstatistikk, Avviksrapporter, Tilsynsrapporter fra arbeidstilsynet, Risikovurderinger, Handlingsplaner, mm ligger på egne mapper som hører til aktuell avdeling.</p>
+<h3>Aktuelle lover og forskrifter</h3>
+<p>Aktuelle lover og forskrifter er omtalt eller lenket fra HMS-håndboken.</p>
+<p>Oppdatering utføres av HMS-ansvarlig: <a href="mailto:jr@utvendigrenhold.no" target="_blank" rel="noopener noreferrer">Jonathan Røthe</a></p>
+<p>Vi følger nøye de gjeldende lover og forskrifter som regulerer vårt arbeidsmiljø og sikkerhetspraksis. Dette inkluderer:</p>
+<ul><li>Arbeidsmiljøloven</li><li>Ferieloven</li><li>Folketrygdloven</li></ul>
+<p>Spesifikke HMS-relaterte Krav:</p>
+<p>Vi er også oppmerksomme på og følger spesifikke HMS-krav, inkludert:</p>
+<ul><li>Sikring av stige (§ 17-21): Alle stiger skal sikres før bruk, uansett høyde. Dette inkluderer arbeid på stiger over fem meter, og sikkerhet er en prioritet.</li><li>Bruk av fallsele og sikkerhetsbelte (§ 17-25): Vi presiserer funksjonene og begrensningene ved bruk av fallsele og sikkerhetsbelte for å forhindre fall fra høyde.</li><li>høytrykksspyling (§ 5-20): Vi merker fareområder der høytrykksspyling utføres.</li><li>Tilsyn med Høytrykkspyleanlegg (§ 20-11): Vi utpeker en kvalifisert person til å føre tilsyn med drift og vedlikehold av høytrykkspyleanlegget.</li><li>personlig verneutstyr (§ 15-1, § 15-2, § 15-3): Vi sørger for å tilby og opprettholde nødvendig personlig verneutstyr i samsvar med gjeldende forskrifter. Dette inkluderer arbeid med kjemikalier, asbest, biologiske faktorer, og eksponering for helseskadelig støy.</li><li>kartlegging og risikovurdering (§ 7-1): Vi vurderer kontinuerlig arbeidsmiljøet ved planlegging, tilrettelegging og utførelse av arbeid. Dette inkluderer også kartlegging av faktorer som påvirker arbeidstakernes helse og sikkerhet.</li><li>Opplæring (§ 8-1): Vi sørger for nødvendig opplæring og øvelse for våre ansatte i hensiktsmessig arbeidsteknikk, bruk av utstyr, og andre relevante forhold for sikker utførelse av arbeidet. Dette inkluderer opplæring i bruk av hjelpemidler, rømnings- og redningsutstyr, førstehjelpsutstyr og personlig verneutstyr.</li></ul>
+<p>Vi tar vårt ansvar for HMS på alvor og arbeider kontinuerlig med å støtte franchisetakerne i å sikre et trygt og forsvarlig arbeidsmiljø i sine virksomheter.</p></section>
+<section id="hms-ch8" class="chapter"><h2><span class="chn">8</span>Dokumentasjon</h2><div class="callout c-neutral"><span class="callout-ic" aria-hidden="true">🗂️</span><div class="callout-bd">Dokumentasjon skal være oppdatert, tilgjengelig og sporbar.</div></div>
+<h3>Risikoanalyse for renhold</h3>
+<div class="callout c-info"><span class="callout-ic" aria-hidden="true">📊</span><div class="callout-bd"><strong>Utarbeidet av:</strong> Jonathan Røthe og Dr. Dropin AS<br><strong>Dato:</strong> 25. desember 2023<br><strong>Videre oppfølging:</strong> Tiltak overføres til handlingsplanen i prioritert rekkefølge.</div></div>
+<div class="callout c-neutral"><span class="callout-ic" aria-hidden="true">ℹ️</span><div class="callout-bd"><strong>Skala:</strong> Sannsynlighet: 1 = tenkelig, 2 = har skjedd, 3 = har skjedd flere ganger. Konsekvens: 1 = forbigående skade, 2 = varig skade, 3 = dødsfall.</div></div>
+<div class="tablewrap"><table><tr class="row-info"><th scope="col">Risikoforhold</th><th scope="col">Sannsynlighet</th><th scope="col">Konsekvens</th><th scope="col">Registrert verdi</th><th scope="col">Prioritet</th></tr><tr class="row-warn"><td>Kjemikalier – skade på hender</td><td>2 · Har skjedd</td><td>1 · Forbigående skade</td><td>2</td><td><strong>1</strong></td></tr><tr class="row-warn"><td>Kjemikalier – skade på luftveier</td><td>2 · Har skjedd</td><td>1 · Forbigående skade</td><td>2</td><td><strong>2</strong></td></tr><tr><td>Muskel- og skjelettskader som følge av arbeidsteknikk eller utstyr</td><td>2 · Har skjedd</td><td>1 · Forbigående skade</td><td>2</td><td><strong>3</strong></td></tr><tr><td>Muskel- og skjelettskader som følge av høyt arbeidspress</td><td>2 · Har skjedd</td><td>1 · Forbigående skade</td><td>2</td><td><strong>4</strong></td></tr><tr class="row-danger"><td>Fallfare</td><td>2 · Har skjedd</td><td>3/2 · Dødsfall eller varig skade</td><td>3</td><td><strong>5</strong></td></tr><tr><td>Kjemikalier – skade på øyne</td><td>1 · Tenkelig</td><td>1 · Forbigående skade</td><td>1</td><td><strong>5</strong></td></tr><tr><td>Skli- og fallulykker på gulv</td><td>1 · Tenkelig</td><td>1 · Forbigående skade</td><td>1</td><td><strong>6</strong></td></tr><tr><td>Arbeid med maskiner</td><td>1 · Tenkelig</td><td>1 · Forbigående skade</td><td>1</td><td><strong>7</strong></td></tr></table></div>
+<div class="callout c-warn"><span class="callout-ic" aria-hidden="true">⚠️</span><div class="callout-bd">Fallfare er markert særskilt fordi den registrerte konsekvensen omfatter dødsfall eller varig skade. Registrert verdi og prioritet er beholdt fra den opprinnelige analysen.</div></div>
+<h3>Tiltaksplan/ Samarbeidsplan for Utvendig Renhold AS</h3>
+<p>Deltatt ved utarbeidelse: Jonathan Røthe Dr. Dropin AS</p>
+<p>Dato: i henhold til plan</p>
+<p>Planen gjelder for perioden: se dato på plan</p>
+<p>Se plan:</p>
+<ul class="linklist"><li><a href="https://drive.google.com/file/d/12TXgB--a0IFmNZJw1HqA1t67dwElnWWS/view?usp=drive_link" target="_blank" rel="noopener noreferrer">2023</a></li></ul></section>
+<section id="hms-ch9" class="chapter"><h2><span class="chn">9</span>Handlingsplan</h2><div class="callout c-success"><span class="callout-ic" aria-hidden="true">✅</span><div class="callout-bd">Tiltak skal ha tydelig ansvar, frist og oppfølging.</div></div>
+<h3>Handlingsplan og oppfølging</h3>
+<p>Etter kartleggingen utføres prioritering og planlegging av tiltak. Forslag til forbedringer av rutiner og utstyr blir grundig diskutert og rangert etter viktighet. De personene som vil bli påvirket av de aktuelle tiltakene bør aktivt delta i planleggingsprosessen. Alle vedtatte tiltak blir nøye dokumentert i handlingsplanen.</p>
+<p>Handlingsplanen spesifiserer hva som skal utføres, hvem som er ansvarlig for gjennomføringen, og tidspunktene for utførelsen. En utpekt person har ansvaret for å følge opp handlingsplanen og sørge for at alle tidsfrister blir overholdt.</p>
+<p>Daglig leder i Utvendig Renhold AS har ansvar for å følge opp handlingsplanen. Handlingsplanen er et praktisk verktøy for kontinuerlig forbedring og sentral dokumentasjon på virksomhetens systematiske helse-, miljø- og sikkerhetsarbeid.</p>
+<h3>Årsrapport / Årlig revisjon</h3>
+<p>Hvert år gjennomgår daglig leder, sammen med alle ansatte eller deres representanter, Utvendig Renholds helse-, miljø- og sikkerhetsarbeid. Dette samarbeidet involverer også bedriftshelsetjenesten. Vi går grundig gjennom all dokumentasjon fra Utvendig Renhold for å sikre at det som er nedskrevet samsvarer med virkeligheten. Eventuelle identifiserte avvik eller forhold som krever forbedring blir nøye registrert i Utvendig Renholds handlingsplan.</p>
+<p>Gjennomgangen gjennomføres hvert år innen utgangen av <a href="https://docs.google.com/document/d/0B3Tp8uilaZ78S203MVJHcGdmVHVMMTA4LUpjWnEtamVsbXMw/edit?usp=drive_link&amp;ouid=115272086111439484409&amp;resourcekey=0-AgVw6NN2To0F4bWLlOcsjw&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer">januar</a></p></section>
+    </article>
+  </div>
+</section>
+
+<section id="view-franchise" class="view" tabindex="-1" hidden aria-label="Franchisehåndbok">
+  <div class="hbwrap">
+    <details class="toc" open>
+      <summary>Innhold</summary>
+      <nav aria-label="Innholdsfortegnelse"><ol><li><a href="#franchise-ch1">1. Formål, virkeområde og bruk</a></li>
+<li><a href="#franchise-ch2">2. Velkommen til Utvendig Renhold</a></li>
+<li><a href="#franchise-ch3">3. Visjon, verdier og kundeløfte</a></li>
+<li><a href="#franchise-ch4">4. Varemerke, profil og forretningshemmeligheter</a></li>
+<li><a href="#franchise-ch5">5. Ressurser og støtte fra franchisegiver</a></li>
+<li><a href="#franchise-ch6">6. Opplæring og franchisesamarbeid</a></li>
+<li><a href="#franchise-ch7">7. Kvalitet og kundebehandling</a></li>
+<li><a href="#franchise-ch8">8. Drift og oppdragshåndtering</a></li>
+<li><a href="#franchise-ch9">9. HMS, kjemikalier og hendelser</a></li>
+<li><a href="#franchise-ch10">10. Utstyr og innkjøp</a></li>
+<li><a href="#franchise-ch11">11. Administrasjon, systemer og regnskap</a></li>
+<li><a href="#franchise-ch12">12. Rapportering, revisjon og inspeksjon</a></li>
+<li><a href="#franchise-ch13">13. Markedsføring</a></li>
+<li><a href="#franchise-ch14">14. Salg og prising</a></li>
+<li><a href="#franchise-ch15">15. Risikostyring og markedsområde</a></li></ol></nav>
+    </details>
+    <article class="doc">
+      <div class="dochead">
+        <p class="doc-eyebrow">Franchisehåndbok</p>
+        <h1>Franchisehåndbok</h1>
+      </div>
+      <div class="callout c-info"><span class="callout-ic" aria-hidden="true">🧭</span><div class="callout-bd"><strong>Formål</strong><br>Franchisehåndboken beskriver felles krav, arbeidsmåter og ansvarsdeling mellom Utvendig Renhold AS og franchisetakerne. Målet er en enhetlig, trygg og profesjonell drift i hele kjeden.</div></div>
+<div class="tablewrap"><table><tr><th scope="row"><strong>Dokument</strong></th><td>Franchisehåndbok</td><th scope="row"><strong>Målgruppe</strong></th><td>Franchisetakere og deres ledere</td></tr><tr><th scope="row"><strong>Dokumenteier</strong></th><td>Utvendig Renhold AS</td><th scope="row"><strong>Dokumentansvarlig</strong></th><td>Jonathan Røthe</td></tr><tr><th scope="row"><strong>Franchisegiver</strong></th><td>Utvendig Renhold AS</td><th scope="row"><strong>Sist oppdatert</strong></th><td>17. september 2026</td></tr></table></div>
+<div class="callout c-neutral"><span class="callout-ic" aria-hidden="true">⚖️</span><div class="callout-bd"><strong>Forholdet til franchiseavtalen</strong><br>Håndboken utfyller franchiseavtalen og beskriver praktisk gjennomføring av samarbeidet. Dersom håndboken og den signerte franchiseavtalen ikke samsvarer, gjelder franchiseavtalen. Lov og forskrift går foran begge dokumentene.</div></div>
+<div class="callout c-neutral"><span class="callout-ic" aria-hidden="true">ℹ️</span><div class="callout-bd"><strong>Begreper:</strong> Franchisegiver omtales som <strong>FG</strong>, og franchisetaker omtales som <strong>FT</strong>.</div></div>
+      <section id="franchise-ch1" class="chapter"><h2><span class="chn">1</span>Formål, virkeområde og bruk</h2><p>Håndboken skal gi FT en tydelig innføring i kjedens rutiner, kvalitetskrav og forventninger til daglig drift og gjennomføring av oppdrag.</p>
+<p>Den beskriver blant annet:</p>
+<ul><li>ansvarsdelingen mellom FG og FT</li><li>bruk av merkevaren Utvendig Renhold</li><li>opplæring, kvalitet og kundebehandling</li><li>drift, systembruk og dokumentasjon</li><li>HMS, utstyr og risikostyring</li><li>administrasjon, regnskap og rapportering</li><li>markedsføring, salg og markedsområder</li></ul>
+<p>FT skal gjøre håndboken kjent for relevante medarbeidere og sørge for at rutinene etterleves i egen virksomhet. FG kan følge opp etterlevelsen gjennom kvalitetsgjennomganger, revisjoner og inspeksjoner.</p>
+<div class="callout c-success"><span class="callout-ic" aria-hidden="true">✅</span><div class="callout-bd">Utvendig Renhold skal fremstå enhetlig i kundedialog, tilbud, arbeidsutførelse, dokumentasjon og oppfølging.</div></div></section>
+<section id="franchise-ch2" class="chapter"><h2><span class="chn">2</span>Velkommen til Utvendig Renhold</h2><p>Virksomheten har sitt utspring i 2010, da Jonathan Røthe startet med vindusvask for privat- og bedriftsmarkedet. Tjenestetilbudet ble etter hvert utvidet til flere former for utvendig renhold og behandling av bygg og overflater.</p>
+<p>Utvendig Renhold skal utvikle konkurransedyktige tjenester gjennom gode arbeidsmetoder, hensiktsmessig teknologi, sikker utførelse og en profesjonell kundeopplevelse.</p>
+<h3>Ledelse og kontakt</h3>
+<p><strong>Jonathan Røthe – daglig leder og kontaktperson for franchisetakere</strong><br>Har erfaring fra eiendomsdrift, VVS, prosjektering, prosjektledelse og vedlikeholdsplanlegging.</p>
+<p><strong>Arild Hestås – styreleder</strong><br>Har erfaring som leder, rådgiver og investor. Styreleder skal bidra til at selskapets strategi gjennomføres kontrollert og lønnsomt.</p>
+<p>Opplysninger om roller og kontaktpersoner skal oppdateres når organisasjonen endres.</p></section>
+<section id="franchise-ch3" class="chapter"><h2><span class="chn">3</span>Visjon, verdier og kundeløfte</h2><div class="callout c-info"><span class="callout-ic" aria-hidden="true">🎯</span><div class="callout-bd"><strong>Visjon</strong><br>Utvendig Renhold skal være en anerkjent nasjonal leverandør av utvendig renhold med høy kvalitet, sikre arbeidsmetoder og gode kundeopplevelser.</div></div>
+<h3>Våre verdier</h3>
+<ul><li><strong>Ærlighet:</strong> Vi kommuniserer åpent og opptrer redelig overfor kunder, medarbeidere og samarbeidspartnere.</li><li><strong>Målrettethet:</strong> Vi planlegger godt, følger opp oppdrag og arbeider systematisk for å nå felles mål.</li><li><strong>Samarbeid:</strong> Vi deler erfaringer og bidrar til at både franchisetakeren og kjeden lykkes.</li><li><strong>Kvalitet:</strong> Vi leverer riktig løsning til avtalt kvalitet, pris og tidspunkt.</li><li><strong>Dokumentasjon:</strong> Oppdrag skal dokumenteres slik at kunden og virksomheten har nødvendig oversikt.</li><li><strong>Forbedring:</strong> Vi utvikler arbeidsmetoder, utstyr og digitale prosesser kontinuerlig.</li></ul>
+<p>Alle FT-er skal arbeide i tråd med målene i <a href="https://docs.google.com/presentation/d/1kb9_qzoeGldftisSZ6FQIUzLFIzzgqE33hXzGFoGhBc/edit#slide=id.g7dd41b1a3b_0_1" target="_blank" rel="noopener noreferrer">Utvendig Renholds strategidokument</a>.</p>
+<p>Kundeløftet er å levere et rent bygg og gode løsninger for å holde bygget rent over tid. Dette skal redusere unødvendig forfall, gi kunden forutsigbare kostnader og legge til rette for gjentakende oppdrag tilpasset kundens behov.</p></section>
+<section id="franchise-ch4" class="chapter"><h2><span class="chn">4</span>Varemerke, profil og forretningshemmeligheter</h2><div class="callout c-warn"><span class="callout-ic" aria-hidden="true">™️</span><div class="callout-bd">Merkevaren Utvendig Renhold tilhører FG og kan bare brukes innenfor rammene av franchiseavtalen og gjeldende profilregler.</div></div>
+<p>FT skal:</p>
+<ul><li>bruke navn, logo, farger og materiell i samsvar med profilhåndboken</li><li>sikre at bilder og publiseringer understøtter kjedens verdier og profesjonelle uttrykk</li><li>innhente nødvendige samtykker før bilder av personer, kunder eller eiendommer publiseres</li><li>ikke registrere eller bruke forvekslingsbare navn, domener eller profiler uten skriftlig godkjenning</li><li>avslutte bruk av merkevaren når retten til bruk opphører</li></ul>
+<p>Bekledning, kjøretøy, maskiner, bannere og annet profilert materiell skal følge <a href="https://drive.google.com/file/d/1kcEQkF8-lKY1Mj9nFLsKyUEotbAzElLM/view?usp=sharing" target="_blank" rel="noopener noreferrer">profilhåndboken</a>.</p>
+<p>Utstyr, løsninger, metoder og dokumentasjon som er utviklet av FG, kan inneholde forretningshemmeligheter. Slikt materiell skal bare brukes av godkjente FT-er og til formål som følger av franchiseavtalen. Utstyr eller fortrolig materiale skal ikke lånes ut, leies ut, kopieres eller brukes til andre formål uten skriftlig godkjenning fra FG.</p></section>
+<section id="franchise-ch5" class="chapter"><h2><span class="chn">5</span>Ressurser og støtte fra franchisegiver</h2><p>FG tilbyr felles ressurser for å støtte lønnsom, effektiv og enhetlig drift. FT har samtidig ansvar for å bruke ressursene korrekt og følge opp egen virksomhet.</p>
+<div class="tablewrap"><table><tr class="row-info"><th scope="col">Område</th><th scope="col">Franchisegiver bidrar med</th><th scope="col">Franchisetakers ansvar</th></tr><tr><td>Markedsføring</td><td>Felles materiell, kampanjer og erfaringsbaserte markedsmodeller.</td><td>Følge profilkrav, behandle henvendelser og dekke avtalte lokale kostnader.</td></tr><tr><td>Prising</td><td>Prismatriser og felles prinsipper for kalkulasjon.</td><td>Bruke gjeldende priser og registrere korrekte varelinjer og kostnader.</td></tr><tr><td>Salg</td><td>Støtte i tilbudsprosesser og større avtaler.</td><td>Drive lokalt salg og involvere FG når avtalen eller omfanget krever det.</td></tr><tr><td>Systemer</td><td>Oppsett, drift og utvikling av oppdragssystemet.</td><td>Registrere fullstendige og oppdaterte opplysninger og følge brukerveiledningene.</td></tr><tr><td>Fakturering</td><td>Felles fakturaflyt der dette følger av avtalen.</td><td>Sikre korrekt og komplett fakturagrunnlag.</td></tr><tr><td>Regnskap</td><td>Felles oppsett og koordinering med avtalt regnskapsleverandør.</td><td>Inngå egen avtale, levere dokumentasjon og dekke egne regnskapskostnader.</td></tr><tr><td>Opplæring</td><td>Grunnopplæring og oppdatering ved nye tjenester, produkter og systemer.</td><td>Delta i obligatorisk opplæring og sikre opplæring av egne medarbeidere.</td></tr><tr><td>Prosedyrer og skjemaer</td><td>Felles prosedyrer, maler, HMS-skjemaer og dataark.</td><td>Bruke gjeldende versjoner og melde behov for forbedringer.</td></tr><tr><td>Utstyr</td><td>Utvikling og forbedring av kjedens utstyrskonsept.</td><td>Bruke, kontrollere og vedlikeholde utstyret som beskrevet.</td></tr></table></div></section>
+<section id="franchise-ch6" class="chapter"><h2><span class="chn">6</span>Opplæring og franchisesamarbeid</h2><div class="callout c-success"><span class="callout-ic" aria-hidden="true">🎓</span><div class="callout-bd">Ingen skal utføre arbeid selvstendig uten nødvendig teoretisk og praktisk opplæring.</div></div>
+<p>FT og relevante medarbeidere skal gjennomføre <a href="https://docs.google.com/document/d/1xvUot1CpVJZ6bhqV6rWSHHBPn8AJE_5YR2U0WHH9GxA/edit#" target="_blank" rel="noopener noreferrer">opplæringsplanen</a>. Gjennomført opplæring og eventuelle godkjenninger skal dokumenteres.</p>
+<p>Opplæringen omfatter normalt:</p>
+<ol><li>franchisekonsept, verdier og kundeløfte</li><li>relevant regelverk og HMS</li><li>teoretisk gjennomgang av tjenestene</li><li>praktisk trening i arbeidsmetoder og utstyr</li><li>bruk av systemer for oppdragshåndtering</li><li>markedsføring, salg og kundedialog</li></ol>
+<p>FG tilrettelegger for grunnopplæring og faglige oppdateringer. FT skal delta når nye tjenester, produkter, prosedyrer, systemer eller utstyr innføres, og skal sørge for at egne medarbeidere får nødvendig opplæring.</p>
+<p>Gjeldende prosess for tilleggsopplæring finnes i <a href="https://docs.google.com/document/d/1xvUot1CpVJZ6bhqV6rWSHHBPn8AJE_5YR2U0WHH9GxA/edit#heading=h.cpzm4gpo5tew" target="_blank" rel="noopener noreferrer">opplæringsplanen</a>.</p>
+<p>FG kan arrangere obligatoriske franchisesamlinger. Agenda og praktisk informasjon sendes ut på forhånd.</p></section>
+<section id="franchise-ch7" class="chapter"><h2><span class="chn">7</span>Kvalitet og kundebehandling</h2><p>FT skal kjenne og følge kvalitetsstandardene til Utvendig Renhold. Kundeopplevelse, avvik, reklamasjoner, dokumentasjon og tilbakemeldinger brukes som grunnlag for forbedring.</p>
+<h3>Kundeløftet i praksis</h3>
+<ol><li>Vi kjenner kunden og oppdraget.</li><li>Vi gir kunden nødvendig oppmerksomhet.</li><li>Vi er enkle og profesjonelle å samarbeide med.</li><li>Vi anbefaler løsninger som ivaretar kundens behov.</li><li>Vi holder det vi lover og følger opp til oppdraget er avsluttet.</li></ol>
+<h3>Kundehenvendelser</h3>
+<p>Alle henvendelser skal besvares høflig og innen rimelig tid. Medarbeidere og underleverandører representerer både FT og merkevaren Utvendig Renhold og skal følge felles krav til kommunikasjon og kvalitet.</p>
+<h3>Kundeklager og reklamasjoner</h3>
+<p>Kundeklager skal registreres, undersøkes og følges opp. FT er ansvarlig for at kundens rettigheter ivaretas i samsvar med lov, avtale og <a href="https://drive.google.com/open?id=1lyAoiAatAh5sTyKWDwnQMt5vyeIDpdfdL4bBjy-nhKs" target="_blank" rel="noopener noreferrer">generelle vilkår</a>.</p>
+<p class="imgnote">[Diagram: Kundeklage – fra mottak til læring]</p>
+<p>Arbeid utenfor avtalt omfang skal avklares og prises som tillegg før det utføres, når dette er praktisk mulig. Kunden har ansvar for avtalt rydding og klargjøring og skal informere om forhold som krever særlige tiltak, for eksempel solfilm, elektriske installasjoner eller materialer som ikke tåler vann.</p></section>
+<section id="franchise-ch8" class="chapter"><h2><span class="chn">8</span>Drift og oppdragshåndtering</h2><div class="callout c-info"><span class="callout-ic" aria-hidden="true">🔄</span><div class="callout-bd">Oppdaterte data, tydelige ansvarsforhold og rask kommunikasjon er avgjørende for effektiv drift og fornøyde kunder.</div></div>
+<p>Når et oppdrag er tildelt, har FT ansvar for å ivareta oppdraget og kunden frem til oppdraget er ferdigstilt, dokumentert og avsluttet i systemet.</p>
+<p class="imgnote">[Diagram: Oppdragsflyt – fra henvendelse til avslutning]</p>
+<p>Oppdraget skal til enhver tid ha korrekt status, planlagt dato, omfang, kontaktinformasjon og nødvendig dokumentasjon. Endringer skal registreres så snart de er kjent.</p>
+<h3>Generelle prosedyrer</h3>
+<p>FG vedlikeholder beste praksis-prosedyrer for kjedens tjenester. FT skal følge gjeldende prosedyre og sikre at den er tilgjengelig for utførende personell, også på mobil gjennom Service Bridge eller annet gjeldende system.</p>
+<h3>Plikter og ansvar</h3>
+<p>FT skal følge avtalt oppdragsflyt og holde kunden og relevante interne parter oppdatert ved endringer, forsinkelser eller avvik.</p>
+<p class="imgnote">[Diagram: Roller og ansvar i oppdraget]</p></section>
+<section id="franchise-ch9" class="chapter"><h2><span class="chn">9</span>HMS, kjemikalier og hendelser</h2><div class="callout c-warn"><span class="callout-ic" aria-hidden="true">🛡️</span><div class="callout-bd">Sikkerhet skal alltid gå foran tidspress, økonomi og lettvinte løsninger.</div></div>
+<p>FT er ansvarlig for HMS i egen virksomhet og på egne oppdrag. Alle som utfører tjenester, skal ha dokumentert opplæring i arbeidsmetodene, utstyret og kjemikaliene de bruker.</p>
+<p>Arbeidsoperasjoner med vesentlig risiko skal risikovurderes. Sikker jobb-analyse skal gjennomføres når arbeidsforholdene, oppdraget eller den felles HMS-håndboken krever det.</p>
+<h3>Sikkerhetsdatablader</h3>
+<p>FG vedlikeholder sikkerhetsdatablader for produkter som leveres gjennom kjeden. Gjeldende datablad finnes i <a href="https://drive.google.com/drive/folders/1nKh9-SntwgjOntp-oF2jN1GG7_gGwRK-" target="_blank" rel="noopener noreferrer">kjemikaliekartoteket</a>. Oversikt over kjemikalier, prosedyrer og priser finnes <a href="https://drive.google.com/open?id=1mWafVwPQRbN1_cewbYx8Knjdq3Dev71Vcq_HGeVIW8Y" target="_blank" rel="noopener noreferrer">her</a>.</p>
+<p>FT skal sikre at sikkerhetsdatablader er tilgjengelige på arbeidsstedet, at kjemikalier er korrekt merket og lagret, og at medarbeiderne bruker nødvendig verneutstyr.</p>
+<h3>Oppfølging av HMS</h3>
+<p>HMS-håndboken og tilhørende rutiner skal følges. Gjentatte eller alvorlige brudd kan innebære mislighold av franchiseavtalen.</p>
+<p>Vernerunder, medarbeideroppfølging og avviksregistrering brukes for å kontrollere at rutinene fungerer i praksis. Aktuelle skjemaer finnes i <a href="https://drive.google.com/drive/folders/1YV80O7x2xGmWtuaUb5KOIyRTPjicNZCG" target="_blank" rel="noopener noreferrer">skjemasamlingen</a>, og nærmere veiledning finnes i <a href="https://docs.google.com/document/d/1VghxgXmBJsrbWfwdCTeOtumiKSIoNuRN6qrNZ7fdxLo/edit?usp=sharing" target="_blank" rel="noopener noreferrer">HMS-håndboken</a>.</p>
+<h3>Rapportering av hendelser</h3>
+<p>Ulykker, nestenulykker, skader og alvorlige avvik skal rapporteres umiddelbart etter gjeldende prosedyre. FT skal ha en beredskapsplan og varsle FG uten ugrunnet opphold ved alvorlige hendelser som kan påvirke personer, kunder, miljø, omdømme eller drift.</p></section>
+<section id="franchise-ch10" class="chapter"><h2><span class="chn">10</span>Utstyr og innkjøp</h2><p>Kjemikalier, maskiner og annet konseptutstyr skal være godkjent for bruk i kjeden og benyttes i samsvar med prosedyrer, sikkerhetsdatablader og bruksanvisninger.</p>
+<p>FT skal:</p>
+<ul><li>bestille avtalte produkter gjennom godkjent kanal</li><li>kontrollere utstyret før bruk</li><li>gjennomføre nødvendig vedlikehold og periodisk kontroll</li><li>registrere feil og ta defekt utstyr ut av bruk</li><li>ikke endre eller bruke konseptutstyr til andre formål uten godkjenning</li></ul>
+<p>Bestillinger av kjemikalier og materiell sendes til <a href="mailto:post@utvendigrenhold.no" target="_blank" rel="noopener noreferrer">post@utvendigrenhold.no</a>, med mindre en annen bestillingskanal er oppgitt.</p></section>
+<section id="franchise-ch11" class="chapter"><h2><span class="chn">11</span>Administrasjon, systemer og regnskap</h2><h3>Registrering av arbeid</h3>
+<p>Alt arbeid skal utføres innenfor gjeldende regelverk, herunder arbeidsmiljøloven, godkjenningsordningen for renholdsvirksomheter og relevante kundekrav.</p>
+<p>Arbeidstid, oppdragstid, status, oppgaver og dokumentasjon skal registreres i Service Bridge eller gjeldende oppdragssystem i tråd med <a href="https://drive.google.com/open?id=1KoiBbH5LkUQgK-C94vUDj2qe58NPrmBUl9z2OB6w3QE" target="_blank" rel="noopener noreferrer">veiledningen for oppdragshåndtering</a>.</p>
+<h3>Regnskapstjenester</h3>
+<p>FG har etablert et regnskapsoppsett med Value Accounting. Der dette følger av franchiseavtalen, skal FT inngå egen avtale med Value Accounting om oppstart, rådgivning og regnskapsføring. FT bærer kostnadene for egen regnskapsførsel og er ansvarlig for å levere fullstendig dokumentasjon innen avtalte frister.</p>
+<p class="imgnote">[Diagram: Regnskapssamarbeid – ansvar og dokumentflyt]</p>
+<p>Flyt for betalinger og inngående fakturaer:</p>
+<p class="imgnote">[Diagram: Fakturaflyt – fra ferdig oppdrag til betaling]</p>
+<p>Flyt for lønn:</p>
+<p class="imgnote">[Diagram: Lønnskjøring – registrering, kontroll og utbetaling]</p>
+<h3>Kunde- og oppdragsdata</h3>
+<p>Service Bridge er kjedens primære kilde for kunde- og oppdragsdata, med mindre FG beslutter noe annet. FT skal sikre at opplysningene er korrekte og at tilganger bare gis til personer med tjenstlig behov.</p>
+<p>Kundedata skal behandles i samsvar med personvernregelverket, franchiseavtalen og gjeldende databehandleravtaler. Spørsmål om eierskap, behandlingsansvar og bruk av data avgjøres av disse avtalene og gjeldende rett.</p></section>
+<section id="franchise-ch12" class="chapter"><h2><span class="chn">12</span>Rapportering, revisjon og inspeksjon</h2><p>Oppdragssystemet kan danne grunnlag for månedlige franchiserapporter med blant annet:</p>
+<ul><li>fakturerte varelinjer og omsetning</li><li>beregnet franchiseavgift</li><li>antall utførte og nye oppdrag</li><li>innkjøp fordelt på beløp og enheter</li><li>åpne reklamasjoner og andre avvik</li><li>uønskede hendelser</li><li>åpne oppgaver og kundeoppfølging</li><li>registrerte timer</li></ul>
+<p>FT skal kontrollere rapportgrunnlaget og melde feil eller mangler innen oppgitt frist.</p>
+<div class="callout c-neutral"><span class="callout-ic" aria-hidden="true">🔍</span><div class="callout-bd">FG kan gjennomføre avtalte eller uanmeldte kvalitetskontroller og inspeksjoner innenfor rammene av franchiseavtalen og gjeldende regelverk. Tilsyn kan også gjennomføres av kunder, tredjepart eller offentlige myndigheter.</div></div>
+<p>FT skal bidra med nødvendig dokumentasjon og følge opp avvik innen fastsatt frist.</p></section>
+<section id="franchise-ch13" class="chapter"><h2><span class="chn">13</span>Markedsføring</h2><p>FG utarbeider felles føringer, materiell og kampanjer. FT har ansvar for lokal markedsføring og for at alle aktiviteter følger profilkrav, markedsføringsloven, personvernreglene og eventuelle godkjenningsrutiner.</p>
+<h3>Lokal markedsføring</h3>
+<p>FG kan bistå med erfaringsbaserte modeller og kampanjer i ulike kanaler. FT skal behandle lokale henvendelser og dekker annonseringskostnader i samsvar med avtalen.</p>
+<p>Aktuelle kanaler kan blant annet være:</p>
+<ul><li>Facebook og Instagram</li><li>Google</li><li>lokale aviser og publikasjoner</li><li>messer og lokale arrangementer</li><li>e-post og andre godkjente kundekanaler</li></ul>
+<p>Valg av kanal skal baseres på målgruppe, dokumentert effekt og lønnsomhet. Lokalt materiell som avviker fra godkjente maler, skal avklares med FG før publisering.</p></section>
+<section id="franchise-ch14" class="chapter"><h2><span class="chn">14</span>Salg og prising</h2><div class="callout c-info"><span class="callout-ic" aria-hidden="true">💼</span><div class="callout-bd">FT har ansvar for salg i eget markedsområde. FG kan støtte ved større tilbud, rammeavtaler og nasjonale kunder.</div></div>
+<h3>Kundehenvendelser og tilbud</h3>
+<p>Henvendelser kan komme gjennom nettside, e-post, telefon, kampanjer eller direkte kontakt. Bestilling og tilbud skal registreres skriftlig i godkjent system, slik at pris, omfang, vilkår og historikk kan dokumenteres.</p>
+<p>Større eller kompliserte oppdrag bør befares før tilbud gis. Kunden skal få en tydelig beskrivelse av omfang, forutsetninger, pris og eventuelle tillegg.</p>
+<h3>Nettside og nettbestilling</h3>
+<p>Bestillinger gjennom nettbutikken følger prisene og vilkårene som vises ved bestilling. Henvendelser utenfor nettbutikken prises etter gjeldende prismatrise. Leads og bestillinger fordeles til relevant FT etter markedsområde og gjeldende rutine.</p>
+<p>FT skal følge vedtatte minstepriser og kampanjer. Rabatter eller avvik fra prisstrukturen krever godkjenning når dette følger av franchiseavtalen eller gjeldende prisregler.</p>
+<h3>Salgsmateriell</h3>
+<p>Felles salgsmateriell kan blant annet omfatte:</p>
+<ul><li>kundepresentasjon for bedriftsmarkedet</li><li>kundepresentasjon for privatmarkedet</li><li>bildebank fra oppdrag</li><li>rammeavtaler og tilbudsmaler</li><li>gjeldende prismatriser</li></ul>
+<h3>Prismatrise og styringsinformasjon</h3>
+<p>Standard prismatrise i Service Bridge skal brukes som grunnlag for oppdrag. Varelinjer, enhetspriser, kjemikalieforbruk og andre relevante kostnader skal spesifiseres korrekt. Dette gir kunden et tydelig tilbud og kjeden sammenlignbar styringsinformasjon.</p></section>
+<section id="franchise-ch15" class="chapter"><h2><span class="chn">15</span>Risikostyring og markedsområde</h2><h3>Risikostyring</h3>
+<p>FT skal ha gyldige og tilstrekkelige forsikringer for virksomheten, utstyret og tjenestene som utføres.</p>
+<div class="callout c-warn"><span class="callout-ic" aria-hidden="true">⚠️</span><div class="callout-bd">God risikostyring innebærer å planlegge for det uforutsette før arbeidet starter.</div></div>
+<p>Oppdrag skal planlegges slik at medarbeidere, kunder, tredjepersoner, eiendom og miljø ivaretas. Faremomenter skal identifiseres på forhånd, og sikker jobb-analyse skal gjennomføres når forholdene krever det. Utløsende kriterier og nærmere rutiner finnes i <a href="https://docs.google.com/document/d/1VghxgXmBJsrbWfwdCTeOtumiKSIoNuRN6qrNZ7fdxLo/edit?usp=sharing" target="_blank" rel="noopener noreferrer">HMS-håndboken</a>.</p>
+<p>Rapportering av hendelser er nødvendig for læring og kontinuerlig forbedring. Det skal være lav terskel for å melde avvik, og alvorlige forhold skal varsles umiddelbart.</p>
+<h3>Utvidelse av markedsområde</h3>
+<p>Utvidelse eller annen endring av FTs markedsområde krever enighet mellom FG og FT. Endringen skal dokumenteres i en oppdatert franchiseavtale eller et signert tillegg før den trer i kraft.</p>
+<p>Når endringen er godkjent, oppdateres oppdragssystemet, leadfordelingen og andre relevante systemer i samsvar med det nye markedsområdet.</p>
+<div class="callout c-success"><span class="callout-ic" aria-hidden="true">✅</span><div class="callout-bd"><strong>Franchisetakers løpende ansvar</strong><br>FT skal holde seg oppdatert på gjeldende versjon av håndboken, følge felles rutiner og sørge for at egne medarbeidere får nødvendig informasjon, opplæring og oppfølging.</div></div></section>
+    </article>
+  </div>
+</section>
+</main>
+
+<script>
+(function(){
+  var titles={'view-hub':'','view-personal':'Personalhåndbok','view-hms':'HMS-håndbok','view-franchise':'Franchisehåndbok'};
+  var views=Array.prototype.slice.call(document.querySelectorAll('.view'));
+  var back=document.getElementById('backbtn');
+  var crumb=document.getElementById('crumb');
+  function showView(id,push){
+    if(!titles.hasOwnProperty(id)) id='view-hub';
+    views.forEach(function(v){ v.hidden=(v.id!==id); });
+    var hub=(id==='view-hub');
+    back.hidden=hub;
+    crumb.innerHTML=hub?'Intranett':('<b>'+titles[id]+'</b>');
+    var el=document.getElementById(id);
+    try{ el.focus({preventScroll:true}); }catch(e){ el.focus(); }
+    window.scrollTo(0,0);
+    if(push){ try{ history.replaceState(null,'', '#'+(hub?'':id.replace('view-','')) ); }catch(e){} }
+  }
+  document.addEventListener('click',function(e){
+    var card=e.target.closest('[data-view]');
+    if(card){ e.preventDefault(); showView(card.getAttribute('data-view'),true); return; }
+    if(e.target.closest('#backbtn')){ e.preventDefault(); showView('view-hub',true); return; }
+    var brand=e.target.closest('#brand');
+    if(brand){ e.preventDefault(); showView('view-hub',true); return; }
+    var tl=e.target.closest('.toc a');
+    if(tl && window.matchMedia('(max-width:940px)').matches){
+      /* let native anchor scroll happen; nothing to hide */
+    }
+  });
+  /* theme toggle */
+  var root=document.documentElement, tbtn=document.getElementById('themebtn');
+  function applyLabel(){
+    var t=root.getAttribute('data-theme');
+    var dark = t? (t==='dark') : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    tbtn.setAttribute('aria-label', dark?'Bytt til lyst tema':'Bytt til mørkt tema');
+    tbtn.textContent = dark? '☀️' : '🌙';
+  }
+  try{ var saved=localStorage.getItem('ur-theme'); if(saved){ root.setAttribute('data-theme',saved); } }catch(e){}
+  tbtn.addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme');
+    var dark = cur? (cur==='dark') : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var next = dark? 'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{ localStorage.setItem('ur-theme',next); }catch(e){}
+    applyLabel();
+  });
+  try{ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',applyLabel); }catch(e){}
+  applyLabel();
+  /* open by hash */
+  var h=(location.hash||'').replace('#','');
+  if(h){ showView(h.indexOf('view-')===0?h:('view-'+h),false); }
+})();
+</script>
