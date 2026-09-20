@@ -187,6 +187,19 @@ tr:last-child td,tr:last-child th{border-bottom:none}
 
 .footnote{margin-top:40px;padding-top:16px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}
 .footnote .dot{width:6px;height:6px;border-radius:50%;background:var(--teal);display:inline-block}
+
+/* mobil: flytende innholdsknapp + kapittel-panel */
+#tocfab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:150;width:54px;height:54px;border-radius:50%;border:none;background:linear-gradient(135deg,var(--teal),var(--teal-deep));color:#fff;font-size:23px;box-shadow:0 6px 20px rgba(16,71,76,.4);cursor:pointer;display:flex;align-items:center;justify-content:center}
+#tocfab:active{transform:translateY(1px)}
+@media(min-width:941px){#tocfab{display:none!important}}
+#tocsheet{position:fixed;inset:0;z-index:200;background:rgba(8,20,22,.55);display:flex;align-items:flex-end;justify-content:center}
+#tocsheet .ts-panel{background:var(--surface);width:100%;max-width:560px;max-height:78vh;border-radius:16px 16px 0 0;box-shadow:0 -8px 30px rgba(0,0,0,.4);display:flex;flex-direction:column;overflow:hidden;padding-bottom:env(safe-area-inset-bottom,0px)}
+#tocsheet .ts-head{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border-bottom:1px solid var(--border);font-family:var(--head);font-weight:700;font-size:15px;color:var(--teal-ink)}
+#tocsheet .ts-close{border:none;background:var(--surface-2);color:var(--text);border-radius:9px;width:34px;height:34px;font-size:17px;cursor:pointer}
+#tocsheet .ts-body{overflow:auto;padding:6px 8px 10px}
+#tocsheet .ts-body ol{list-style:none;margin:0;padding:0}
+#tocsheet .ts-body a{display:block;text-decoration:none;color:var(--text);font-size:15px;padding:12px;border-radius:9px;line-height:1.35}
+#tocsheet .ts-body a:active{background:var(--surface-2)}
 </style>
 </head>
 <body>
@@ -235,7 +248,7 @@ tr:last-child td,tr:last-child th{border-bottom:none}
   <div class="sec">
     <h2 class="sec-h">🚀 Ny hos oss</h2>
     <p class="sec-sub">Opplæringsløpet for nye i kjeden – presentasjoner og kunnskapstester.</p>
-    <div class="grid"><a class="linkcard" href="https://app.notion.com/p/13fd31701b9780259df4d2db6a33872c" target="_blank" rel="noopener noreferrer"><span class="lic" aria-hidden="true">🚀</span><span><span class="lt">Opplæringsløpet</span><span class="ld">Presentasjoner og kunnskapstester ligger på intranettet i Notion</span></span><span class="ext" aria-hidden="true">↗</span></a></div>
+    <div class="grid"><a class="linkcard" href="https://app.notion.com/p/306d31701b9780609656cab49ec9e03f" target="_blank" rel="noopener noreferrer"><span class="lic" aria-hidden="true">🚀</span><span><span class="lt">Opplæringsløpet</span><span class="ld">Presentasjoner, kunnskapstester og sjekkliste (Onboardingsplan i Notion)</span></span><span class="ext" aria-hidden="true">↗</span></a></div>
   </div>
 
   <div class="sec">
@@ -833,17 +846,26 @@ tr:last-child td,tr:last-child th{border-bottom:none}
 </section>
 </main>
 
+<button id="tocfab" type="button" hidden aria-label="Åpne innhold">☰</button>
+<div id="tocsheet" hidden role="dialog" aria-label="Innhold"><div class="ts-panel"><div class="ts-head"><span>Innhold</span><button class="ts-close" type="button" aria-label="Lukk">✕</button></div><div class="ts-body"></div></div></div>
 <script>
 (function(){
   var titles={'view-hub':'','view-personal':'Personalhåndbok','view-hms':'HMS-håndbok','view-franchise':'Franchisehåndbok'};
   var views=Array.prototype.slice.call(document.querySelectorAll('.view'));
   var back=document.getElementById('backbtn');
+  var fab=document.getElementById('tocfab');
+  var sheet=document.getElementById('tocsheet');
+  var tsbody=sheet.querySelector('.ts-body');
+  var curId='view-hub';
   var crumb=document.getElementById('crumb');
   function showView(id,push){
     if(!titles.hasOwnProperty(id)) id='view-hub';
     views.forEach(function(v){ v.hidden=(v.id!==id); });
     var hub=(id==='view-hub');
     back.hidden=hub;
+    fab.hidden=hub;
+    sheet.hidden=true;
+    curId=id;
     crumb.innerHTML=hub?'Intranett':('<b>'+titles[id]+'</b>');
     var el=document.getElementById(id);
     try{ el.focus({preventScroll:true}); }catch(e){ el.focus(); }
@@ -859,6 +881,22 @@ tr:last-child td,tr:last-child th{border-bottom:none}
     var tl=e.target.closest('.toc a');
     if(tl && window.matchMedia('(max-width:940px)').matches){
       /* let native anchor scroll happen; nothing to hide */
+    }
+  });
+  fab.addEventListener('click',function(){
+    var nav=document.querySelector('#'+curId+' .toc nav');
+    tsbody.innerHTML = nav ? nav.innerHTML : '';
+    sheet.hidden=false;
+  });
+  sheet.addEventListener('click',function(e){
+    if(e.target===sheet || e.target.closest('.ts-close')){ sheet.hidden=true; return; }
+    var a=e.target.closest('a');
+    if(a){
+      e.preventDefault();
+      var tid=(a.getAttribute('href')||'').replace('#','');
+      sheet.hidden=true;
+      var t=document.getElementById(tid);
+      if(t){ t.scrollIntoView(); }
     }
   });
   /* theme toggle */
