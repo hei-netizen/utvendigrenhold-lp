@@ -1,0 +1,19 @@
+# Speiler handbok/ til ur-handbok.netlify.app ved hver push, så Netlify alltid er 1:1 med GitHub Pages.
+name: Håndbok til Netlify
+on:
+  push:
+    branches: [main]
+    paths: ['handbok/**', '.github/workflows/netlify-handbok.yml']
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npx -y netlify-cli@17 deploy --dir=handbok --prod --site="$NETLIFY_SITE_ID" --auth="$NETLIFY_AUTH_TOKEN" --message="git ${GITHUB_SHA::7}"
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
