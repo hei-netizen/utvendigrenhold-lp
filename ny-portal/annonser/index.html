@@ -452,8 +452,12 @@ if(inst&&!app){let ventende=null;addEventListener('beforeinstallprompt',e=>{e.pr
 } else if(inst) inst.remove();
 })();
 </script>
-<script>/* format-bytte: vis 1:1 eller 9:16 i samme kort */
-document.querySelectorAll('figure.ad a[href$="_9x16.webp"]').forEach(function(a){var img=a.querySelector('img');if(!img)return;var sq=img.getAttribute('src'),tall=a.getAttribute('href');
-var t=document.createElement('div');t.className='fmt';t.innerHTML='<button type="button" class="on">1:1 Feed</button><button type="button">9:16 Story</button>';
-var b1=t.children[0],b2=t.children[1];b1.onclick=function(){img.src=sq;b1.classList.add('on');b2.classList.remove('on')};b2.onclick=function(){img.src=tall;b2.classList.add('on');b1.classList.remove('on')};a.after(t);});
+<script>/* format-bytte v2: vis 1:1 eller 9:16 i samme kort. Gammel portal: <a href=_9x16><img 1x1>. Ny portal: <img 9x16> + lenke «Se 1:1-versjonen» → knapper, 1:1 som standard. */
+(function(){function knapper(img,sq,tall){var t=document.createElement('div');t.className='fmt';t.innerHTML='<button type="button" class="on">1:1 Feed</button><button type="button">9:16 Story</button>';
+var b1=t.children[0],b2=t.children[1];b1.onclick=function(e){e.preventDefault();img.src=sq;b1.classList.add('on');b2.classList.remove('on')};b2.onclick=function(e){e.preventDefault();img.src=tall;b2.classList.add('on');b1.classList.remove('on')};return t}
+function koble(){document.querySelectorAll('figure.ad').forEach(function(fig){if(fig.dataset.fmt)return;var img=fig.querySelector('img');if(!img)return;
+var a=fig.querySelector('a[href*="_9x16.webp"]');if(a&&a.contains(img)){fig.dataset.fmt='1';a.after(knapper(img,img.getAttribute('src'),a.getAttribute('href')));return}
+var l=[].slice.call(fig.querySelectorAll('a')).filter(function(x){return /_1x1\.webp/.test(x.getAttribute('href')||'')})[0];
+if(l&&/_9x16\.webp/.test(img.getAttribute('src')||'')){fig.dataset.fmt='1';var tall=img.getAttribute('src'),sq=l.getAttribute('href');img.src=sq;img.after(knapper(img,sq,tall));var pp=l.closest('p');if(pp&&pp.querySelectorAll('a').length===1)pp.remove();else l.remove()}})}
+koble();new MutationObserver(koble).observe(document.body,{childList:true,subtree:true})})();
 </script></body></html>
